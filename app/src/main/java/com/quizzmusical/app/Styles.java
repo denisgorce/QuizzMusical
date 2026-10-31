@@ -5,16 +5,22 @@ import java.util.List;
 
 /** Playlists : genre (code) ou décennie. Une chanson peut appartenir à plusieurs playlists. */
 public final class Styles {
-    public static final String[] KEYS = {"random", "intemporel", "pop", "rock", "disco", "slow", "variete", "60", "70", "80", "90", "2000", "2010", "2020", "es", "it", "instru", "ru", "en", "classique"};
-    public static final String[] LABELS = {"Random", "Tubes français intemporels", "Pop", "Rock", "Disco / Dance", "Slow", "Variété", "60's", "70's", "80's", "90's", "2000's", "2010's", "2020's", "Español", "Italiano", "Instrumental", "Russie", "English", "Classique"};
-    public static final String[] EMOJI = {"🎲", "⭐", "🎤", "🎸", "🪩", "💞", "🇫🇷", "📻", "🕺", "📼", "💿", "📱", "🎧", "🔥", "🇪🇸", "🇮🇹", "🎹", "🪆", "🇬🇧", "🎻"};
+    public static final String[] KEYS = {"random", "intemporel", "pop", "rock", "disco", "slow", "variete", "60", "70", "80", "90", "2000", "2010", "2020",
+            "inter", "en", "es", "it", "instru", "ru", "classique"};
+    public static final String[] LABELS = {"Random", "Tubes français intemporels", "Pop", "Rock", "Disco / Dance", "Slow", "Variété", "60's", "70's", "80's", "90's", "2000's", "2010's", "2020's",
+            "International", "English", "Español", "Italiano", "Instrumental", "Russie", "Classique"};
+    public static final String[] EMOJI = {"🎲", "⭐", "🎤", "🎸", "🪩", "💞", "🇫🇷", "📻", "🕺", "📼", "💿", "📱", "🎧", "🔥",
+            "🇪🇺", "🇬🇧", "🇪🇸", "🇮🇹", "🎹", "🪆", "🎻"};
+    /** Premier thème du groupe "langues et thèmes spéciaux" (séparé par un trait, hors jauge française). */
+    public static final int FIRST_SPECIAL = 14;
     /** Dégradé de chaque tuile de playlist (même ordre que KEYS). */
     public static final int[][] COLORS = {
             {0xFF46A8F3, 0xFFF683CE}, {0xFFFFC14D, 0xFFE8650A}, {0xFFF7931E, 0xFFE8650A}, {0xFF2F6FD0, 0xFF063B7D},
             {0xFFF683CE, 0xFF9B6BE8}, {0xFFF08AD8, 0xFFA8329A}, {0xFF46A8F3, 0xFFF683CE}, {0xFF8DBDF0, 0xFF2F6FD0},
             {0xFFF7931E, 0xFFF683CE}, {0xFF46A8F3, 0xFF9B6BE8}, {0xFF2F6FD0, 0xFFF683CE}, {0xFF9B6BE8, 0xFF46A8F3},
-            {0xFFE8650A, 0xFFA8329A}, {0xFFF683CE, 0xFFF7931E}, {0xFFE8650A, 0xFFD43F3F}, {0xFF2E9E5B, 0xFFD43F3F},
-            {0xFF46A8F3, 0xFF2E9E8F}, {0xFFD43F3F, 0xFF2F6FD0}, {0xFF2F6FD0, 0xFFD43F3F}, {0xFF8A94A6, 0xFF4D1B60}
+            {0xFFE8650A, 0xFFA8329A}, {0xFFF683CE, 0xFFF7931E},
+            {0xFF1D4ED8, 0xFFFFC14D}, {0xFF2F6FD0, 0xFFD43F3F}, {0xFFE8650A, 0xFFD43F3F}, {0xFF2E9E5B, 0xFFD43F3F},
+            {0xFF46A8F3, 0xFF2E9E8F}, {0xFFD43F3F, 0xFF2F6FD0}, {0xFF8A94A6, 0xFF4D1B60}
     };
 
     private Styles() {}
@@ -47,12 +53,24 @@ public final class Styles {
         return "XXe siècle";
     }
 
+    /** La jauge "part de chansons françaises" s'applique à ce thème. */
+    public static boolean usesFrenchShare(String key) {
+        for (int i = 0; i < FIRST_SPECIAL; i++) if (KEYS[i].equals(key)) return !"intemporel".equals(key);
+        return false;
+    }
+
     public static boolean matches(Song s, String key) {
-        // Modules Russie (U), English (E) et Classique (C) : isolés, jamais tirés dans les autres playlists ni dans Random
+        // Modules isolés : Russie (U), English (E), Classique (C), International (X)
         if ("ru".equals(key)) return s.hasGenre('U');
         if ("en".equals(key)) return s.hasGenre('E');
         if ("classique".equals(key)) return s.hasGenre('C');
-        if (s.hasGenre('U') || s.hasGenre('E') || s.hasGenre('C')) return false;
+        if ("inter".equals(key)) return s.hasGenre('X');
+        if (s.isModule()) return false;
+        return base(s, key);
+    }
+
+    /** Critère genre / décennie, sans tenir compte de l'isolement des modules. */
+    static boolean base(Song s, String key) {
         switch (key) {
             // Tous les incontournables français, toutes époques confondues
             case "intemporel": return s.hasGenre('F') && s.difficulty == 1;
@@ -73,6 +91,19 @@ public final class Styles {
             case "2020": return s.decade() == 2020;
             default: return true;
         }
+    }
+
+    /** Chansons non françaises d'un thème soumis à la jauge : catalogue principal + module English (sans doublon). */
+    public static List<Song> foreignPool(List<Song> all, String key, int difficulty) {
+        List<Song> out = new ArrayList<>();
+        java.util.Set<String> ids = new java.util.HashSet<>();
+        for (Song s : all) {
+            if (s.hasGenre('F') || s.hasGenre('U') || s.hasGenre('C') || s.hasGenre('X')) continue;
+            if (difficulty != 0 && s.difficulty != difficulty) continue;
+            if (!base(s, key) || !ids.add(s.id)) continue;
+            out.add(s);
+        }
+        return out;
     }
 
     /** difficulty : 0 mix, 1 incontournables, 2 connaisseurs. */

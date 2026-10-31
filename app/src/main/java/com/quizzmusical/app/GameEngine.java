@@ -23,6 +23,7 @@ public class GameEngine {
         public int difficulty = 0; // 0 mix, 1 incontournables, 2 connaisseurs
         public boolean challenges = true;
         public boolean speedBonus = true;
+        public int frenchShare = 75; // % de chansons françaises (thèmes généraux)
         public List<String> names = new ArrayList<>();
     }
 
@@ -98,6 +99,17 @@ public class GameEngine {
         String style = styleKey;
         List<Song> pool = Styles.pool(catalog, style, config.difficulty);
         if (pool.isEmpty()) pool = Styles.pool(catalog, style, 0);
+        if (Styles.usesFrenchShare(style)) {
+            // Jauge : chanson française avec la probabilité choisie, sinon étrangère (repli sur l'autre groupe si vide)
+            List<Song> fr = new ArrayList<>();
+            for (Song s : pool) if (s.hasGenre('F')) fr.add(s);
+            List<Song> other = Styles.foreignPool(catalog, style, config.difficulty);
+            if (other.isEmpty()) other = Styles.foreignPool(catalog, style, 0);
+            boolean wantFr = rnd.nextInt(100) < config.frenchShare;
+            List<Song> pick = wantFr ? fr : other;
+            if (freshCount(pick) == 0) pick = wantFr ? other : fr;
+            if (!pick.isEmpty()) pool = pick;
+        }
         if (pool.isEmpty()) pool = Styles.pool(catalog, "random", 0);
 
         List<Song> fresh = new ArrayList<>();
@@ -128,6 +140,12 @@ public class GameEngine {
         currentTurn.add(p);
         history.add(p);
         return p;
+    }
+
+    private int freshCount(List<Song> l) {
+        int n = 0;
+        for (Song s : l) if (!usedThisGame.contains(s.id)) n++;
+        return n;
     }
 
     private String nextOnomato() {

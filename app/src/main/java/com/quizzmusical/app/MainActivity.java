@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 
     // Réglages
     private int modeIdx, playersN, teamsN, secIdx, roundsN, penIdx, diffIdx;
-    private boolean challengesOn, bonusOn;
+    private boolean challengesOn, bonusOn, listenOnPass;
     private List<EditText> nameFields = new ArrayList<>();
 
     // Partie
@@ -143,7 +143,7 @@ public class MainActivity extends Activity {
 
     private void loadCatalog() {
         List<String> lines = new ArrayList<>();
-        for (String f : new String[]{"songs.txt", "songs_monde.txt", "songs_ru.txt", "songs_en.txt", "songs_classique.txt"}) {
+        for (String f : new String[]{"songs.txt", "songs_monde.txt", "songs_ru.txt", "songs_en.txt", "songs_classique.txt", "songs_inter.txt"}) {
             try (BufferedReader r = new BufferedReader(new InputStreamReader(getAssets().open(f), StandardCharsets.UTF_8))) {
                 String l;
                 while ((l = r.readLine()) != null) lines.add(l);
@@ -164,12 +164,13 @@ public class MainActivity extends Activity {
         diffIdx = prefs.getInt("diff", 0);
         challengesOn = prefs.getBoolean("chal", true);
         bonusOn = prefs.getBoolean("bonus", true);
+        listenOnPass = prefs.getBoolean("listen", true);
     }
 
     private void saveSettings() {
         prefs.edit().putInt("mode", modeIdx).putInt("players", playersN).putInt("teams", teamsN)
                 .putInt("sec", secIdx).putInt("rounds", roundsN).putInt("pen", penIdx).putInt("diff", diffIdx)
-                .putBoolean("chal", challengesOn).putBoolean("bonus", bonusOn).apply();
+                .putBoolean("chal", challengesOn).putBoolean("bonus", bonusOn).putBoolean("listen", listenOnPass).apply();
     }
 
     private Set<String> loadPlayed() {
@@ -258,11 +259,13 @@ public class MainActivity extends Activity {
         int ru = Styles.pool(catalog, "ru", 0).size();
         int en = Styles.pool(catalog, "en", 0).size();
         int cl = Styles.pool(catalog, "classique", 0).size();
-        info.addView(ui.text("📀 " + (catalog.size() - ru - en - cl) + " chansons du Top 50 et des hit-parades depuis 1960", 14, Ui.MUTED, false));
+        int it = Styles.pool(catalog, "inter", 0).size();
+        info.addView(ui.text("📀 " + (catalog.size() - ru - en - cl - it) + " chansons du Top 50 et des hit-parades depuis 1960", 14, Ui.MUTED, false));
         info.addView(ui.text("🌍 dont " + Styles.pool(catalog, "es", 0).size() + " en espagnol, " + Styles.pool(catalog, "it", 0).size()
                 + " en italien, " + Styles.pool(catalog, "instru", 0).size() + " instrumentaux", 14, Ui.MUTED, false), ui.full(6));
         info.addView(ui.text("🪆 + module Russie : " + ru + " tubes (titres en cyrillique)", 14, Ui.MUTED, false), ui.full(6));
         info.addView(ui.text("🇬🇧 + module English : " + en + " tubes mondiaux en anglais", 14, Ui.MUTED, false), ui.full(6));
+        info.addView(ui.text("🇪🇺 + module International : " + it + " tubes connus dans toute l'Europe", 14, Ui.MUTED, false), ui.full(6));
         info.addView(ui.text("🎻 + module Classique : " + cl + " œuvres célèbres", 14, Ui.MUTED, false), ui.full(6));
         info.addView(ui.text("🔁 " + played + " déjà jouées (évitées aux prochains tirages)", 14, Ui.MUTED, false), ui.full(6));
         ui.add(l, info, 28);
@@ -283,7 +286,7 @@ public class MainActivity extends Activity {
                 + "• Défis : parfois une contrainte s'ajoute (chuchoter, voix de robot, siffler...).\n\n"
                 + "• Trouvé : le chanteur ET celui qui a deviné marquent 1 point. En équipes, l'équipe marque 1 point.\n\n"
                 + "• Bonus éclair : chanson trouvée en moins de 5 s = +1 point supplémentaire pour chacun.\n\n"
-                + "• Passer : nouvelle chanson tirée, mais le chanteur perd du temps (pénalité réglable).\n\n"
+                + "• Passer : le jeu se met en pause, on peut écouter la chanson passée puis reprendre. Une nouvelle chanson est tirée, mais le chanteur perd du temps (pénalité réglable).\n\n"
                 + "• Bip bip pendant les 5 dernières secondes.\n\n"
                 + "• Fin de passage : les chansons proposées s'affichent, touchez-en une pour l'écouter sur YouTube Music.";
         new AlertDialog.Builder(this).setTitle("Règles").setMessage(msg).setPositiveButton("Compris", null).show();
@@ -340,6 +343,7 @@ public class MainActivity extends Activity {
         ui.add(l, stepper("Difficulté", DIFFS, diffIdx, i -> diffIdx = i), 10);
         ui.add(l, stepper("Défis surprises", new String[]{"Oui", "Non"}, challengesOn ? 0 : 1, i -> challengesOn = i == 0), 10);
         ui.add(l, stepper("Bonus éclair (< 5 s)", new String[]{"Oui", "Non"}, bonusOn ? 0 : 1, i -> bonusOn = i == 0), 10);
+        ui.add(l, stepper("Écouter après un passe", new String[]{"Oui", "Non"}, listenOnPass ? 0 : 1, i -> listenOnPass = i == 0), 10);
 
         TextView help = ui.text(modeIdx == 0
                 ? "Individuel : le chanteur et celui qui devine marquent chacun 1 point."
@@ -410,6 +414,7 @@ public class MainActivity extends Activity {
         c.difficulty = diffIdx;
         c.challenges = challengesOn;
         c.speedBonus = bonusOn;
+        c.frenchShare = prefs.getInt("frShare", 75);
         c.names = names;
         return c;
     }
@@ -500,6 +505,30 @@ public class MainActivity extends Activity {
         LinearLayout l = page();
         ui.add(l, ui.text(game.singer().name + ", choisis ta playlist", 22, Ui.TXT, true), 0);
         ui.add(l, ui.text("Le chrono démarre dès que tu choisis.", 14, Ui.MUTED, false), 4);
+
+        // Jauge "part de chansons françaises" (tout en haut)
+        LinearLayout gauge = ui.card();
+        final TextView gLabel = ui.text("", 16, Ui.TXT, true);
+        gauge.addView(gLabel);
+        android.widget.SeekBar sb = new android.widget.SeekBar(this);
+        sb.setMax(10);
+        sb.setProgress(game.config.frenchShare / 10);
+        sb.setProgressTintList(android.content.res.ColorStateList.valueOf(Ui.NEON_PINK));
+        sb.setThumbTintList(android.content.res.ColorStateList.valueOf(Ui.ORANGE));
+        gauge.addView(sb, ui.full(8));
+        gauge.addView(ui.text("S'applique à Random, aux styles et aux décennies. Les thèmes sous le trait ne sont pas concernés.", 12, Ui.MUTED, false), ui.full(4));
+        gLabel.setText("🇫🇷 Chansons françaises : " + game.config.frenchShare + " %");
+        sb.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
+            @Override public void onProgressChanged(android.widget.SeekBar s, int p, boolean fromUser) {
+                game.config.frenchShare = p * 10;
+                gLabel.setText("🇫🇷 Chansons françaises : " + game.config.frenchShare + " %");
+                prefs.edit().putInt("frShare", game.config.frenchShare).apply();
+            }
+            @Override public void onStartTrackingTouch(android.widget.SeekBar s) { }
+            @Override public void onStopTrackingTouch(android.widget.SeekBar s) { }
+        });
+        ui.add(l, gauge, 14);
+
         // Tuile vedette pleine largeur, plus grosse : Random
         int[] c0 = Styles.COLORS[0];
         TextView star = ui.gbutton(Styles.EMOJI[0] + "  " + Styles.LABELS[0].toUpperCase(), c0[0], c0[1]);
@@ -508,9 +537,23 @@ public class MainActivity extends Activity {
         star.setShadowLayer(12, 0, 0, Ui.NEON_PINK);
         star.setOnClickListener(v -> startTurn(Styles.KEYS[0]));
         ui.add(l, star, 16);
+
+        addTileGrid(l, 1, Styles.FIRST_SPECIAL);
+
+        // Trait de séparation : langues et thèmes spéciaux (hors jauge)
+        View line = new View(this);
+        line.setBackground(ui.gradient(Ui.NEON_BLUE, Ui.NEON_PINK, 2));
+        LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ui.dp(3));
+        llp.topMargin = ui.dp(22);
+        l.addView(line, llp);
+        ui.add(l, ui.text("🌍 Langues & thèmes spéciaux", 15, Ui.MUTED, true), 10);
+        addTileGrid(l, Styles.FIRST_SPECIAL, Styles.KEYS.length);
+    }
+
+    private void addTileGrid(LinearLayout l, int from, int to) {
         LinearLayout row = null;
-        for (int i = 1; i < Styles.KEYS.length; i++) {
-            if (i % 2 == 1) {
+        for (int i = from; i < to; i++) {
+            if ((i - from) % 2 == 0) {
                 row = ui.hbox();
                 ui.add(l, row, 12);
             }
@@ -522,11 +565,7 @@ public class MainActivity extends Activity {
             b.setOnClickListener(v -> startTurn(key));
             row.addView(b, ui.weight(1, 5));
         }
-        // Dernière ligne : compléter pour garder la grille alignée
-        if ((Styles.KEYS.length - 1) % 2 == 1 && row != null) {
-            View spacer = new View(this);
-            row.addView(spacer, ui.weight(1, 5));
-        }
+        if ((to - from) % 2 == 1 && row != null) row.addView(new View(this), ui.weight(1, 5));
     }
 
     // ---------- Jeu chronométré ----------
@@ -658,6 +697,7 @@ public class MainActivity extends Activity {
 
     private void onPass() {
         if (!running) return;
+        final GameEngine.Proposal passed = game.current;
         game.pass();
         long pen = game.config.passPenalty * 1000L;
         if (pen > 0) {
@@ -666,8 +706,29 @@ public class MainActivity extends Activity {
             vibrate(60);
         }
         if (remainingMs <= 0) { timeUp(); return; }
+        if (listenOnPass && passed != null) {
+            pauseTimer();
+            updateTimerUi();
+            showPassedOverlay(passed);
+            return;
+        }
         nextSong();
         updateTimerUi();
+    }
+
+    /** Chanson passée : le jeu est en pause, on peut l'écouter puis reprendre. */
+    private void showPassedOverlay(GameEngine.Proposal p) {
+        LinearLayout box = overlayBox("⏭ Chanson passée");
+        box.addView(ui.center("⏸ Jeu en pause", 13, Ui.CYAN, true), ui.full(4));
+        box.addView(ui.center(p.song.title, 22, Ui.TXT, true), ui.full(14));
+        if (p.song.translation != null) box.addView(ui.center("🇫🇷 " + p.song.translation, 14, Ui.GOLD, false), ui.full(2));
+        box.addView(ui.center(p.song.artist + " • " + p.song.year, 15, Ui.MUTED, false), ui.full(4));
+        TextView listen = ui.button("🎧 Écouter la chanson", Ui.CARD2, Ui.TXT);
+        listen.setOnClickListener(v -> openYouTube(p.song));
+        box.addView(listen, ui.full(18));
+        TextView resume = ui.button("▶ Reprendre le jeu", Ui.PINK, Ui.TXT);
+        resume.setOnClickListener(v -> { closeOverlay(); nextSong(); resumeTimer(); });
+        box.addView(resume, ui.full(10));
     }
 
     private void onFound() {

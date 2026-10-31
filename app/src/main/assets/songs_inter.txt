@@ -1,0 +1,501 @@
+# Module International : ~500 chansons parmi les plus connues en Europe (genre X obligatoire)
+1880|Luigi Denza|Funiculì, funiculà|X,I,V|1
+1882|Chant populaire mexicain|Cielito lindo|X,H,V|1
+1898|Eduardo di Capua|'O sole mio|X,I,S|1
+1920|Chant populaire mexicain|La cucaracha|X,H,V|1
+1945|Chant populaire italien|Bella ciao|X,I,V|1
+1954|Bill Haley & His Comets|Rock Around the Clock|X,R|1
+1956|Elvis Presley|Heartbreak Hotel|X,R|1
+1956|Elvis Presley|Hound Dog|X,R|1
+1957|Jerry Lee Lewis|Great Balls of Fire|X,R|1
+1957|Little Richard|Tutti Frutti|X,R|1
+1958|Chuck Berry|Johnny B. Goode|X,R|1
+1958|Domenico Modugno|Nel blu dipinto di blu (Volare)|X,I,V|1
+1958|Ritchie Valens|La Bamba|X,H,R|1
+1959|Renato Carosone|Tu vuò fà l'americano|X,I,V|1
+1960|Ray Charles|Georgia on My Mind|X,S|1
+1961|Ben E. King|Stand by Me|X,S|1
+1961|Chubby Checker|Let's Twist Again|X,R|1
+1961|Ray Charles|Hit the Road Jack|X,P|1
+1961|The Tokens|The Lion Sleeps Tonight|X,P|1
+1963|Jimmy Fontana|Il mondo|X,I,S|1
+1963|The Beatles|She Loves You|X,P|1
+1964|Gigliola Cinquetti|Non ho l'età|X,I,S|1
+1964|Mikis Theodorakis|Sirtaki (Zorba le Grec)|X,V|1
+1964|Roy Orbison|Oh, Pretty Woman|X,R|1
+1964|The Animals|The House of the Rising Sun|X,R|1
+1964|The Beatles|A Hard Day's Night|X,R|1
+1965|Bob Dylan|Like a Rolling Stone|X,R|1
+1965|James Brown|I Got You (I Feel Good)|X,P|1
+1965|Simon & Garfunkel|The Sound of Silence|X,S|1
+1965|Sonny & Cher|I Got You Babe|X,P|1
+1965|The Righteous Brothers|Unchained Melody|X,S|1
+1965|The Rolling Stones|(I Can't Get No) Satisfaction|X,R|1
+1965|The Temptations|My Girl|X,S|1
+1966|Frank Sinatra|Strangers in the Night|X,S|1
+1966|Nancy Sinatra|These Boots Are Made for Walkin'|X,P|1
+1966|Percy Sledge|When a Man Loves a Woman|X,S|1
+1966|The Beach Boys|Good Vibrations|X,P|1
+1966|The Mamas & the Papas|California Dreamin'|X,P|1
+1966|The Monkees|I'm a Believer|X,P|1
+1966|The Rolling Stones|Paint It Black|X,R|1
+1967|Aretha Franklin|Respect|X,P|1
+1967|Frankie Valli|Can't Take My Eyes Off You|X,P|1
+1967|Jimi Hendrix|Purple Haze|X,R|1
+1967|Louis Armstrong|What a Wonderful World|X,S|1
+1967|Marvin Gaye & Tammi Terrell|Ain't No Mountain High Enough|X,P|1
+1967|Procol Harum|A Whiter Shade of Pale|X,S|1
+1967|Scott McKenzie|San Francisco (Be Sure to Wear Flowers in Your Hair)|X,P|1
+1967|The Doors|Light My Fire|X,R|1
+1968|Adriano Celentano|Azzurro|X,I,V|1
+1968|Celia Cruz|Guantanamera|X,H,V|1
+1968|Marvin Gaye|I Heard It Through the Grapevine|X,P|1
+1968|Otis Redding|(Sittin' On) The Dock of the Bay|X,S|1
+1968|Simon & Garfunkel|Mrs. Robinson|X,P|1
+1968|Steppenwolf|Born to Be Wild|X,R|1
+1969|Creedence Clearwater Revival|Proud Mary|X,R|1
+1969|David Bowie|Space Oddity|X,R|1
+1969|Frank Sinatra|My Way|X,S|1
+1969|Led Zeppelin|Whole Lotta Love|X,R|1
+1969|The Archies|Sugar, Sugar|X,P|1
+1969|The Jackson 5|I Want You Back|X,P|1
+1970|Black Sabbath|Paranoid|X,R|1
+1970|Creedence Clearwater Revival|Have You Ever Seen the Rain|X,R|1
+1970|Derek and the Dominos|Layla|X,R|1
+1970|Mungo Jerry|In the Summertime|X,P|1
+1970|The Jackson 5|ABC|X,P|1
+1971|Bill Withers|Ain't No Sunshine|X,S|1
+1971|Don McLean|American Pie|X,R|1
+1971|John Denver|Take Me Home, Country Roads|X,P|1
+1971|John Lennon|Imagine|X,S|1
+1971|Led Zeppelin|Stairway to Heaven|X,R|1
+1971|Marvin Gaye|What's Going On|X,P|1
+1971|Mocedades|Eres tú|X,H,S|1
+1972|Bill Withers|Lean on Me|X,S|1
+1972|Deep Purple|Smoke on the Water|X,R|1
+1972|Elton John|Rocket Man|X,P|1
+1972|Lou Reed|Walk on the Wild Side|X,R|1
+1972|Mina & Alberto Lupo|Parole parole|X,I,S|1
+1972|Stevie Wonder|Superstition|X,P|1
+1973|Bob Dylan|Knockin' on Heaven's Door|X,R|1
+1973|Elton John|Crocodile Rock|X,R|1
+1973|Paul McCartney & Wings|Live and Let Die|X,R|1
+1973|Pink Floyd|Money|X,R|1
+1973|Roberta Flack|Killing Me Softly with His Song|X,S|1
+1974|ABBA|Waterloo|X,P|1
+1974|Barry White|Can't Get Enough of Your Love, Babe|X,S|1
+1974|Carl Douglas|Kung Fu Fighting|X,D|1
+1974|Lynyrd Skynyrd|Sweet Home Alabama|X,R|1
+1974|Terry Jacks|Seasons in the Sun|X,S|1
+1974|Udo Jürgens|Griechischer Wein|X,S|2
+1975|ABBA|Mamma Mia|X,P|1
+1975|Aerosmith|Walk This Way|X,R|1
+1975|Bob Marley & The Wailers|No Woman, No Cry|X,S|1
+1975|Bruce Springsteen|Born to Run|X,R|1
+1975|Jeanette|Porque te vas|X,H,P|1
+1975|KC and the Sunshine Band|That's the Way (I Like It)|X,D|1
+1975|Labelle|Lady Marmalade|X,D|1
+1975|Pink Floyd|Wish You Were Here|X,R|1
+1975|Queen|Bohemian Rhapsody|X,R|1
+1975|Riccardo Cocciante|Bella senz'anima|X,I,S|1
+1976|Boney M.|Daddy Cool|X,D|1
+1976|Boston|More Than a Feeling|X,R|1
+1976|Brotherhood of Man|Save Your Kisses for Me|X,P|1
+1976|Eagles|Hotel California|X,R|1
+1976|Elton John & Kiki Dee|Don't Go Breaking My Heart|X,P|1
+1976|Wild Cherry|Play That Funky Music|X,D|1
+1977|Bee Gees|How Deep Is Your Love|X,S|1
+1977|Bee Gees|Stayin' Alive|X,D|1
+1977|Boney M.|Ma Baker|X,D|1
+1977|David Bowie|Heroes|X,R|1
+1977|Donna Summer|I Feel Love|X,D|1
+1977|Electric Light Orchestra|Mr. Blue Sky|X,P|1
+1977|Eric Clapton|Wonderful Tonight|X,S|1
+1977|Fleetwood Mac|Dreams|X,P|1
+1977|Fleetwood Mac|Go Your Own Way|X,R|1
+1977|Queen|We Are the Champions|X,R|1
+1977|Umberto Tozzi|Ti amo|X,I,P|1
+1978|Blondie|Heart of Glass|X,D|1
+1978|Bob Marley & The Wailers|Is This Love|X,P|1
+1978|Boney M.|Rivers of Babylon|X,D|1
+1978|Chic|Le Freak|X,D|1
+1978|Dire Straits|Sultans of Swing|X,R|1
+1978|Earth, Wind & Fire|September|X,D|1
+1978|Gloria Gaynor|I Will Survive|X,D|1
+1978|John Travolta & Olivia Newton-John|Summer Nights|X,P|1
+1978|John Travolta & Olivia Newton-John|You're the One That I Want|X,P|1
+1978|Julio Iglesias|Hey!|X,H,S|1
+1978|Kate Bush|Wuthering Heights|X,P|1
+1978|Kraftwerk|Das Model|X,P|2
+1978|Rod Stewart|Da Ya Think I'm Sexy?|X,D|1
+1978|The Police|Roxanne|X,R|1
+1978|Toto|Hold the Line|X,R|1
+1978|Village People|Y.M.C.A.|X,D|1
+1979|ABBA|Chiquitita|X,S|2
+1979|AC/DC|Highway to Hell|X,R|1
+1979|Camilo Sesto|Vivir así es morir de amor|X,H,S|1
+1979|Dschinghis Khan|Dschinghis Khan|X,D|1
+1979|Julio Iglesias|Me olvidé de vivir|X,H,S|1
+1979|Kiss|I Was Made for Lovin' You|X,R|1
+1979|Michael Jackson|Don't Stop 'Til You Get Enough|X,D|1
+1979|Patrick Hernandez|Born to Be Alive|X,D|1
+1979|Pupo|Gelato al cioccolato|X,I,P|1
+1979|Sister Sledge|We Are Family|X,D|1
+1979|Supertramp|Breakfast in America|X,R|1
+1979|Supertramp|The Logical Song|X,R|1
+1979|The Buggles|Video Killed the Radio Star|X,P|1
+1979|The Clash|London Calling|X,R|1
+1979|The Knack|My Sharona|X,R|1
+1979|The Police|Message in a Bottle|X,R|1
+1979|Umberto Tozzi|Gloria|X,I,P|1
+1980|AC/DC|Back in Black|X,R|1
+1980|Diana Ross|Upside Down|X,D|1
+1980|Irene Cara|Fame|X,D|1
+1980|Kool & the Gang|Celebration|X,D|1
+1981|Bucks Fizz|Making Your Mind Up|X,P|2
+1981|Depeche Mode|Just Can't Get Enough|X,P|1
+1981|Diana Ross & Lionel Richie|Endless Love|X,S|1
+1981|Journey|Don't Stop Believin'|X,R|1
+1981|Kim Carnes|Bette Davis Eyes|X,P|1
+1981|Kim Wilde|Kids in America|X,P|1
+1981|Kool & the Gang|Get Down On It|X,D|1
+1981|Olivia Newton-John|Physical|X,P|1
+1981|Paolo Conte|Via con me|X,I,V|1
+1981|Phil Collins|In the Air Tonight|X,R|1
+1981|Queen & David Bowie|Under Pressure|X,R|1
+1981|Ricchi e Poveri|Sarà perché ti amo|X,I,P|1
+1981|Soft Cell|Tainted Love|X,P|1
+1981|The Human League|Don't You Want Me|X,P|1
+1982|Al Bano & Romina Power|Felicità|X,I,P|1
+1982|Dexys Midnight Runners|Come On Eileen|X,P|1
+1982|Falco|Der Kommissar|X,P|2
+1982|Joan Jett & the Blackhearts|I Love Rock 'n' Roll|X,R|1
+1982|Men at Work|Down Under|X,R|1
+1982|Nicole|Ein bißchen Frieden|X,S|2
+1982|Survivor|Eye of the Tiger|X,R|1
+1982|Trio|Da Da Da|X,P|1
+1983|Billy Joel|Uptown Girl|X,P|1
+1983|Bonnie Tyler|Total Eclipse of the Heart|X,S|1
+1983|Culture Club|Karma Chameleon|X,P|1
+1983|Cyndi Lauper|Girls Just Want to Have Fun|X,P|1
+1983|Eurythmics|Sweet Dreams (Are Made of This)|X,P|1
+1983|Lionel Richie|All Night Long (All Night)|X,D|1
+1983|Nena|99 Luftballons|X,P|1
+1983|New Order|Blue Monday|X,D|1
+1983|Peter Schilling|Major Tom (völlig losgelöst)|X,P|1
+1983|Righeira|Vamos a la playa|X,D|1
+1983|Savage|Only You|X,S|2
+1983|Spandau Ballet|True|X,S|1
+1983|Tears for Fears|Mad World|X,P|1
+1983|Toto Cutugno|L'Italiano|X,I,P|1
+1983|U2|Sunday Bloody Sunday|X,R|1
+1984|Alphaville|Forever Young|X,S|1
+1984|Band Aid|Do They Know It's Christmas?|X,P|1
+1984|Bronski Beat|Smalltown Boy|X,P|1
+1984|Foreigner|I Want to Know What Love Is|X,S|1
+1984|Frankie Goes to Hollywood|Relax|X,D|1
+1984|Gazebo|I Like Chopin|X,S|1
+1984|George Michael|Careless Whisper|X,S|1
+1984|Kenny Loggins|Footloose|X,R|1
+1984|Laura Branigan|Self Control|X,P|1
+1984|Madonna|Like a Virgin|X,P|1
+1984|Prince|Purple Rain|X,R|1
+1984|Ray Parker Jr.|Ghostbusters|X,P|1
+1984|Ricchi e Poveri|Mamma Maria|X,I,P|1
+1984|Simple Minds|Don't You (Forget About Me)|X,R|1
+1984|Tina Turner|What's Love Got to Do with It|X,P|1
+1984|Van Halen|Jump|X,R|1
+1984|Wham!|Last Christmas|X,P|1
+1985|Baltimora|Tarzan Boy|X,D|1
+1985|Bryan Adams|Summer of '69|X,R|1
+1985|Dead or Alive|You Spin Me Round (Like a Record)|X,D|1
+1985|Eros Ramazzotti|Una storia importante|X,I,S|1
+1985|Falco|Rock Me Amadeus|X,P|1
+1985|Gipsy Kings|Bamboléo|X,H,P|1
+1985|Huey Lewis and the News|The Power of Love|X,R|1
+1985|Modern Talking|Cheri, Cheri Lady|X,D|1
+1985|Opus|Live Is Life|X,R|1
+1985|Ryan Paris|Dolce Vita|X,D|1
+1985|USA for Africa|We Are the World|X,S|1
+1985|a-ha|Take On Me|X,P|1
+1986|Bananarama|Venus|X,D|1
+1986|Berlin|Take My Breath Away|X,S|1
+1986|Bon Jovi|Livin' on a Prayer|X,R|1
+1986|Europe|The Final Countdown|X,R|1
+1986|Gipsy Kings|Djobi Djoba|X,H,P|1
+1986|Lucio Dalla|Caruso|X,I,S|1
+1986|Peter Gabriel|Sledgehammer|X,R|1
+1986|The Bangles|Walk Like an Egyptian|X,P|1
+1987|Bill Medley & Jennifer Warnes|(I've Had) The Time of My Life|X,S|1
+1987|Gianna Nannini & Edoardo Bennato|Un'estate italiana|X,I,R|1
+1987|Johnny Logan|Hold Me Now|X,S|2
+1987|Rick Astley|Never Gonna Give You Up|X,P|1
+1987|Sabrina|Boys (Summertime Love)|X,D|1
+1987|Spagna|Call Me|X,D|2
+1987|Whitney Houston|I Wanna Dance with Somebody (Who Loves Me)|X,D|1
+1987|Zucchero|Senza una donna|X,I,R|1
+1988|Mecano|Hijo de la luna|X,H,S|1
+1989|Kaoma|Lambada|X,D|1
+1989|Technotronic|Pump Up the Jam|X,D|1
+1990|Chris Isaak|Wicked Game|X,S|1
+1990|Deee-Lite|Groove Is in the Heart|X,D|1
+1990|Enigma|Sadeness (Part I)|X,P|1
+1990|Londonbeat|I've Been Thinking About You|X,D|2
+1990|MC Hammer|U Can't Touch This|X,D|1
+1990|Roxette|It Must Have Been Love|X,S|1
+1990|Sinéad O'Connor|Nothing Compares 2 U|X,S|1
+1990|Snap!|The Power|X,D|1
+1990|Vanilla Ice|Ice Ice Baby|X,P|1
+1991|C+C Music Factory|Gonna Make You Sweat (Everybody Dance Now)|X,D|1
+1991|Extreme|More Than Words|X,S|1
+1991|Guns N' Roses|November Rain|X,S|1
+1991|Metallica|Enter Sandman|X,R|1
+1991|Nirvana|Smells Like Teen Spirit|X,R|1
+1991|R.E.M.|Losing My Religion|X,R|1
+1991|Red Hot Chili Peppers|Under the Bridge|X,R|1
+1991|Scorpions|Wind of Change|X,S|1
+1991|Zucchero|Diavolo in me|X,I,R|1
+1992|Dr. Alban|It's My Life|X,D|1
+1992|Gloria Estefan|Mi tierra|X,H,P|1
+1992|House of Pain|Jump Around|X,P|1
+1992|Radiohead|Creep|X,R|1
+1992|Rage Against the Machine|Killing in the Name|X,R|1
+1993|2 Unlimited|No Limit|X,D|1
+1993|4 Non Blondes|What's Up?|X,R|1
+1993|Corona|The Rhythm of the Night|X,D|1
+1993|Culture Beat|Mr. Vain|X,D|1
+1993|Haddaway|What Is Love|X,D|1
+1993|Laura Pausini|La solitudine|X,I,S|1
+1993|Mariah Carey|Hero|X,S|1
+1993|The Cranberries|Zombie|X,R|1
+1993|UB40|(I Can't Help) Falling in Love with You|X,S|1
+1994|Ace of Base|The Sign|X,P|1
+1994|Green Day|Basket Case|X,R|1
+1994|La Bouche|Be My Lover|X,D|1
+1994|Scooter|How Much Is the Fish?|X,D|2
+1994|Scooter|Hyper Hyper|X,D|1
+1994|The Offspring|Self Esteem|X,R|1
+1994|Wet Wet Wet|Love Is All Around|X,S|1
+1994|Whigfield|Saturday Night|X,D|1
+1994|Youssou N'Dour & Neneh Cherry|7 Seconds|X,S|1
+1995|Alanis Morissette|Ironic|X,R|1
+1995|Andrea Bocelli|Con te partirò|X,I,S|1
+1995|Captain Jack|Captain Jack|X,D|1
+1995|Coolio|Gangsta's Paradise|X,P|1
+1995|Mo-Do|Eins, Zwei, Polizei|X,D|1
+1995|Mr. President|Coco Jamboo|X,D|1
+1995|Oasis|Don't Look Back in Anger|X,R|1
+1995|Robert Miles|Children|X,D|1
+1995|Scatman John|Scatman (Ski-Ba-Bop-Ba-Dop-Bop)|X,D|1
+1995|Seal|Kiss from a Rose|X,S|1
+1995|TLC|Waterfalls|X,P|1
+1995|Take That|Back for Good|X,S|1
+1996|Alejandro Sanz|Corazón partío|X,H,P|1
+1996|Andrea Bocelli & Sarah Brightman|Time to Say Goodbye|X,I,S|1
+1996|Celine Dion|All by Myself|X,S|1
+1996|Fugees|Killing Me Softly|X,S|1
+1996|Jamiroquai|Virtual Insanity|X,D|1
+1996|Los del Río|Macarena|X,D|1
+1996|No Doubt|Don't Speak|X,S|1
+1996|R. Kelly|I Believe I Can Fly|X,S|1
+1996|Spice Girls|Wannabe|X,P|1
+1996|Toni Braxton|Un-Break My Heart|X,S|1
+1997|Aqua|Barbie Girl|X,D|1
+1997|Backstreet Boys|Everybody (Backstreet's Back)|X,P|1
+1997|Blur|Song 2|X,R|1
+1997|Buena Vista Social Club|Chan Chan|X,H,V|1
+1997|Chumbawamba|Tubthumping|X,R|1
+1997|Daft Punk|Around the World|X,D|1
+1997|Hanson|MMMBop|X,P|1
+1997|Luis Miguel|Bésame mucho|X,H,S|1
+1997|Natalie Imbruglia|Torn|X,P|1
+1997|Puff Daddy & Faith Evans|I'll Be Missing You|X,S|1
+1997|Rammstein|Du hast|X,R|1
+1997|Ricky Martin|María|X,H,D|1
+1997|Robbie Williams|Angels|X,S|1
+1997|Savage Garden|Truly Madly Deeply|X,S|1
+1997|The Verve|Bitter Sweet Symphony|X,R|1
+1997|Will Smith|Men in Black|X,P|1
+1998|Britney Spears|...Baby One More Time|X,P|1
+1998|Celia Cruz|La vida es un carnaval|X,H,D|1
+1998|Cher|Believe|X,D|1
+1998|Eagle-Eye Cherry|Save Tonight|X,R|1
+1998|Fool's Garden|Lemon Tree|X,P|1
+1998|Goo Goo Dolls|Iris|X,S|1
+1998|Ricky Martin|La copa de la vida|X,H,D|1
+1998|Ricky Martin|The Cup of Life|X,D|1
+1998|Shakira|Ojos así|X,H,P|1
+1998|Stardust|Music Sounds Better with You|X,D|1
+1998|Vengaboys|We Like to Party! (The Vengabus)|X,D|1
+1999|Eiffel 65|Blue (Da Ba Dee)|X,D|1
+1999|Gigi D'Agostino|L'amour toujours|X,D|1
+1999|Lou Bega|Mambo No. 5 (A Little Bit of...)|X,D|1
+1999|Vengaboys|Boom, Boom, Boom, Boom!!|X,D|1
+2000|Anastacia|I'm Outta Love|X,P|1
+2000|Carlos Santana feat. Maná|Corazón espinado|X,H,R|1
+2000|Coldplay|Yellow|X,R|1
+2000|Dido|Thank You|X,S|1
+2000|Eminem feat. Dido|Stan|X,P|1
+2000|Eminem|The Real Slim Shady|X,P|1
+2000|Gigi D'Agostino|La passion|X,D|2
+2000|Linkin Park|In the End|X,R|1
+2000|Modjo|Lady (Hear Me Tonight)|X,D|1
+2001|Alicia Keys|Fallin'|X,S|1
+2001|DJ Ötzi|Hey Baby (Uhh, Ahh)|X,P|1
+2001|Destiny's Child|Survivor|X,P|1
+2001|Gorillaz|Clint Eastwood|X,P|1
+2001|Kylie Minogue|Can't Get You Out of My Head|X,D|1
+2001|Manu Chao|Me gustas tú|X,H,P|1
+2001|Rammstein|Sonne|X,R|2
+2001|Shaggy|It Wasn't Me|X,P|1
+2001|Zucchero|Baila (Sexy Thing)|X,I,R|1
+2002|Avril Lavigne|Complicated|X,R|1
+2002|Juanes|A Dios le pido|X,H,R|1
+2002|Las Ketchup|Aserejé|X,D|1
+2002|Nelly feat. Kelly Rowland|Dilemma|X,S|1
+2002|Nickelback|How You Remind Me|X,R|1
+2002|Shakira|Whenever, Wherever|X,P|1
+2003|50 Cent|In da Club|X,P|1
+2003|Beyoncé feat. Jay-Z|Crazy in Love|X,P|1
+2003|Black Eyed Peas|Where Is the Love?|X,P|1
+2003|DJ BoBo|Chihuahua|X,D|1
+2003|Evanescence|Bring Me to Life|X,R|1
+2003|OutKast|Hey Ya!|X,P|1
+2003|The White Stripes|Seven Nation Army|X,R|1
+2003|Tiziano Ferro|Perdono|X,I,P|1
+2003|t.A.T.u.|All the Things She Said|X,P|1
+2004|Daddy Yankee|Gasolina|X,H,D|1
+2004|Franz Ferdinand|Take Me Out|X,R|1
+2004|Juli|Perfekte Welle|X,R|2
+2004|Keane|Somewhere Only We Know|X,S|1
+2004|Maroon 5|This Love|X,R|1
+2004|O-Zone|Dragostea din tei|X,D|1
+2004|The Killers|Mr. Brightside|X,R|1
+2004|Usher|Yeah!|X,D|1
+2005|Crazy Frog|Axel F|X,D|1
+2005|Daniel Powter|Bad Day|X,P|1
+2005|James Blunt|You're Beautiful|X,S|1
+2005|Kelly Clarkson|Since U Been Gone|X,R|1
+2005|Shakira|La tortura|X,H,P|1
+2005|Tokio Hotel|Durch den Monsun|X,R|1
+2006|Amy Winehouse|Rehab|X,P|1
+2006|Gnarls Barkley|Crazy|X,P|1
+2006|Juanes|La camisa negra|X,H,R|1
+2006|Justin Timberlake|SexyBack|X,P|1
+2006|Lordi|Hard Rock Hallelujah|X,R|2
+2006|Mika|Relax, Take It Easy|X,P|1
+2006|Nelly Furtado|Maneater|X,P|1
+2006|Shakira feat. Wyclef Jean|Hips Don't Lie|X,D|1
+2006|Snow Patrol|Chasing Cars|X,S|1
+2007|Amy Macdonald|This Is the Life|X,R|1
+2007|Kanye West|Stronger|X,P|1
+2007|Leona Lewis|Bleeding Love|X,S|1
+2007|Rihanna feat. Jay-Z|Umbrella|X,P|1
+2007|Timbaland feat. OneRepublic|Apologize|X,S|1
+2008|Duffy|Mercy|X,P|1
+2008|Juanes|Me enamora|X,H,P|1
+2008|Katy Perry|I Kissed a Girl|X,P|1
+2008|Kings of Leon|Sex on Fire|X,R|1
+2008|Lady Gaga|Just Dance|X,D|1
+2008|Peter Fox|Haus am See|X,P|2
+2009|Inna|Hot|X,D|2
+2010|Alexandra Stan|Mr. Saxobeat|X,D|1
+2010|Bruno Mars|Just the Way You Are|X,S|1
+2010|Eminem feat. Rihanna|Love the Way You Lie|X,P|1
+2010|Lena|Satellite|X,P|1
+2010|Robyn|Dancing On My Own|X,P|2
+2010|Shakira|Loca|X,H,D|1
+2010|Shakira|Waka Waka (This Time for Africa)|X,D|1
+2010|Yolanda Be Cool & DCUP|We No Speak Americano|X,D|1
+2011|Adele|Rolling in the Deep|X,P|1
+2011|David Guetta feat. Sia|Titanium|X,D|1
+2011|Don Omar & Lucenzo|Danza kuduro|X,H,D|1
+2011|Gotye feat. Kimbra|Somebody That I Used to Know|X,P|1
+2011|Jennifer Lopez feat. Pitbull|On the Floor|X,D|1
+2011|LMFAO|Party Rock Anthem|X,D|1
+2011|Maroon 5 feat. Christina Aguilera|Moves like Jagger|X,P|1
+2011|Michel Teló|Ai se eu te pego!|X,D|1
+2011|Rihanna feat. Calvin Harris|We Found Love|X,D|1
+2012|Asaf Avidan|One Day / Reckoning Song|X,P|1
+2012|Carly Rae Jepsen|Call Me Maybe|X,P|1
+2012|Die Toten Hosen|Tage wie diese|X,R|2
+2012|Imagine Dragons|Radioactive|X,R|1
+2012|Loreen|Euphoria|X,D|1
+2012|Rihanna|Diamonds|X,S|1
+2013|Avicii|Wake Me Up|X,D|1
+2013|Bastille|Pompeii|X,P|1
+2013|Daft Punk feat. Pharrell Williams|Get Lucky|X,D|1
+2013|Helene Fischer|Atemlos durch die Nacht|X,P|1
+2013|Lorde|Royals|X,P|1
+2013|Miley Cyrus|Wrecking Ball|X,S|1
+2013|Passenger|Let Her Go|X,S|1
+2013|Pharrell Williams|Happy|X,P|1
+2013|Robin Thicke|Blurred Lines|X,P|1
+2013|Ylvis|The Fox (What Does the Fox Say?)|X,P|1
+2014|Andreas Bourani|Auf uns|X,P|2
+2014|Conchita Wurst|Rise Like a Phoenix|X,S|2
+2014|Ed Sheeran|Thinking Out Loud|X,S|1
+2014|Enrique Iglesias|Bailando|X,H,D|1
+2014|Hozier|Take Me to Church|X,S|1
+2014|Il Volo|Grande amore|X,I,S|1
+2014|John Legend|All of Me|X,S|1
+2014|Mark Forster|Au Revoir|X,P|2
+2014|Mark Ronson feat. Bruno Mars|Uptown Funk|X,D|1
+2014|Meghan Trainor|All About That Bass|X,P|1
+2014|Milky Chance|Stolen Dance|X,P|1
+2014|Romeo Santos|Propuesta indecente|X,H,S|1
+2014|Sam Smith|Stay with Me|X,S|1
+2014|Sia|Chandelier|X,P|1
+2014|Taylor Swift|Shake It Off|X,P|1
+2015|Alan Walker|Faded|X,D|1
+2015|Justin Bieber|Sorry|X,P|1
+2015|Lost Frequencies|Are You with Me|X,D|1
+2015|Lukas Graham|7 Years|X,P|1
+2015|Major Lazer & DJ Snake feat. MØ|Lean On|X,D|1
+2015|Nicky Jam & Enrique Iglesias|El perdón|X,H,P|1
+2015|OMI|Cheerleader (Felix Jaehn Remix)|X,P|1
+2015|Wiz Khalifa feat. Charlie Puth|See You Again|X,S|1
+2016|Alvaro Soler|Sofia|X,H,P|1
+2016|Carlos Vives & Shakira|La bicicleta|X,H,P|1
+2016|Drake|One Dance|X,P|1
+2016|Kungs vs Cookin' on 3 Burners|This Girl|X,D|1
+2016|Shakira feat. Maluma|Chantaje|X,H,P|1
+2016|The Chainsmokers feat. Halsey|Closer|X,P|1
+2017|Camila Cabello|Havana|X,P|1
+2017|Dua Lipa|New Rules|X,P|1
+2017|Francesco Gabbani|Occidentali's Karma|X,I,P|1
+2017|J Balvin & Willy William|Mi gente|X,H,D|1
+2017|Luis Fonsi feat. Justin Bieber|Despacito (Remix)|X,D|1
+2017|Luis Fonsi ft. Daddy Yankee|Despacito|X,H,D|1
+2017|Ofenbach|Be Mine|X,D|2
+2017|Salvador Sobral|Amar pelos dois|X,S|2
+2018|DJ Snake feat. Selena Gomez, Ozuna & Cardi B|Taki Taki|X,H,D|1
+2018|Dua Lipa & Calvin Harris|One Kiss|X,D|1
+2018|Lady Gaga & Bradley Cooper|Shallow|X,S|1
+2018|Netta|Toy|X,P|2
+2019|Billie Eilish|Bad Guy|X,P|1
+2019|Daddy Yankee feat. Snow|Con calma|X,H,D|1
+2019|Duncan Laurence|Arcade|X,S|1
+2019|Lewis Capaldi|Someone You Loved|X,S|1
+2019|Lil Nas X|Old Town Road|X,P|1
+2019|Mahmood|Soldi|X,I,P|1
+2019|Shawn Mendes & Camila Cabello|Señorita|X,P|1
+2019|Tones and I|Dance Monkey|X,P|1
+2020|Harry Styles|Watermelon Sugar|X,P|1
+2020|The Weeknd|Blinding Lights|X,P|1
+2021|Elton John & Dua Lipa|Cold Heart (Pnau Remix)|X,D|1
+2021|Glass Animals|Heat Waves|X,P|1
+2021|Måneskin|Zitti e buoni|X,I,R|1
+2021|Olivia Rodrigo|Drivers License|X,S|1
+2021|Rauw Alejandro|Todo de ti|X,H,D|1
+2022|David Guetta & Bebe Rexha|I'm Good (Blue)|X,D|1
+2022|Mahmood & Blanco|Brividi|X,I,S|1
+2022|Rosalía|Despechá|X,H,P|1
+2023|Rema & Selena Gomez|Calm Down|X,P|1
+2023|Shakira & Bizarrap|Bzrp Music Sessions, Vol. 53|X,H,P|1
+2024|Angelina Mango|La noia|X,I,P|1
+2024|Benson Boone|Beautiful Things|X,R|1
+2024|Lady Gaga & Bruno Mars|Die with a Smile|X,S|1
+2024|Rosé & Bruno Mars|APT.|X,P|1
+2024|Sabrina Carpenter|Espresso|X,P|1
+2024|Teddy Swims|Lose Control|X,S|1

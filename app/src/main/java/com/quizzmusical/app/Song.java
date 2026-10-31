@@ -49,8 +49,8 @@ public class Song {
         }
     }
 
-    /** Module isolé (Russie, English, Classique) : jamais fusionné avec le catalogue principal. */
-    public boolean isModule() { return hasGenre('U') || hasGenre('E') || hasGenre('C'); }
+    /** Module isolé (Russie, English, Classique, International) : jamais fusionné avec le catalogue principal. */
+    public boolean isModule() { return hasGenre('U') || hasGenre('E') || hasGenre('C') || hasGenre('X'); }
 
     /** Fusionne les doublons hors modules (même artiste + titre) : genres cumulés, difficulté la plus facile. */
     public static List<Song> merge(List<Song> all) {
