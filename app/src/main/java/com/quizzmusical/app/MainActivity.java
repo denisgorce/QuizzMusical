@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
-import android.media.ToneGenerator;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -51,7 +50,7 @@ public class MainActivity extends Activity {
     private List<Song> catalog = new ArrayList<>();
     private final Handler h = new Handler(Looper.getMainLooper());
     private final Random rnd = new Random();
-    private ToneGenerator tone;
+    private SoftSound sound;
     private Vibrator vib;
     private int screen = SC_HOME;
 
@@ -106,7 +105,7 @@ public class MainActivity extends Activity {
         setContentView(root);
         loadCatalog();
         loadSettings();
-        try { tone = new ToneGenerator(AudioManager.STREAM_MUSIC, 100); } catch (RuntimeException e) { tone = null; }
+        sound = new SoftSound();
         vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         showHome();
     }
@@ -125,7 +124,7 @@ public class MainActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         h.removeCallbacksAndMessages(null);
-        if (tone != null) tone.release();
+        sound.shutdown();
     }
 
     @Override
@@ -455,8 +454,8 @@ public class MainActivity extends Activity {
                     TextView go = ui.button("C'est parti !", Ui.PINK, Ui.TXT);
                     go.setOnClickListener(v -> showHandoff());
                     after.addView(go, ui.full(20));
-                } else if (tone != null) {
-                    try { tone.startTone(ToneGenerator.TONE_PROP_BEEP, 30); } catch (RuntimeException ignored) { }
+                } else {
+                    sound.click();
                 }
             }, delay);
         }
@@ -501,9 +500,17 @@ public class MainActivity extends Activity {
         LinearLayout l = page();
         ui.add(l, ui.text(game.singer().name + ", choisis ta playlist", 22, Ui.TXT, true), 0);
         ui.add(l, ui.text("Le chrono démarre dès que tu choisis.", 14, Ui.MUTED, false), 4);
+        // Tuile vedette pleine largeur, plus grosse : Random
+        int[] c0 = Styles.COLORS[0];
+        TextView star = ui.gbutton(Styles.EMOJI[0] + "  " + Styles.LABELS[0].toUpperCase(), c0[0], c0[1]);
+        star.setTextSize(26);
+        star.setPadding(ui.dp(10), ui.dp(30), ui.dp(10), ui.dp(30));
+        star.setShadowLayer(12, 0, 0, Ui.NEON_PINK);
+        star.setOnClickListener(v -> startTurn(Styles.KEYS[0]));
+        ui.add(l, star, 16);
         LinearLayout row = null;
-        for (int i = 0; i < Styles.KEYS.length; i++) {
-            if (i % 2 == 0) {
+        for (int i = 1; i < Styles.KEYS.length; i++) {
+            if (i % 2 == 1) {
                 row = ui.hbox();
                 ui.add(l, row, 12);
             }
@@ -516,7 +523,7 @@ public class MainActivity extends Activity {
             row.addView(b, ui.weight(1, 5));
         }
         // Dernière ligne : compléter pour garder la grille alignée
-        if (Styles.KEYS.length % 2 == 1 && row != null) {
+        if ((Styles.KEYS.length - 1) % 2 == 1 && row != null) {
             View spacer = new View(this);
             row.addView(spacer, ui.weight(1, 5));
         }
@@ -700,20 +707,16 @@ public class MainActivity extends Activity {
     private void timeUp() {
         pauseTimer();
         game.abandon(); // chanson en cours non trouvée
-        if (tone != null) {
-            try { tone.startTone(ToneGenerator.TONE_CDMA_HIGH_L, 900); } catch (RuntimeException ignored) { }
-        }
-        vibrate(500);
+        sound.endTurn();
+        vibrate(250);
         savePlayed();
         backdrop.setAlert(false);
         showTurnRecap();
     }
 
     private void beep() {
-        if (tone != null) {
-            try { tone.startTone(ToneGenerator.TONE_PROP_BEEP2, 200); } catch (RuntimeException ignored) { }
-        }
-        vibrate(80);
+        sound.tick();
+        vibrate(40);
     }
 
     @SuppressWarnings("deprecation")
@@ -832,7 +835,8 @@ public class MainActivity extends Activity {
     private void openYouTube(Song s) {
         Intent i = new Intent(this, YouTubeActivity.class);
         i.putExtra(YouTubeActivity.EXTRA_QUERY, s.query());
-        i.putExtra(YouTubeActivity.EXTRA_TITLE, s.title + " - " + s.artist);
+        i.putExtra(YouTubeActivity.EXTRA_TITLE, s.title);
+        i.putExtra(YouTubeActivity.EXTRA_ARTIST, s.artist);
         startActivity(i);
     }
 
@@ -893,6 +897,7 @@ public class MainActivity extends Activity {
 
     private void showFinal() {
         screen = SC_FINAL;
+        sound.endGame();
         keepScreenOn(false);
         savePlayed();
         LinearLayout l = page();

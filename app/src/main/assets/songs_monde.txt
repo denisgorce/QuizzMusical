@@ -1,234 +1,96 @@
 # Playlists Espagnol (H), Italien (I) et Instrumental (N) : incluses dans Aléatoire et dans les décennies. Doublons avec songs.txt fusionnés au chargement.
 1958|Ritchie Valens|La Bamba|H,R|1
-1962|Los Machucambos|Pepito|H,P|2
-1968|Los Paraguayos|Malagueña salerosa|H,V|2
 1971|Mocedades|Eres tú|H,S|1
-1972|Julio Iglesias|Un canto a Galicia|H,V|2
-1973|Lole y Manuel|Todo es de color|H,V|2
-1974|Camilo Sesto|Algo de mí|H,S|2
 1975|Jeanette|Porque te vas|H,P|1
-1976|Paloma San Basilio|Juntos|H,S|2
-1977|Raphael|Qué sabe nadie|H,S|2
 1978|Julio Iglesias|Hey!|H,S|1
 1979|Julio Iglesias|Me olvidé de vivir|H,S|1
 1979|Camilo Sesto|Vivir así es morir de amor|H,S|1
-1980|Miguel Bosé|Amante bandido|H,P|2
-1980|Julio Iglesias|De niña a mujer|H,S|2
-1981|Julio Iglesias|Volver a empezar (Begin the Beguine)|H,S|2
-1982|Mecano|Hoy no me puedo levantar|H,P|2
-1983|Julio Iglesias|La paloma|H,S|2
-1984|Mecano|Me colé en una fiesta|H,P|2
 1985|Gipsy Kings|Bamboléo|H,P|1
 1986|Gipsy Kings|Djobi Djoba|H,P|1
 1987|Los Lobos|La Bamba|H,R|1
 1988|Mecano|Hijo de la luna|H,S|1
-1988|Gipsy Kings|Un amor|H,S|2
-1989|Mecano|Mujer contra mujer|H,P|2
-1989|Gloria Estefan|Oye mi canto|H,D|2
-1990|Gipsy Kings|A mi manera|H,S|2
 1992|Gloria Estefan|Mi tierra|H,P|1
-1992|Juan Luis Guerra|Burbujas de amor|H,S|2
-1993|Ricky Martin|Vuelve|H,S|2
-1993|Enrique Iglesias|Si tú te vas|H,S|2
-1993|Juan Luis Guerra|Ojalá que llueva café|H,P|2
 1993|Los del Río|Macarena|H,D|1
-1994|Selena|Bidi Bidi Bom Bom|H,P|2
-1994|Shakira|Estoy aquí|H,P|2
-1995|Shakira|Dónde están los ladrones|H,R|2
-1995|Selena|Amor prohibido|H,P|2
 1996|Alejandro Sanz|Corazón partío|H,P|1
-1996|Enrique Iglesias|Experiencia religiosa|H,S|2
 1997|Ricky Martin|María|H,D|1
 1997|Buena Vista Social Club|Chan Chan|H,V|1
 1998|Ricky Martin|La copa de la vida|H,D|1
 1998|Shakira|Ojos así|H,P|1
-1998|Enrique Iglesias|Bailamos|H,D|2
-1999|Marc Anthony|Dímelo|H,S|2
 2000|Carlos Santana feat. Maná|Corazón espinado|H,R|1
-2001|Shakira|Suerte (Whenever, Wherever)|H,P|2
-2001|Paulina Rubio|Y yo sigo aquí|H,P|2
 2002|Las Ketchup|Aserejé|H,D|1
 2002|Juanes|A Dios le pido|H,R|1
-2003|Juanes|Es por ti|H,S|2
 2004|Daddy Yankee|Gasolina|H,D|1
-2004|La Oreja de Van Gogh|Rosas|H,P|2
 2005|Shakira|La tortura|H,P|1
-2005|Don Omar|Dale don dale|H,D|2
 2006|Juanes|La camisa negra|H,R|1
-2007|Enrique Iglesias|¿Dónde están corazón?|H,P|2
-2007|Wisin & Yandel|Sexy movimiento|H,D|2
 2008|Juanes|Me enamora|H,P|1
-2008|Aventura|Por un segundo|H,S|2
 2010|Shakira|Loca|H,D|1
-2010|Enrique Iglesias|Cuando me enamoro|H,S|2
 2011|Don Omar & Lucenzo|Danza kuduro|H,D|1
-2011|Pitbull|Bon, Bon|H,D|2
 2014|Enrique Iglesias|Bailando|H,D|1
 2014|Romeo Santos|Propuesta indecente|H,S|1
 2015|Nicky Jam & Enrique Iglesias|El perdón|H,P|1
-2015|J Balvin|Ginza|H,D|2
 2016|Carlos Vives & Shakira|La bicicleta|H,P|1
 2016|Shakira feat. Maluma|Chantaje|H,P|1
-2016|J Balvin|Safari|H,D|2
 2017|Luis Fonsi ft. Daddy Yankee|Despacito|H,D|1
 2017|J Balvin & Willy William|Mi gente|H,D|1
-2017|Maluma|Felices los 4|H,P|2
-2017|Shakira|Me enamoré|H,P|2
-2018|Daddy Yankee|Dura|H,D|2
-2018|Becky G & Natti Natasha|Sin pijama|H,P|2
 2018|DJ Snake feat. Selena Gomez, Ozuna & Cardi B|Taki Taki|H,D|1
-2018|Rosalía|Malamente|H,P|2
 2019|Daddy Yankee feat. Snow|Con calma|H,D|1
-2019|Rosalía & J Balvin|Con altura|H,P|2
-2020|Bad Bunny & Jhay Cortez|Dákiti|H,P|2
 2021|Rauw Alejandro|Todo de ti|H,D|1
-2022|Bad Bunny|Tití me preguntó|H,P|2
 2022|Rosalía|Despechá|H,P|1
 2023|Shakira & Bizarrap|Bzrp Music Sessions, Vol. 53|H,P|1
-2023|Karol G|TQG|H,P|2
-2024|Shakira|Soltera|H,P|2
-1976|Julio Iglesias|Abrázame|H,S|2
-1989|Luis Miguel|La incondicional|H,S|2
-1987|Luis Miguel|Ahora te puedes marchar|H,P|2
-1997|Maná|Clavado en un bar|H,R|2
 1998|Celia Cruz|La vida es un carnaval|H,D|1
 1968|Celia Cruz|Guantanamera|H,V|1
 1997|Luis Miguel|Bésame mucho|H,S|1
-1935|Carlos Gardel|Por una cabeza|H,S|2
 1920|Chant populaire mexicain|La cucaracha|H,V|1
 1882|Chant populaire mexicain|Cielito lindo|H,V|1
 2001|Manu Chao|Me gustas tú|H,P|1
-1998|Manu Chao|Clandestino|H,P|2
-2004|Bebe|Malo|H,R|2
 2016|Alvaro Soler|Sofia|H,P|1
-2015|Alvaro Soler|El mismo sol|H,P|2
 1958|Domenico Modugno|Nel blu dipinto di blu (Volare)|I,V|1
 1959|Renato Carosone|Tu vuò fà l'americano|I,V|1
-1960|Mina|Il cielo in una stanza|I,S|2
-1961|Adriano Celentano|24.000 baci|I,R|2
-1962|Rita Pavone|La partita di pallone|I,P|2
-1963|Gianni Morandi|In ginocchio da te|I,S|2
 1964|Gigliola Cinquetti|Non ho l'età|I,S|1
-1964|Rita Pavone|Cuore|I,P|2
-1965|Gino Paoli|Senza fine|I,S|2
-1966|Adriano Celentano|Il ragazzo della via Gluck|I,V|2
-1967|Patty Pravo|La bambola|I,P|2
 1968|Adriano Celentano|Azzurro|I,V|1
-1969|Lucio Battisti|Mi ritorni in mente|I,P|2
-1970|Lucio Battisti|Emozioni|I,S|2
-1971|Mina|Grande grande grande|I,S|2
 1972|Mina & Alberto Lupo|Parole parole|I,S|1
-1972|Adriano Celentano|Prisencolinensinainciusol|I,P|2
-1973|Lucio Dalla|Piazza Grande|I,V|2
-1974|Umberto Tozzi|Donna amante mia|I,S|2
 1975|Riccardo Cocciante|Bella senz'anima|I,S|1
-1976|Riccardo Cocciante|Margherita|I,S|2
 1977|Umberto Tozzi|Ti amo|I,P|1
-1978|Matia Bazar|...e dirsi ciao|I,P|2
-1978|Umberto Tozzi|Tu|I,P|2
 1979|Umberto Tozzi|Gloria|I,P|1
-1979|Gianna Nannini|America|I,R|2
-1980|Pupo|Su di noi|I,P|2
 1981|Ricchi e Poveri|Sarà perché ti amo|I,P|1
 1982|Al Bano & Romina Power|Felicità|I,P|1
-1982|Riccardo Fogli|Storie di tutti i giorni|I,S|2
 1983|Toto Cutugno|L'Italiano|I,P|1
-1983|Vasco Rossi|Vita spericolata|I,R|2
 1984|Ricchi e Poveri|Mamma Maria|I,P|1
-1985|Ricchi e Poveri|Se m'innamoro|I,S|2
 1985|Eros Ramazzotti|Una storia importante|I,S|1
-1986|Eros Ramazzotti|Adesso tu|I,S|2
-1987|Umberto Tozzi & Raf|Gente di mare|I,P|2
 1987|Gianna Nannini & Edoardo Bennato|Un'estate italiana|I,R|1
 1987|Zucchero|Senza una donna|I,R|1
-1989|Zucchero|Diamante|I,S|2
-1990|Gianna Nannini & Edoardo Bennato|Notti magiche|I,R|2
-1990|Toto Cutugno|Insieme: 1992|I,P|2
 1991|Zucchero|Diavolo in me|I,R|1
-1991|Riccardo Cocciante|Se stiamo insieme|I,S|2
 1993|Laura Pausini|La solitudine|I,S|1
-1993|Eros Ramazzotti|Cose della vita|I,P|2
-1994|Laura Pausini|Strani amori|I,S|2
 1995|Andrea Bocelli|Con te partirò|I,S|1
-1995|Eros Ramazzotti|Più bella cosa|I,S|2
-1996|Eros Ramazzotti|Più che puoi|I,S|2
 1996|Andrea Bocelli & Sarah Brightman|Time to Say Goodbye|I,S|1
-1997|Laura Pausini|Ascolta il tuo cuore|I,S|2
-1998|Zucchero|Il volo|I,S|2
-2000|Eros Ramazzotti|Fuoco nel fuoco|I,P|2
-2000|Laura Pausini|Tra te e il mare|I,S|2
 2001|Zucchero|Baila (Sexy Thing)|I,R|1
 2003|Tiziano Ferro|Perdono|I,P|1
-2003|Eros Ramazzotti|Un'emozione per sempre|I,S|2
-2004|Tiziano Ferro|Sere nere|I,S|2
-2004|Laura Pausini|Resta in ascolto|I,S|2
-2005|Eros Ramazzotti & Anastacia|I Belong to You (Il ritmo della passione)|I,S|2
-2006|Laura Pausini|Io canto|I,S|2
-2007|Eros Ramazzotti & Ricky Martin|Non siamo soli|I,P|2
-2008|Giusy Ferreri|Non ti scordar mai di me|I,S|2
-2009|Marco Mengoni|Credimi ancora|I,P|2
-2010|Laura Pausini|Non ho mai smesso|I,S|2
-2011|Il Volo|'O sole mio|I,S|2
-2012|Emma|Non è l'inferno|I,P|2
-2013|Marco Mengoni|L'essenziale|I,S|2
 2014|Il Volo|Grande amore|I,S|1
-2016|Francesco Gabbani|Amen|I,P|2
 2017|Francesco Gabbani|Occidentali's Karma|I,P|1
-2018|Ermal Meta & Fabrizio Moro|Non mi avete fatto niente|I,P|2
 2019|Mahmood|Soldi|I,P|1
-2020|Diodato|Fai rumore|I,S|2
 2021|Måneskin|Zitti e buoni|I,R|1
-2021|Måneskin|Coraline|I,R|2
 2022|Mahmood & Blanco|Brividi|I,S|1
-2022|Måneskin|Supermodel|I,R|2
-2023|Marco Mengoni|Due vite|I,S|2
-2023|Annalisa|Mon amour|I,P|2
 2024|Angelina Mango|La noia|I,P|1
-2024|Annalisa|Sinceramente|I,P|2
-1965|Dalida|Ciao amore, ciao|I,S|2
-1960|Renato Carosone|Torero|I,V|2
 1880|Luigi Denza|Funiculì, funiculà|I,V|1
 1898|Eduardo di Capua|'O sole mio|I,S|1
 1945|Chant populaire italien|Bella ciao|I,V|1
 1963|Jimmy Fontana|Il mondo|I,S|1
-1969|Massimo Ranieri|Rose rosse|I,S|2
-1974|Al Bano|Nel sole|I,S|2
-1990|Toto Cutugno|Gli amori|I,S|2
 1986|Lucio Dalla|Caruso|I,S|1
-1995|Andrea Bocelli & Giorgia|Vivo per lei|I,S|2
-1968|Adriano Celentano|Una carezza in un pugno|I,S|2
-1971|Nicola Di Bari|Il cuore è uno zingaro|I,S|2
-1984|Al Bano & Romina Power|Ci sarà|I,P|2
 1981|Paolo Conte|Via con me|I,V|1
-1959|Domenico Modugno|Piove (Ciao ciao bambina)|I,S|2
-1956|Fred Buscaglione|Che bambola|I,V|2
 1979|Pupo|Gelato al cioccolato|I,P|1
 1983|Righeira|Vamos a la playa|I,D|1
-1984|Eros Ramazzotti|Terra promessa|I,P|2
 1976|Jean-Michel Jarre|Oxygène (Part IV)|N,P|1
-1978|Jean-Michel Jarre|Équinoxe (Part 5)|N,P|2
-1978|Jean-Michel Jarre|Équinoxe (Part 4)|N,P|2
-1981|Jean-Michel Jarre|Magnetic Fields (Part 2)|N,P|2
-1984|Jean-Michel Jarre|Zoolookologie|N,P|2
-1986|Jean-Michel Jarre|Rendez-Vous IV|N,P|2
 1972|Hot Butter|Popcorn|N,P|1
 1984|Harold Faltermeyer|Axel F|N,P|1
-2005|Crazy Frog|Axel F|N,D|2
 1981|Vangelis|Chariots of Fire|N,S|1
 1992|Vangelis|Conquest of Paradise|N,S|1
 1973|Mike Oldfield|Tubular Bells|N,R|1
-1968|Fleetwood Mac|Albatross|N,S|2
 1960|Les Shadows|Apache|N,R|1
-1962|The Tornados|Telstar|N,R|2
-1962|Booker T. & the M.G.'s|Green Onions|N,R|2
-1963|The Chantays|Pipeline|N,R|2
 1962|Dick Dale|Misirlou|N,R|1
-1983|Herbie Hancock|Rockit|N,D|2
 1977|Space|Magic Fly|N,D|1
 1975|Ennio Morricone|Le Bon, la Brute et le Truand|N,P|1
 1968|Ennio Morricone|Il était une fois dans l'Ouest (L'Homme à l'harmonica)|N,S|1
 1981|Ennio Morricone|Le Professionnel (Chi Mai)|N,S|1
-1986|Ennio Morricone|Mission - Gabriel's Oboe|N,S|2
 1964|Henry Mancini|La Panthère rose|N,P|1
 1962|Monty Norman|James Bond Theme|N,R|1
 1966|Lalo Schifrin|Mission: Impossible|N,R|1
@@ -236,74 +98,28 @@
 1980|John Williams|Star Wars - La Marche impériale|N,P|1
 1975|John Williams|Les Dents de la mer|N,P|1
 1981|John Williams|Les Aventuriers de l'arche perdue|N,P|1
-1982|John Williams|E.T. l'extra-terrestre|N,S|2
 1993|John Williams|Jurassic Park|N,S|1
 2001|John Williams|Harry Potter - Hedwig's Theme|N,P|1
-1978|John Williams|Superman|N,P|2
 1985|Alan Silvestri|Retour vers le futur|N,P|1
-1984|Brad Fiedel|Terminator|N,P|2
-1993|Michael Nyman|La Leçon de piano - The Heart Asks Pleasure First|N,S|2
-2000|Hans Zimmer & Lisa Gerrard|Gladiator - Now We Are Free|N,S|2
 2003|Klaus Badelt|Pirates des Caraïbes - He's a Pirate|N,P|1
-2010|Hans Zimmer|Inception - Time|N,S|2
-2014|Hans Zimmer|Interstellar - Cornfield Chase|N,S|2
 2001|Yann Tiersen|Le Fabuleux Destin d'Amélie Poulain - Comptine d'un autre été|N,S|1
-2001|Yann Tiersen|La Valse d'Amélie|N,S|2
 2011|Ludovico Einaudi|Intouchables - Una Mattina|N,S|1
-2011|Ludovico Einaudi|Nuvole Bianche|N,S|2
-1960|Ernest Gold|Exodus|N,S|2
 1965|Maurice Jarre|Le Docteur Jivago - Thème de Lara|N,S|1
-1962|Maurice Jarre|Lawrence d'Arabie|N,S|2
 1971|Francis Lai|Love Story|N,S|1
-1966|Francis Lai|Un homme et une femme|N,S|2
 1972|Nino Rota|Le Parrain - Thème|N,S|1
 1976|Bill Conti|Rocky - Gonna Fly Now|N,R|1
-1978|Giorgio Moroder|Midnight Express - Chase|N,D|2
-1963|Riz Ortolani|Mondo Cane - More|N,S|2
-1973|Marvin Hamlisch|L'Arnaque - The Entertainer|N,P|2
-1962|Acker Bilk|Stranger on the Shore|N,S|2
-1959|Santo & Johnny|Sleep Walk|N,S|2
-1955|Pérez Prado|Cerezo Rosa|N,P|2
 1958|The Champs|Tequila|N,R|1
 1961|Dave Brubeck Quartet|Take Five|N,P|1
-1964|Herb Alpert & the Tijuana Brass|The Lonely Bull|N,P|2
-1965|Herb Alpert & the Tijuana Brass|A Taste of Honey|N,P|2
 1968|Paul Mauriat|L'amour est bleu|N,S|1
 1969|Jean-Claude Borelly|Dolannes Melodie|N,S|1
 1974|Richard Clayderman|Ballade pour Adeline|N,S|1
-1978|Richard Clayderman|Lettre à ma mère|N,S|2
-1977|Gheorghe Zamfir|Le Berger solitaire|N,S|2
-1971|Gheorghe Zamfir|Doina de jale|N,S|2
-1984|Jan Hammer|Miami Vice Theme|N,P|2
-1985|Jan Hammer|Crockett's Theme|N,S|2
 1996|Mark Snow|The X-Files|N,P|1
-1990|Angelo Badalamenti|Twin Peaks|N,S|2
 1989|Danny Elfman|Les Simpson|N,P|1
 2011|Ramin Djawadi|Game of Thrones|N,P|1
-1966|Alexander Courage|Star Trek|N,P|2
-1979|Kraftwerk|Trans-Europe Express|N,P|2
-1984|Paul Hardcastle|Rain Forest|N,D|2
 1995|Robert Miles|Children|N,D|1
 1999|Darude|Sandstorm|N,D|1
 1999|ATB|9 PM (Till I Come)|N,D|1
-2000|Gigi D'Agostino|La passion|N,D|2
-1997|Daft Punk|Da Funk|N,D|2
-2001|Daft Punk|Aerodynamic|N,D|2
-2003|Paul Kalkbrenner|Sky and Sand|N,D|2
 2011|Avicii|Levels|N,D|1
-2012|Swedish House Mafia|Greyhound|N,D|2
 2014|Martin Garrix|Animals|N,D|1
-2009|Joe Hisaishi|Le Voyage de Chihiro - One Summer's Day|N,S|2
-1994|Hans Zimmer|Le Roi lion - This Land|N,S|2
 1970|Santana|Samba pa ti|N,R|1
-1975|Jeff Beck|Cause We've Ended as Lovers|N,R|2
-1990|Gary Moore|The Messiah Will Come Again|N,R|2
-1974|Mike Oldfield|In Dulci Jubilo|N,P|2
-1973|Edgar Winter Group|Frankenstein|N,R|2
 1959|Sidney Bechet|Petite fleur|N,S|1
-1972|Apollo 100|Joy|N,P|2
-1969|Ennio Morricone|Le Clan des Siciliens|N,S|2
-1972|Vladimir Cosma|Le Grand Blond avec une chaussure noire|N,P|2
-1986|Kenny G|Songbird|N,S|2
-1997|James Horner|Titanic - Hymn to the Sea|N,S|2
-2016|Justin Hurwitz|La La Land - Mia & Sebastian's Theme|N,S|2

@@ -7,27 +7,29 @@ Jeu d'ambiance Android : un joueur fredonne une chanson **uniquement avec une on
 - **Réglages** : mode individuel ou équipes (2 à 4), 2 à 12 joueurs, temps par joueur (30 à 120 s), 1 à 10 tours, pénalité de passe (0 / 3 / 5 / 10 s), difficulté (mix / incontournables / connaisseurs), défis surprises, bonus éclair.
 - **Tirage au sort animé** du premier joueur, puis ordre de passage tournant.
 - **Écran « Passe le téléphone à... »** entre chaque joueur.
-- **16 playlists** : Pop, Rock, Disco / Dance, Slow, Variété, 60's à 2020's, Español, Italiano, Instrumental, Aléatoire. Une chanson peut appartenir à plusieurs playlists.
-- **Español 🇪🇸, Italiano 🇮🇹, Instrumental 🎹** : ~100 titres chacun (Gipsy Kings, Despacito, Felicità, Volare, Oxygène, Popcorn, thèmes de films...), inclus dans Aléatoire et dans les décennies.
-- **Module Russie** 🪆 : 100 tubes du top russe (1976-2023), titres en cyrillique avec traduction française. Playlist isolée : jamais tirée dans Aléatoire ni dans les autres playlists.
+- **🎲 Random** : tuile vedette, la plus grosse, en tête du choix de playlist (tire dans tout le catalogue hors modules).
+- **⭐ Tubes français intemporels** : 517 incontournables français de toutes les époques, de Piaf à Stromae.
+- **16 playlists** : Pop, Rock, Disco / Dance, Slow, Variété, 60's à 2020's, Español, Italiano, Instrumental, Random. Une chanson peut appartenir à plusieurs playlists.
+- **Español 🇪🇸, Italiano 🇮🇹, Instrumental 🎹** : ~100 titres chacun (Gipsy Kings, Despacito, Felicità, Volare, Oxygène, Popcorn, thèmes de films...), inclus dans Random et dans les décennies.
+- **Module Russie** 🪆 : 100 tubes du top russe (1976-2023), titres en cyrillique avec traduction française. Playlist isolée : jamais tirée dans Random ni dans les autres playlists.
 - **Module English** 🇬🇧 : 500 titres mondialement célèbres en anglais (1954-2025), isolé comme le module Russie.
 - **Module Classique** 🎻 : 161 œuvres célèbres (Vivaldi, Mozart, Beethoven, Tchaïkovski, Ravel...), isolé, avec la période (Baroque, Classicisme, Romantisme, XXe siècle).
 - **Design néon** inspiré de l'icône casque + micro : bleu nuit → violet, contours lumineux bleu → rose, boutons orange (casque) et bleus (oreillettes), notes et étoiles flottantes, égaliseur bleu → rose.
 - **Style musical affiché** pour chaque chanson (carte de jeu et récapitulatifs).
 - **Onomatopée + défi éventuel** (chuchoter, voix de robot, siffler, bouche fermée...) tirés dynamiquement à chaque chanson.
 - **Passer** : nouvelle chanson, mais perte de temps.
-- **Bip bip + vibration + écran rouge** sur les 5 dernières secondes.
+- **Sons doux** synthétisés : petit carillon les 5 dernières secondes (+ vibration légère, écran rouge), carillon descendant en fin de passage, arpège en fin de partie.
 - **Score** : chanson trouvée = 1 point pour le chanteur + 1 point pour celui qui devine (mode équipes : 1 point pour l'équipe). Bonus éclair (< 5 s) : +1 pour chacun.
-- **Récap après chaque passage, chaque tour et en fin de partie** : chaque chanson est cliquable pour la rechercher et l'écouter sur **YouTube Music** dans l'application (bouton « App ↗ » pour basculer vers l'app YouTube Music).
+- **Récap après chaque passage, chaque tour et en fin de partie** : chaque chanson est cliquable pour l'**écouter dans l'application** (lecteur intégré : lecture/pause, ±10 s, autre version), flux audio direct sans interface ni publicité YouTube (NewPipeExtractor + ExoPlayer, comme WebRadio).
 - **Pause / arrêt** : bouton ⏸ (Reprendre, Terminer et voir le classement, Quitter), pause automatique si l'app passe en arrière-plan.
 - **Statistiques par joueur** en fin de partie : taux de réussite, temps moyen, passes, éclairs, chansons devinées, points forts et points à travailler (playlist forte / difficile, décennie favorite, défis...).
 - **Classement final + trophées** : meilleur chanteur, meilleure oreille, plus rapide, roi du joker. Bouton revanche.
 - **Anti-répétition** : les chansons déjà jouées sont mémorisées sur le téléphone et évitées aux parties suivantes (réinitialisable depuis l'accueil).
-- **Hors ligne** : seul YouTube Music nécessite Internet.
+- **Hors ligne** : seule l'écoute des chansons nécessite Internet.
 
 ## Catalogue
 
-`app/src/main/assets/songs.txt` : ~1 200 titres classés du Top 50 (depuis 1984) et des hit-parades français antérieurs (1960-1983).
+`app/src/main/assets/songs.txt` : ~900 titres très populaires, dont ~780 chansons françaises (genre `F`). Random : 76 % de chansons françaises.
 
 Format d'une ligne :
 
@@ -57,7 +59,7 @@ L'APK est généré par **GitHub Actions** à chaque push sur `main` (ou manuell
 - artefact `QuizzMusical-apk` dans l'exécution du workflow
 - release GitHub `v1.0.N` avec l'APK en pièce jointe
 
-Stack : Java, AGP 8.2.2, Gradle 8.4, minSdk 24, targetSdk 34, aucune dépendance externe.
+Stack : Java, AGP 8.2.2, Gradle 8.4, minSdk 24, targetSdk 34. Dépendances : NewPipeExtractor (JitPack), OkHttp, Media3 ExoPlayer.
 
 ### Signature
 
