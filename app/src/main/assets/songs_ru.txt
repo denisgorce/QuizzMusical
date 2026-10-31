@@ -1,0 +1,101 @@
+# Module Russie : année|artiste|titre (cyrillique)|U + genres|difficulté|traduction française
+1976|Алла Пугачёва|Арлекино|U,P|1|Arlequin
+1976|Самоцветы|Мой адрес - Советский Союз|U,P|2|Mon adresse : l'Union soviétique
+1978|Алла Пугачёва|Всё могут короли|U,P|1|Les rois peuvent tout
+1979|Машина времени|Поворот|U,R|1|Le tournant
+1980|Лев Лещенко и Татьяна Анциферова|До свиданья, Москва|U,S|2|Au revoir, Moscou
+1982|Алла Пугачёва|Миллион алых роз|U,S|1|Un million de roses rouges
+1982|Земляне|Трава у дома|U,R|1|L'herbe près de la maison
+1982|Юрий Антонов|Крыша дома твоего|U,P|2|Le toit de ta maison
+1982|Кино|Восьмиклассница|U,R|2|La collégienne de 4e
+1984|Алла Пугачёва|Айсберг|U,P|2|L'iceberg
+1985|София Ротару и Яак Йоала|Лаванда|U,P,S|1|Lavande
+1985|Браво|Жёлтые ботинки|U,R|2|Les bottines jaunes
+1986|Михаил Муромов|Яблоки на снегу|U,P|1|Des pommes sur la neige
+1986|Наутилус Помпилиус|Скованные одной цепью|U,R|2|Enchaînés à la même chaîne
+1987|Мираж|Музыка нас связала|U,D|1|La musique nous a liés
+1988|Ласковый май|Белые розы|U,D|1|Roses blanches
+1988|Ласковый май|Седая ночь|U,S|2|Nuit grisonnante
+1988|Кино|Группа крови|U,R|1|Groupe sanguin
+1988|Наутилус Помпилиус|Я хочу быть с тобой|U,R,S|1|Je veux être avec toi
+1989|Кино|Перемен|U,R|1|Du changement !
+1989|Кино|Звезда по имени Солнце|U,R|1|Une étoile nommée Soleil
+1990|Кар-Мэн|Лондон, гудбай|U,D|2|Londres, goodbye
+1990|Татьяна Буланова|Не плачь|U,S|1|Ne pleure pas
+1990|Наташа Королёва|Жёлтые тюльпаны|U,P|2|Tulipes jaunes
+1990|Вячеслав Добрынин|Не сыпь мне соль на рану|U,P|2|Ne mets pas de sel sur ma plaie
+1991|Комбинация|Бухгалтер|U,D|1|Le comptable
+1991|Любэ|Атас|U,R|1|Attention, ça craint !
+1992|ДДТ|Что такое осень|U,R,S|1|Qu'est-ce que l'automne
+1994|Леонид Агутин|Хоп хэй лала лэй|U,P|1|Hop hey lala lei
+1994|Любэ|Конь|U,S|2|Le cheval
+1994|Агата Кристи|Сказочная тайга|U,R|2|La taïga enchantée
+1995|Андрей Губин|Мальчик-бродяга|U,P|2|Le garçon vagabond
+1996|Любэ|Комбат|U,R|1|Le commandant de bataillon
+1996|Иванушки International|Кукла|U,P|2|La poupée
+1996|Иванушки International|Тучи|U,P,S|1|Les nuages
+1997|Иванушки International|Тополиный пух|U,P|1|Le duvet de peuplier
+1997|Мумий Тролль|Владивосток 2000|U,R|1|Vladivostok 2000
+1997|Филипп Киркоров|Зайка моя|U,P|2|Mon petit lapin
+1997|Алла Пугачёва|Позови меня с собой|U,S|1|Emmène-moi avec toi
+1998|Мумий Тролль|Утекай|U,R|1|File d'ici
+1998|Руки Вверх!|Крошка моя|U,D|1|Ma petite
+1998|Руки Вверх!|18 мне уже|U,D|1|J'ai déjà 18 ans
+1998|Hi-Fi|Не дано|U,D|2|Ce n'est pas donné
+1998|Шура|Отшумели летние дожди|U,P|2|Les pluies d'été se sont tues
+1998|Филипп Киркоров|Ой, мама, шика дам|U,D|2|Oh maman, chic madame
+1998|Сплин|Орбит без сахара|U,R|2|Orbit sans sucre
+1998|Михей и Джуманджи|Сука любовь|U,P|2|Saloperie d'amour
+1999|Земфира|Ариведерчи|U,R|1|Arrivederci
+1999|Танцы Минус|Половинка|U,R|2|Ma moitié
+1999|Чайф|Аргентина - Ямайка 5:0|U,R|2|Argentine - Jamaïque 5-0
+1999|Король и Шут|Лесник|U,R|2|Le garde forestier
+2000|Тату|Я сошла с ума|U,P|1|Je suis devenue folle
+2000|Би-2|Полковнику никто не пишет|U,R|1|Personne n'écrit au colonel
+2000|Земфира|Искала|U,R|2|Je cherchais
+2001|Тату|Нас не догонят|U,P|1|Ils ne nous rattraperont pas
+2001|ВИА Гра|Попытка № 5|U,P|1|Tentative n° 5
+2001|Сплин|Выхода нет|U,R,S|1|Il n'y a pas d'issue
+2002|Валерий Меладзе и ВИА Гра|Притяжения больше нет|U,P|1|Il n'y a plus d'attirance
+2002|Корни|Ты узнаешь её|U,P|2|Tu la reconnaîtras
+2002|Григорий Лепс|Рюмка водки на столе|U,S|1|Un verre de vodka sur la table
+2003|Глюкоза|Невеста|U,P|2|La fiancée
+2003|Валерия|Часики|U,P|2|La petite montre
+2004|Звери|Районы-кварталы|U,R|1|Quartiers et pâtés de maisons
+2005|Жанна Фриске|Малинки|U,D|2|Petites framboises
+2005|Би-2|Мой рок-н-ролл|U,R|2|Mon rock'n'roll
+2006|Дима Билан|Невозможное возможно|U,P|2|L'impossible est possible
+2006|Город 312|Останусь|U,R,S|2|Je resterai
+2009|Винтаж|Плохая девочка|U,D|2|Mauvaise fille
+2010|Ёлка|Прованс|U,P|1|Provence
+2010|Нюша|Выбирать чудо|U,P|2|Choisir le miracle
+2012|Иван Дорн|Стыцамен|U,D|2|Stytsamen (style man)
+2013|Тимати и Григорий Лепс|Лондон|U,P|2|Londres
+2014|Баста|Выпускной (Медлячок)|U,S|1|Le bal de fin d'études (le slow)
+2014|Полина Гагарина|Кукушка|U,S|1|Le coucou
+2014|MBAND|Она вернётся|U,P|2|Elle reviendra
+2015|Егор Крид|Невеста|U,P|2|La fiancée
+2015|Время и Стекло|Имя 505|U,P|1|Le nom 505
+2015|Макс Корж|Малый повзрослел|U,P|2|Le petit a grandi
+2016|Ленинград|Экспонат|U,R|1|La pièce d'exposition
+2017|Макс Корж|Мотылёк|U,P|2|Le papillon de nuit
+2017|Грибы|Тает лёд|U,D|1|La glace fond
+2017|Мальбэк и Сюзанна|Равнодушие|U,S|2|Indifférence
+2018|Тима Белорусских|Мокрые кроссы|U,P|1|Baskets mouillées
+2018|Монеточка|Каждый раз|U,P|2|Chaque fois
+2018|Rauf & Faik|Детство|U,S|1|L'enfance
+2018|Cream Soda и Хлеб|Плачу на техно|U,D|2|Je pleure sur de la techno
+2019|Тима Белорусских|Незабудка|U,P|2|Le myosotis
+2019|Jony|Комета|U,P|1|La comète
+2019|Artik & Asti|Грустный дэнс|U,D|2|Danse triste
+2019|Niletto|Любимка|U,D|1|Ma chérie
+2020|Клава Кока и Niletto|Краш|U,P|2|Crush (le béguin)
+2020|Ramil'|Сияй|U,S|2|Brille
+2020|Слава Марлоу|Снова я напиваюсь|U,P|2|Je me saoule encore
+2020|Dabro|Юность|U,P|1|La jeunesse
+2021|Даня Милохин и Николай Басков|Дико тусим|U,D|2|On fait une fête de dingue
+2021|Ваня Дмитриенко|Венера-Юпитер|U,P|2|Vénus-Jupiter
+2022|Шаман|Встанем|U,S|2|Levons-nous
+2022|Анна Асти|По барам|U,P|1|De bar en bar
+2022|Instasamka|За деньги да|U,P|2|Pour de l'argent, oui
+2023|Анна Асти|Царица|U,P|1|La tsarine

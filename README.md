@@ -1,0 +1,75 @@
+# Quizz Musical
+
+Jeu d'ambiance Android : un joueur fredonne une chanson **uniquement avec une onomatopée tirée au sort** (« NA NA NA », « PAM PAM PAM »...) et les autres doivent la deviner avant la fin du chrono.
+
+## Fonctionnalités
+
+- **Réglages** : mode individuel ou équipes (2 à 4), 2 à 12 joueurs, temps par joueur (30 à 120 s), 1 à 10 tours, pénalité de passe (0 / 3 / 5 / 10 s), difficulté (mix / incontournables / connaisseurs), défis surprises, bonus éclair.
+- **Tirage au sort animé** du premier joueur, puis ordre de passage tournant.
+- **Écran « Passe le téléphone à... »** entre chaque joueur.
+- **16 playlists** : Pop, Rock, Disco / Dance, Slow, Variété, 60's à 2020's, Español, Italiano, Instrumental, Aléatoire. Une chanson peut appartenir à plusieurs playlists.
+- **Español 🇪🇸, Italiano 🇮🇹, Instrumental 🎹** : ~100 titres chacun (Gipsy Kings, Despacito, Felicità, Volare, Oxygène, Popcorn, thèmes de films...), inclus dans Aléatoire et dans les décennies.
+- **Module Russie** 🪆 : 100 tubes du top russe (1976-2023), titres en cyrillique avec traduction française. Playlist isolée : jamais tirée dans Aléatoire ni dans les autres playlists.
+- **Module English** 🇬🇧 : 500 titres mondialement célèbres en anglais (1954-2025), isolé comme le module Russie.
+- **Module Classique** 🎻 : 161 œuvres célèbres (Vivaldi, Mozart, Beethoven, Tchaïkovski, Ravel...), isolé, avec la période (Baroque, Classicisme, Romantisme, XXe siècle).
+- **Design néon** inspiré de l'icône casque + micro : bleu nuit → violet, contours lumineux bleu → rose, boutons orange (casque) et bleus (oreillettes), notes et étoiles flottantes, égaliseur bleu → rose.
+- **Style musical affiché** pour chaque chanson (carte de jeu et récapitulatifs).
+- **Onomatopée + défi éventuel** (chuchoter, voix de robot, siffler, bouche fermée...) tirés dynamiquement à chaque chanson.
+- **Passer** : nouvelle chanson, mais perte de temps.
+- **Bip bip + vibration + écran rouge** sur les 5 dernières secondes.
+- **Score** : chanson trouvée = 1 point pour le chanteur + 1 point pour celui qui devine (mode équipes : 1 point pour l'équipe). Bonus éclair (< 5 s) : +1 pour chacun.
+- **Récap après chaque passage, chaque tour et en fin de partie** : chaque chanson est cliquable pour la rechercher et l'écouter sur **YouTube Music** dans l'application (bouton « App ↗ » pour basculer vers l'app YouTube Music).
+- **Pause / arrêt** : bouton ⏸ (Reprendre, Terminer et voir le classement, Quitter), pause automatique si l'app passe en arrière-plan.
+- **Statistiques par joueur** en fin de partie : taux de réussite, temps moyen, passes, éclairs, chansons devinées, points forts et points à travailler (playlist forte / difficile, décennie favorite, défis...).
+- **Classement final + trophées** : meilleur chanteur, meilleure oreille, plus rapide, roi du joker. Bouton revanche.
+- **Anti-répétition** : les chansons déjà jouées sont mémorisées sur le téléphone et évitées aux parties suivantes (réinitialisable depuis l'accueil).
+- **Hors ligne** : seul YouTube Music nécessite Internet.
+
+## Catalogue
+
+`app/src/main/assets/songs.txt` : ~1 200 titres classés du Top 50 (depuis 1984) et des hit-parades français antérieurs (1960-1983).
+
+Format d'une ligne :
+
+```
+année|artiste|titre|genres|difficulté
+1984|Jeanne Mas|Toute première fois|P,V|1
+```
+
+- `genres` : `P` pop, `R` rock, `D` disco / dance, `S` slow, `V` variété (plusieurs possibles, séparés par des virgules)
+- `difficulté` : `1` incontournable, `2` connaisseur
+- La décennie (playlists 60's à 2020's) est déduite de l'année.
+
+`app/src/main/assets/songs_monde.txt` : Espagnol (`H`), Italien (`I`), Instrumental (`N`), même format. Un titre déjà présent dans `songs.txt` (même artiste + titre) est fusionné au chargement : ses genres se cumulent.
+
+`app/src/main/assets/songs_en.txt` : module English, genre `E` obligatoire (isole la chanson dans ce module).
+
+`app/src/main/assets/songs_classique.txt` : module Classique, genre `C` obligatoire (année = composition, artiste = compositeur).
+
+`app/src/main/assets/songs_ru.txt` : module Russie, même format avec le genre `U` (obligatoire, isole la chanson dans ce module) et une 6e colonne optionnelle : traduction française du titre, affichée sous le titre cyrillique.
+
+Listes compilées sans source officielle exhaustive : à relire et enrichir librement (une ligne par chanson, les lignes commençant par `#` sont ignorées).
+
+## Build
+
+L'APK est généré par **GitHub Actions** à chaque push sur `main` (ou manuellement via *Actions > Build APK > Run workflow*) :
+
+- artefact `QuizzMusical-apk` dans l'exécution du workflow
+- release GitHub `v1.0.N` avec l'APK en pièce jointe
+
+Stack : Java, AGP 8.2.2, Gradle 8.4, minSdk 24, targetSdk 34, aucune dépendance externe.
+
+### Signature
+
+Sans configuration, l'APK release est signé avec une clé de debug générée par le runner : il s'installe, mais une nouvelle version peut exiger de désinstaller la précédente.
+
+Pour des mises à jour sans désinstallation, ajouter ces **secrets** dans *Settings > Secrets and variables > Actions* :
+
+| Secret | Contenu |
+|---|---|
+| `KEYSTORE_BASE64` | keystore encodé en base64 |
+| `KEYSTORE_PASSWORD` | mot de passe du keystore |
+| `KEY_ALIAS` | alias de la clé |
+| `KEY_PASSWORD` | mot de passe de la clé |
+
+Ne jamais committer le keystore ni ses mots de passe.

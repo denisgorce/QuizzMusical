@@ -1,0 +1,500 @@
+1954|Bill Haley & His Comets|Rock Around the Clock|E,R|1
+1955|Chuck Berry|Maybellene|E,R|2
+1956|Carl Perkins|Blue Suede Shoes|E,R|2
+1956|Elvis Presley|Heartbreak Hotel|E,R|1
+1956|Elvis Presley|Hound Dog|E,R|1
+1957|Buddy Holly|That'll Be the Day|E,R|2
+1957|Elvis Presley|Jailhouse Rock|E,R|1
+1957|Jerry Lee Lewis|Great Balls of Fire|E,R|1
+1957|Little Richard|Tutti Frutti|E,R|1
+1958|Chuck Berry|Johnny B. Goode|E,R|1
+1958|Eddie Cochran|Summertime Blues|E,R|2
+1958|Ritchie Valens|La Bamba|E,R|2
+1960|Ray Charles|Georgia on My Mind|E,S|1
+1960|The Everly Brothers|Cathy's Clown|E,P|2
+1961|Ben E. King|Stand by Me|E,S|1
+1961|Chubby Checker|Let's Twist Again|E,R|1
+1961|Elvis Presley|Can't Help Falling in Love|E,S|1
+1961|Ray Charles|Hit the Road Jack|E,P|1
+1961|The Tokens|The Lion Sleeps Tonight|E,P|1
+1962|Booker T. & the M.G.'s|Green Onions|E,R|2
+1962|The Isley Brothers|Twist and Shout|E,R|2
+1963|The Beatles|She Loves You|E,P|1
+1964|Roy Orbison|Oh, Pretty Woman|E,R|1
+1964|The Animals|The House of the Rising Sun|E,R|1
+1964|The Beatles|A Hard Day's Night|E,R|1
+1964|The Beatles|Can't Buy Me Love|E,P|1
+1964|The Beatles|I Want to Hold Your Hand|E,P|1
+1965|Bob Dylan|Like a Rolling Stone|E,R|1
+1965|James Brown|I Got You (I Feel Good)|E,P|1
+1965|Simon & Garfunkel|The Sound of Silence|E,S|1
+1965|Sonny & Cher|I Got You Babe|E,P|1
+1965|The Beatles|Help!|E,R|1
+1965|The Beatles|Yesterday|E,S|1
+1965|The Righteous Brothers|Unchained Melody|E,S|1
+1965|The Rolling Stones|(I Can't Get No) Satisfaction|E,R|1
+1965|The Temptations|My Girl|E,S|1
+1966|Frank Sinatra|Strangers in the Night|E,S|1
+1966|Nancy Sinatra|These Boots Are Made for Walkin'|E,P|1
+1966|Percy Sledge|When a Man Loves a Woman|E,S|1
+1966|The Beach Boys|Good Vibrations|E,P|1
+1966|The Beatles|Yellow Submarine|E,P|1
+1966|The Mamas & the Papas|California Dreamin'|E,P|1
+1966|The Monkees|I'm a Believer|E,P|1
+1966|The Rolling Stones|Paint It Black|E,R|1
+1967|Aretha Franklin|Respect|E,P|1
+1967|Frankie Valli|Can't Take My Eyes Off You|E,P|1
+1967|Jimi Hendrix|Purple Haze|E,R|1
+1967|Louis Armstrong|What a Wonderful World|E,S|1
+1967|Marvin Gaye & Tammi Terrell|Ain't No Mountain High Enough|E,P|1
+1967|Procol Harum|A Whiter Shade of Pale|E,S|1
+1967|Scott McKenzie|San Francisco (Be Sure to Wear Flowers in Your Hair)|E,P|1
+1967|The Beatles|All You Need Is Love|E,P|1
+1967|The Doors|Light My Fire|E,R|1
+1968|Marvin Gaye|I Heard It Through the Grapevine|E,P|1
+1968|Otis Redding|(Sittin' On) The Dock of the Bay|E,S|1
+1968|Simon & Garfunkel|Mrs. Robinson|E,P|1
+1968|Steppenwolf|Born to Be Wild|E,R|1
+1968|The Beatles|Hey Jude|E,P|1
+1969|Creedence Clearwater Revival|Proud Mary|E,R|1
+1969|David Bowie|Space Oddity|E,R|1
+1969|Elvis Presley|Suspicious Minds|E,R|1
+1969|Frank Sinatra|My Way|E,S|1
+1969|Led Zeppelin|Whole Lotta Love|E,R|1
+1969|The Archies|Sugar, Sugar|E,P|1
+1969|The Beatles|Come Together|E,R|1
+1969|The Beatles|Here Comes the Sun|E,P|1
+1969|The Jackson 5|I Want You Back|E,P|1
+1970|Black Sabbath|Paranoid|E,R|1
+1970|Creedence Clearwater Revival|Have You Ever Seen the Rain|E,R|1
+1970|Derek and the Dominos|Layla|E,R|1
+1970|Mungo Jerry|In the Summertime|E,P|1
+1970|Simon & Garfunkel|Bridge over Troubled Water|E,S|1
+1970|The Beatles|Let It Be|E,S|1
+1970|The Jackson 5|ABC|E,P|1
+1971|Bill Withers|Ain't No Sunshine|E,S|1
+1971|Don McLean|American Pie|E,R|1
+1971|John Denver|Take Me Home, Country Roads|E,P|1
+1971|John Lennon|Imagine|E,S|1
+1971|Led Zeppelin|Stairway to Heaven|E,R|1
+1971|Marvin Gaye|What's Going On|E,P|1
+1972|Bill Withers|Lean on Me|E,S|1
+1972|Deep Purple|Smoke on the Water|E,R|1
+1972|Elton John|Rocket Man|E,P|1
+1972|Lou Reed|Walk on the Wild Side|E,R|1
+1972|Stevie Wonder|Superstition|E,P|1
+1973|Bob Dylan|Knockin' on Heaven's Door|E,R|1
+1973|Elton John|Crocodile Rock|E,R|1
+1973|Paul McCartney & Wings|Live and Let Die|E,R|1
+1973|Pink Floyd|Money|E,R|1
+1973|Roberta Flack|Killing Me Softly with His Song|E,S|1
+1974|ABBA|Waterloo|E,P|1
+1974|Barry White|Can't Get Enough of Your Love, Babe|E,S|1
+1974|Carl Douglas|Kung Fu Fighting|E,D|1
+1974|Lynyrd Skynyrd|Sweet Home Alabama|E,R|1
+1974|Terry Jacks|Seasons in the Sun|E,S|1
+1975|ABBA|Mamma Mia|E,P|1
+1975|Aerosmith|Walk This Way|E,R|1
+1975|Bob Marley & The Wailers|No Woman, No Cry|E,S|1
+1975|Bruce Springsteen|Born to Run|E,R|1
+1975|KC and the Sunshine Band|That's the Way (I Like It)|E,D|1
+1975|Labelle|Lady Marmalade|E,D|1
+1975|Pink Floyd|Wish You Were Here|E,R|1
+1975|Queen|Bohemian Rhapsody|E,R|1
+1976|ABBA|Dancing Queen|E,D|1
+1976|ABBA|Fernando|E,S|1
+1976|ABBA|Money, Money, Money|E,P|1
+1976|Boney M.|Daddy Cool|E,D|1
+1976|Boston|More Than a Feeling|E,R|1
+1976|Eagles|Hotel California|E,R|1
+1976|Elton John & Kiki Dee|Don't Go Breaking My Heart|E,P|1
+1976|Wild Cherry|Play That Funky Music|E,D|1
+1977|Bee Gees|How Deep Is Your Love|E,S|1
+1977|Bee Gees|Stayin' Alive|E,D|1
+1977|Boney M.|Ma Baker|E,D|1
+1977|David Bowie|Heroes|E,R|1
+1977|Donna Summer|I Feel Love|E,D|1
+1977|Electric Light Orchestra|Mr. Blue Sky|E,P|1
+1977|Eric Clapton|Wonderful Tonight|E,S|1
+1977|Fleetwood Mac|Dreams|E,P|1
+1977|Fleetwood Mac|Go Your Own Way|E,R|1
+1977|Queen|We Are the Champions|E,R|1
+1977|Queen|We Will Rock You|E,R|1
+1978|Bee Gees|Night Fever|E,D|1
+1978|Blondie|Heart of Glass|E,D|1
+1978|Bob Marley & The Wailers|Is This Love|E,P|1
+1978|Boney M.|Rasputin|E,D|1
+1978|Boney M.|Rivers of Babylon|E,D|1
+1978|Chic|Le Freak|E,D|1
+1978|Dire Straits|Sultans of Swing|E,R|1
+1978|Earth, Wind & Fire|September|E,D|1
+1978|Gloria Gaynor|I Will Survive|E,D|1
+1978|John Travolta & Olivia Newton-John|Summer Nights|E,P|1
+1978|John Travolta & Olivia Newton-John|You're the One That I Want|E,P|1
+1978|Kate Bush|Wuthering Heights|E,P|1
+1978|Queen|Don't Stop Me Now|E,R|1
+1978|Rod Stewart|Da Ya Think I'm Sexy?|E,D|1
+1978|The Police|Roxanne|E,R|1
+1978|Toto|Hold the Line|E,R|1
+1978|Village People|Y.M.C.A.|E,D|1
+1979|ABBA|Gimme! Gimme! Gimme! (A Man After Midnight)|E,D|1
+1979|AC/DC|Highway to Hell|E,R|1
+1979|Kiss|I Was Made for Lovin' You|E,R|1
+1979|Michael Jackson|Don't Stop 'Til You Get Enough|E,D|1
+1979|Patrick Hernandez|Born to Be Alive|E,D|1
+1979|Pink Floyd|Another Brick in the Wall|E,R|1
+1979|Sister Sledge|We Are Family|E,D|1
+1979|Supertramp|Breakfast in America|E,R|1
+1979|Supertramp|The Logical Song|E,R|1
+1979|The Buggles|Video Killed the Radio Star|E,P|1
+1979|The Clash|London Calling|E,R|1
+1979|The Knack|My Sharona|E,R|1
+1979|The Police|Message in a Bottle|E,R|1
+1980|ABBA|The Winner Takes It All|E,S|1
+1980|AC/DC|Back in Black|E,R|1
+1980|AC/DC|You Shook Me All Night Long|E,R|1
+1980|Blondie|Call Me|E,R|1
+1980|Diana Ross|Upside Down|E,D|1
+1980|Irene Cara|Fame|E,D|1
+1980|Kool & the Gang|Celebration|E,D|1
+1980|Queen|Another One Bites the Dust|E,R|1
+1980|Queen|Crazy Little Thing Called Love|E,R|1
+1981|Depeche Mode|Just Can't Get Enough|E,P|1
+1981|Diana Ross & Lionel Richie|Endless Love|E,S|1
+1981|Journey|Don't Stop Believin'|E,R|1
+1981|Kim Carnes|Bette Davis Eyes|E,P|1
+1981|Kim Wilde|Kids in America|E,P|1
+1981|Kool & the Gang|Get Down On It|E,D|1
+1981|Olivia Newton-John|Physical|E,P|1
+1981|Phil Collins|In the Air Tonight|E,R|1
+1981|Queen & David Bowie|Under Pressure|E,R|1
+1981|Soft Cell|Tainted Love|E,P|1
+1981|The Human League|Don't You Want Me|E,P|1
+1982|Bob Marley & The Wailers|Buffalo Soldier|E,P|1
+1982|Dexys Midnight Runners|Come On Eileen|E,P|1
+1982|Joan Jett & the Blackhearts|I Love Rock 'n' Roll|E,R|1
+1982|Men at Work|Down Under|E,R|1
+1982|Michael Jackson|Billie Jean|E,P|1
+1982|Survivor|Eye of the Tiger|E,R|1
+1982|The Clash|Should I Stay or Should I Go|E,R|1
+1982|Toto|Africa|E,R|1
+1983|Billy Joel|Uptown Girl|E,P|1
+1983|Bonnie Tyler|Total Eclipse of the Heart|E,S|1
+1983|Culture Club|Karma Chameleon|E,P|1
+1983|Cyndi Lauper|Girls Just Want to Have Fun|E,P|1
+1983|Cyndi Lauper|Time After Time|E,S|1
+1983|David Bowie|Let's Dance|E,P|1
+1983|Eurythmics|Sweet Dreams (Are Made of This)|E,P|1
+1983|Gazebo|I Like Chopin|E,S|1
+1983|Irene Cara|Flashdance... What a Feeling|E,D|1
+1983|Lionel Richie|All Night Long (All Night)|E,D|1
+1983|Michael Jackson|Beat It|E,R|1
+1983|Michael Jackson|Thriller|E,D|1
+1983|New Order|Blue Monday|E,D|1
+1983|Spandau Ballet|True|E,S|1
+1983|Tears for Fears|Mad World|E,P|1
+1983|The Police|Every Breath You Take|E,R|1
+1983|U2|Sunday Bloody Sunday|E,R|1
+1984|Alphaville|Forever Young|E,S|1
+1984|Band Aid|Do They Know It's Christmas?|E,P|1
+1984|Bronski Beat|Smalltown Boy|E,P|1
+1984|Bruce Springsteen|Born in the U.S.A.|E,R|1
+1984|Bruce Springsteen|Dancing in the Dark|E,R|1
+1984|Foreigner|I Want to Know What Love Is|E,S|1
+1984|Frankie Goes to Hollywood|Relax|E,D|1
+1984|George Michael|Careless Whisper|E,S|1
+1984|Kenny Loggins|Footloose|E,R|1
+1984|Laura Branigan|Self Control|E,P|1
+1984|Lionel Richie|Hello|E,S|1
+1984|Madonna|Like a Virgin|E,P|1
+1984|Prince|Purple Rain|E,R|1
+1984|Queen|I Want to Break Free|E,R|1
+1984|Queen|Radio Ga Ga|E,R|1
+1984|Ray Parker Jr.|Ghostbusters|E,P|1
+1984|Simple Minds|Don't You (Forget About Me)|E,R|1
+1984|Stevie Wonder|I Just Called to Say I Love You|E,S|1
+1984|Tina Turner|What's Love Got to Do with It|E,P|1
+1984|Van Halen|Jump|E,R|1
+1984|Wham!|Last Christmas|E,P|1
+1984|Wham!|Wake Me Up Before You Go-Go|E,P|1
+1985|Baltimora|Tarzan Boy|E,D|1
+1985|Bryan Adams|Summer of '69|E,R|1
+1985|Dead or Alive|You Spin Me Round (Like a Record)|E,D|1
+1985|Dire Straits|Money for Nothing|E,R|1
+1985|Huey Lewis and the News|The Power of Love|E,R|1
+1985|Jennifer Rush|The Power of Love|E,S|1
+1985|Kate Bush|Running Up That Hill|E,P|1
+1985|Madonna|Into the Groove|E,D|1
+1985|Madonna|Material Girl|E,P|1
+1985|Modern Talking|Cheri, Cheri Lady|E,D|1
+1985|Modern Talking|You're My Heart, You're My Soul|E,D|1
+1985|Opus|Live Is Life|E,R|1
+1985|Tears for Fears|Everybody Wants to Rule the World|E,P|1
+1985|Tears for Fears|Shout|E,P|1
+1985|USA for Africa|We Are the World|E,S|1
+1985|a-ha|Take On Me|E,P|1
+1986|Bananarama|Venus|E,D|1
+1986|Berlin|Take My Breath Away|E,S|1
+1986|Bon Jovi|Livin' on a Prayer|E,R|1
+1986|Bon Jovi|You Give Love a Bad Name|E,R|1
+1986|Europe|The Final Countdown|E,R|1
+1986|Madonna|La Isla Bonita|E,P|1
+1986|Madonna|Papa Don't Preach|E,P|1
+1986|Peter Gabriel|Sledgehammer|E,R|1
+1986|The Bangles|Walk Like an Egyptian|E,P|1
+1987|Bill Medley & Jennifer Warnes|(I've Had) The Time of My Life|E,S|1
+1987|George Michael|Faith|E,P|1
+1987|Los Lobos|La Bamba|E,R|1
+1987|Michael Jackson|Bad|E,P|1
+1987|Rick Astley|Never Gonna Give You Up|E,P|1
+1987|U2|I Still Haven't Found What I'm Looking For|E,R|1
+1987|U2|With or Without You|E,R|1
+1987|Whitney Houston|I Wanna Dance with Somebody (Who Loves Me)|E,D|1
+1990|AC/DC|Thunderstruck|E,R|1
+1990|Chris Isaak|Wicked Game|E,S|1
+1990|Deee-Lite|Groove Is in the Heart|E,D|1
+1990|Depeche Mode|Enjoy the Silence|E,P|1
+1990|George Michael|Freedom! '90|E,P|1
+1990|MC Hammer|U Can't Touch This|E,D|1
+1990|Madonna|Vogue|E,D|1
+1990|Roxette|It Must Have Been Love|E,S|1
+1990|Sinéad O'Connor|Nothing Compares 2 U|E,S|1
+1990|Snap!|The Power|E,D|1
+1990|Vanilla Ice|Ice Ice Baby|E,P|1
+1991|Bryan Adams|(Everything I Do) I Do It for You|E,S|1
+1991|C+C Music Factory|Gonna Make You Sweat (Everybody Dance Now)|E,D|1
+1991|Extreme|More Than Words|E,S|1
+1991|Guns N' Roses|November Rain|E,S|1
+1991|Metallica|Enter Sandman|E,R|1
+1991|Metallica|Nothing Else Matters|E,S|1
+1991|Michael Jackson|Black or White|E,P|1
+1991|Nirvana|Smells Like Teen Spirit|E,R|1
+1991|Queen|The Show Must Go On|E,R|1
+1991|R.E.M.|Losing My Religion|E,R|1
+1991|Red Hot Chili Peppers|Under the Bridge|E,R|1
+1991|Scorpions|Wind of Change|E,S|1
+1992|Dr. Alban|It's My Life|E,D|1
+1992|Eric Clapton|Tears in Heaven|E,S|1
+1992|House of Pain|Jump Around|E,P|1
+1992|Radiohead|Creep|E,R|1
+1992|Rage Against the Machine|Killing in the Name|E,R|1
+1992|Snap!|Rhythm Is a Dancer|E,D|1
+1992|U2|One|E,S|1
+1992|Whitney Houston|I Will Always Love You|E,S|1
+1993|2 Unlimited|No Limit|E,D|1
+1993|4 Non Blondes|What's Up?|E,R|1
+1993|Ace of Base|All That She Wants|E,P|1
+1993|Ace of Base|The Sign|E,P|1
+1993|Corona|The Rhythm of the Night|E,D|1
+1993|Culture Beat|Mr. Vain|E,D|1
+1993|Haddaway|What Is Love|E,D|1
+1993|Mariah Carey|Hero|E,S|1
+1993|The Cranberries|Zombie|E,R|1
+1993|UB40|(I Can't Help) Falling in Love with You|E,S|1
+1994|Bon Jovi|Always|E,S|1
+1994|Bruce Springsteen|Streets of Philadelphia|E,S|1
+1994|Celine Dion|The Power of Love|E,S|1
+1994|Elton John|Can You Feel the Love Tonight|E,S|1
+1994|Green Day|Basket Case|E,R|1
+1994|La Bouche|Be My Lover|E,D|1
+1994|Mariah Carey|All I Want for Christmas Is You|E,P|1
+1994|The Offspring|Self Esteem|E,R|1
+1994|Wet Wet Wet|Love Is All Around|E,S|1
+1994|Whigfield|Saturday Night|E,D|1
+1994|Youssou N'Dour & Neneh Cherry|7 Seconds|E,S|1
+1995|Alanis Morissette|Ironic|E,R|1
+1995|Coolio|Gangsta's Paradise|E,P|1
+1995|Los del Río|Macarena (Bayside Boys Mix)|E,D|1
+1995|Michael Jackson|Earth Song|E,S|1
+1995|Michael Jackson|They Don't Care About Us|E,P|1
+1995|Oasis|Don't Look Back in Anger|E,R|1
+1995|Oasis|Wonderwall|E,R|1
+1995|Robert Miles|Children|E,D|1
+1995|Scatman John|Scatman (Ski-Ba-Bop-Ba-Dop-Bop)|E,D|1
+1995|Seal|Kiss from a Rose|E,S|1
+1995|TLC|Waterfalls|E,P|1
+1995|Take That|Back for Good|E,S|1
+1996|Celine Dion|All by Myself|E,S|1
+1996|Fugees|Killing Me Softly|E,S|1
+1996|Jamiroquai|Virtual Insanity|E,D|1
+1996|No Doubt|Don't Speak|E,S|1
+1996|R. Kelly|I Believe I Can Fly|E,S|1
+1996|Spice Girls|Wannabe|E,P|1
+1996|Toni Braxton|Un-Break My Heart|E,S|1
+1997|Aqua|Barbie Girl|E,D|1
+1997|Backstreet Boys|Everybody (Backstreet's Back)|E,P|1
+1997|Blur|Song 2|E,R|1
+1997|Celine Dion|My Heart Will Go On|E,S|1
+1997|Chumbawamba|Tubthumping|E,R|1
+1997|Daft Punk|Around the World|E,D|1
+1997|Elton John|Candle in the Wind 1997|E,S|1
+1997|Hanson|MMMBop|E,P|1
+1997|Natalie Imbruglia|Torn|E,P|1
+1997|Puff Daddy & Faith Evans|I'll Be Missing You|E,S|1
+1997|Robbie Williams|Angels|E,S|1
+1997|Savage Garden|Truly Madly Deeply|E,S|1
+1997|The Verve|Bitter Sweet Symphony|E,R|1
+1997|Will Smith|Men in Black|E,P|1
+1998|Aerosmith|I Don't Want to Miss a Thing|E,S|1
+1998|Britney Spears|...Baby One More Time|E,P|1
+1998|Cher|Believe|E,D|1
+1998|Eagle-Eye Cherry|Save Tonight|E,R|1
+1998|Fool's Garden|Lemon Tree|E,P|1
+1998|Goo Goo Dolls|Iris|E,S|1
+1998|Ricky Martin|The Cup of Life|E,D|1
+1998|Stardust|Music Sounds Better with You|E,D|1
+1999|Eiffel 65|Blue (Da Ba Dee)|E,D|1
+1999|Lou Bega|Mambo No. 5 (A Little Bit of...)|E,D|1
+2000|Anastacia|I'm Outta Love|E,P|1
+2000|Bon Jovi|It's My Life|E,R|1
+2000|Britney Spears|Oops!... I Did It Again|E,P|1
+2000|Coldplay|Yellow|E,R|1
+2000|Daft Punk|One More Time|E,D|1
+2000|Dido|Thank You|E,S|1
+2000|Eminem feat. Dido|Stan|E,P|1
+2000|Eminem|The Real Slim Shady|E,P|1
+2000|Linkin Park|In the End|E,R|1
+2000|Madonna|Music|E,D|1
+2000|Modjo|Lady (Hear Me Tonight)|E,D|1
+2000|Robbie Williams|Rock DJ|E,P|1
+2000|U2|Beautiful Day|E,R|1
+2001|Alicia Keys|Fallin'|E,S|1
+2001|Destiny's Child|Survivor|E,P|1
+2001|Enrique Iglesias|Hero|E,S|1
+2001|Gorillaz|Clint Eastwood|E,P|1
+2001|Kylie Minogue|Can't Get You Out of My Head|E,D|1
+2001|Shaggy|It Wasn't Me|E,P|1
+2002|Avril Lavigne|Complicated|E,R|1
+2002|Coldplay|Clocks|E,R|1
+2002|Coldplay|The Scientist|E,S|1
+2002|Eminem|Lose Yourself|E,P|1
+2002|Eminem|Without Me|E,P|1
+2002|Las Ketchup|The Ketchup Song (Aserejé)|E,D|1
+2002|Nelly feat. Kelly Rowland|Dilemma|E,S|1
+2002|Nickelback|How You Remind Me|E,R|1
+2002|Shakira|Whenever, Wherever|E,P|1
+2003|50 Cent|In da Club|E,P|1
+2003|Beyoncé feat. Jay-Z|Crazy in Love|E,P|1
+2003|Black Eyed Peas|Where Is the Love?|E,P|1
+2003|Evanescence|Bring Me to Life|E,R|1
+2003|OutKast|Hey Ya!|E,P|1
+2003|The White Stripes|Seven Nation Army|E,R|1
+2003|t.A.T.u.|All the Things She Said|E,P|1
+2004|Britney Spears|Toxic|E,P|1
+2004|Crazy Frog|Axel F|E,D|1
+2004|Franz Ferdinand|Take Me Out|E,R|1
+2004|Green Day|American Idiot|E,R|1
+2004|Green Day|Boulevard of Broken Dreams|E,R|1
+2004|Keane|Somewhere Only We Know|E,S|1
+2004|Maroon 5|This Love|E,R|1
+2004|The Killers|Mr. Brightside|E,R|1
+2004|Usher|Yeah!|E,D|1
+2005|Coldplay|Fix You|E,S|1
+2005|Daniel Powter|Bad Day|E,P|1
+2005|Gorillaz|Feel Good Inc.|E,P|1
+2005|James Blunt|You're Beautiful|E,S|1
+2005|Kelly Clarkson|Since U Been Gone|E,R|1
+2005|Madonna|Hung Up|E,D|1
+2006|Amy Winehouse|Rehab|E,P|1
+2006|Gnarls Barkley|Crazy|E,P|1
+2006|Justin Timberlake|SexyBack|E,P|1
+2006|Mika|Relax, Take It Easy|E,P|1
+2006|Nelly Furtado|Maneater|E,P|1
+2006|Shakira feat. Wyclef Jean|Hips Don't Lie|E,D|1
+2006|Snow Patrol|Chasing Cars|E,S|1
+2007|Amy Macdonald|This Is the Life|E,R|1
+2007|Amy Winehouse|Back to Black|E,S|1
+2007|Kanye West|Stronger|E,P|1
+2007|Leona Lewis|Bleeding Love|E,S|1
+2007|Mika|Grace Kelly|E,P|1
+2007|Rihanna feat. Jay-Z|Umbrella|E,P|1
+2007|Timbaland feat. OneRepublic|Apologize|E,S|1
+2008|Coldplay|Viva la Vida|E,P|1
+2008|Duffy|Mercy|E,P|1
+2008|Katy Perry|I Kissed a Girl|E,P|1
+2008|Kings of Leon|Sex on Fire|E,R|1
+2008|Lady Gaga|Just Dance|E,D|1
+2008|Lady Gaga|Poker Face|E,D|1
+2010|Bruno Mars|Just the Way You Are|E,S|1
+2010|Eminem feat. Rihanna|Love the Way You Lie|E,P|1
+2010|Katy Perry|California Gurls|E,P|1
+2010|Katy Perry|Firework|E,P|1
+2010|Rihanna|Only Girl (In the World)|E,D|2
+2010|Shakira|Waka Waka (This Time for Africa)|E,D|1
+2010|Yolanda Be Cool & DCUP|We No Speak Americano|E,D|1
+2011|Adele|Rolling in the Deep|E,P|1
+2011|Adele|Someone Like You|E,S|1
+2011|David Guetta feat. Sia|Titanium|E,D|1
+2011|Gotye feat. Kimbra|Somebody That I Used to Know|E,P|1
+2011|Jennifer Lopez feat. Pitbull|On the Floor|E,D|1
+2011|LMFAO|Party Rock Anthem|E,D|1
+2011|Maroon 5 feat. Christina Aguilera|Moves like Jagger|E,P|1
+2011|Rihanna feat. Calvin Harris|We Found Love|E,D|1
+2012|Adele|Skyfall|E,S|1
+2012|Asaf Avidan|One Day / Reckoning Song|E,P|1
+2012|Carly Rae Jepsen|Call Me Maybe|E,P|1
+2012|Imagine Dragons|Radioactive|E,R|1
+2012|Rihanna|Diamonds|E,S|1
+2013|Avicii|Wake Me Up|E,D|1
+2013|Bastille|Pompeii|E,P|1
+2013|Daft Punk feat. Pharrell Williams|Get Lucky|E,D|1
+2013|Katy Perry|Roar|E,P|1
+2013|Lorde|Royals|E,P|1
+2013|Miley Cyrus|Wrecking Ball|E,S|1
+2013|Passenger|Let Her Go|E,S|1
+2013|Pharrell Williams|Happy|E,P|1
+2013|Robin Thicke|Blurred Lines|E,P|1
+2014|Ed Sheeran|Thinking Out Loud|E,S|1
+2014|Hozier|Take Me to Church|E,S|1
+2014|John Legend|All of Me|E,S|1
+2014|Mark Ronson feat. Bruno Mars|Uptown Funk|E,D|1
+2014|Meghan Trainor|All About That Bass|E,P|1
+2014|Sam Smith|Stay with Me|E,S|1
+2014|Sia|Chandelier|E,P|1
+2014|Taylor Swift|Shake It Off|E,P|1
+2015|Adele|Hello|E,S|1
+2015|Justin Bieber|Sorry|E,P|1
+2015|Major Lazer & DJ Snake feat. MØ|Lean On|E,D|1
+2015|OMI|Cheerleader (Felix Jaehn Remix)|E,P|1
+2015|Wiz Khalifa feat. Charlie Puth|See You Again|E,S|1
+2016|Drake|One Dance|E,P|1
+2016|Ed Sheeran|Shape of You|E,P|1
+2016|Justin Timberlake|Can't Stop the Feeling!|E,D|1
+2016|The Chainsmokers feat. Halsey|Closer|E,P|1
+2017|Camila Cabello|Havana|E,P|1
+2017|Dua Lipa|New Rules|E,P|1
+2017|Ed Sheeran|Perfect|E,S|1
+2017|Imagine Dragons|Believer|E,R|1
+2017|Luis Fonsi feat. Justin Bieber|Despacito (Remix)|E,D|1
+2018|Dua Lipa & Calvin Harris|One Kiss|E,D|1
+2018|Lady Gaga & Bradley Cooper|Shallow|E,S|1
+2019|Billie Eilish|Bad Guy|E,P|1
+2019|Lewis Capaldi|Someone You Loved|E,S|1
+2019|Lil Nas X|Old Town Road|E,P|1
+2019|Shawn Mendes & Camila Cabello|Señorita|E,P|1
+2019|Tones and I|Dance Monkey|E,P|1
+2020|Dua Lipa|Don't Start Now|E,D|1
+2020|Dua Lipa|Levitating|E,D|1
+2020|Harry Styles|Watermelon Sugar|E,P|1
+2020|Joel Corry feat. MNEK|Head & Heart|E,D|2
+2020|The Weeknd|Blinding Lights|E,P|1
+2021|Adele|Easy on Me|E,S|1
+2021|Ed Sheeran|Bad Habits|E,P|1
+2021|Elton John & Dua Lipa|Cold Heart (Pnau Remix)|E,D|1
+2021|Glass Animals|Heat Waves|E,P|1
+2021|Måneskin|Beggin'|E,R|1
+2021|Olivia Rodrigo|Drivers License|E,S|1
+2022|David Guetta & Bebe Rexha|I'm Good (Blue)|E,D|1
+2022|Harry Styles|As It Was|E,P|1
+2022|Lizzo|About Damn Time|E,D|2
+2023|Billie Eilish|What Was I Made For?|E,S|2
+2023|Doja Cat|Paint the Town Red|E,P|2
+2023|Loreen|Tattoo|E,P|1
+2023|Miley Cyrus|Flowers|E,P|1
+2023|Rema & Selena Gomez|Calm Down|E,P|1
+2024|Benson Boone|Beautiful Things|E,R|1
+2024|Billie Eilish|Birds of a Feather|E,P|1
+2024|Lady Gaga & Bruno Mars|Die with a Smile|E,S|1
+2024|Rosé & Bruno Mars|APT.|E,P|1
+2024|Sabrina Carpenter|Espresso|E,P|1
+2024|Teddy Swims|Lose Control|E,S|1

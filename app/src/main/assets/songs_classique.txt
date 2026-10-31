@@ -1,0 +1,162 @@
+# Module Classique : année de composition|compositeur|œuvre|C|difficulté
+1638|Gregorio Allegri|Miserere|C|2
+1670|Jean-Baptiste Lully|Marche pour la cérémonie des Turcs|C|2
+1680|Johann Pachelbel|Canon en ré majeur|C|1
+1692|Marc-Antoine Charpentier|Te Deum - Prélude (Eurovision)|C|1
+1695|Henry Purcell|Musique pour les funérailles de la reine Mary|C|2
+1700|Jeremiah Clarke|Trumpet Voluntary|C|2
+1704|Jean-Sébastien Bach|Toccata et fugue en ré mineur|C|1
+1711|Georg Friedrich Haendel|Rinaldo - Lascia ch'io pianga|C|2
+1717|Georg Friedrich Haendel|Water Music - Hornpipe|C|2
+1720|Jean-Sébastien Bach|Suite pour violoncelle n° 1 - Prélude|C|1
+1721|Jean-Sébastien Bach|Concerto brandebourgeois n° 3|C|2
+1722|Jean-Sébastien Bach|Prélude en do majeur (Clavier bien tempéré)|C|2
+1723|Jean-Sébastien Bach|Jésus, que ma joie demeure|C|1
+1725|Antonio Vivaldi|Les Quatre Saisons - Le Printemps|C|1
+1725|Antonio Vivaldi|Les Quatre Saisons - L'Été (Presto)|C|1
+1725|Antonio Vivaldi|Les Quatre Saisons - L'Hiver|C|2
+1729|Jean-Joseph Mouret|Rondeau (Fanfare)|C|1
+1730|Jean-Sébastien Bach|Suite pour orchestre n° 3 - Air|C|1
+1733|Georg Friedrich Haendel|Sarabande|C|1
+1735|Jean-Philippe Rameau|Les Indes galantes - Les Sauvages|C|2
+1738|Jean-Sébastien Bach|Suite pour orchestre n° 2 - Badinerie|C|1
+1738|Georg Friedrich Haendel|Serse - Ombra mai fu|C|2
+1742|Georg Friedrich Haendel|Le Messie - Alléluia|C|1
+1749|Georg Friedrich Haendel|Musique pour les feux d'artifice royaux|C|2
+1749|Georg Friedrich Haendel|Salomon - L'Arrivée de la reine de Saba|C|2
+1771|Luigi Boccherini|Menuet|C|1
+1781|Wolfgang Amadeus Mozart|Variations sur « Ah ! vous dirai-je, maman »|C|1
+1783|Wolfgang Amadeus Mozart|Marche turque|C|1
+1785|Wolfgang Amadeus Mozart|Concerto pour piano n° 21 - Andante|C|2
+1786|Wolfgang Amadeus Mozart|Les Noces de Figaro - Ouverture|C|2
+1787|Wolfgang Amadeus Mozart|Une petite musique de nuit|C|1
+1788|Wolfgang Amadeus Mozart|Symphonie n° 40|C|1
+1788|Wolfgang Amadeus Mozart|Sonate pour piano n° 16 (Sonata facile)|C|2
+1791|Wolfgang Amadeus Mozart|La Flûte enchantée - Air de la Reine de la nuit|C|1
+1791|Wolfgang Amadeus Mozart|Requiem - Lacrimosa|C|2
+1791|Wolfgang Amadeus Mozart|Concerto pour clarinette - Adagio|C|2
+1791|Joseph Haydn|Symphonie n° 94 « La Surprise »|C|2
+1797|Joseph Haydn|Hymne impérial|C|2
+1798|Ludwig van Beethoven|Sonate « Pathétique » - Adagio|C|2
+1801|Ludwig van Beethoven|Sonate « Clair de lune »|C|1
+1808|Ludwig van Beethoven|Symphonie n° 5|C|1
+1808|Ludwig van Beethoven|Symphonie n° 6 « Pastorale »|C|2
+1810|Ludwig van Beethoven|Lettre à Élise|C|1
+1812|Ludwig van Beethoven|Symphonie n° 7 - Allegretto|C|2
+1816|Gioachino Rossini|Le Barbier de Séville - Largo al factotum|C|1
+1817|Gioachino Rossini|La Pie voleuse - Ouverture|C|2
+1817|Niccolò Paganini|Caprice n° 24|C|2
+1818|Franz Schubert|Marche militaire|C|2
+1819|Franz Schubert|La Truite|C|2
+1822|Franz Schubert|Symphonie « Inachevée »|C|2
+1824|Ludwig van Beethoven|Symphonie n° 9 - Hymne à la joie|C|1
+1825|Franz Schubert|Ave Maria|C|1
+1828|Franz Schubert|Sérénade|C|2
+1829|Gioachino Rossini|Guillaume Tell - Ouverture (Galop)|C|1
+1830|Hector Berlioz|Symphonie fantastique - Marche au supplice|C|2
+1831|Vincenzo Bellini|Norma - Casta diva|C|2
+1832|Frédéric Chopin|Nocturne op. 9 n° 2|C|1
+1832|Frédéric Chopin|Étude op. 10 n° 3 « Tristesse »|C|2
+1832|Gaetano Donizetti|L'Élixir d'amour - Una furtiva lagrima|C|2
+1834|Frédéric Chopin|Fantaisie-impromptu|C|2
+1838|Robert Schumann|Rêverie (Träumerei)|C|2
+1839|Frédéric Chopin|Sonate n° 2 - Marche funèbre|C|1
+1839|Frédéric Chopin|Prélude op. 28 n° 4|C|2
+1842|Giuseppe Verdi|Nabucco - Va, pensiero (Chœur des esclaves)|C|1
+1842|Frédéric Chopin|Polonaise « Héroïque »|C|2
+1842|Felix Mendelssohn|Marche nuptiale|C|1
+1844|Felix Mendelssohn|Concerto pour violon en mi mineur|C|2
+1847|Frédéric Chopin|Valse « Minute » (du petit chien)|C|2
+1847|Franz Liszt|Rhapsodie hongroise n° 2|C|1
+1848|Johann Strauss père|Marche de Radetzky|C|1
+1850|Franz Liszt|Rêve d'amour n° 3|C|1
+1850|Richard Wagner|Lohengrin - Chœur nuptial|C|1
+1851|Giuseppe Verdi|Rigoletto - La donna è mobile|C|1
+1851|Franz Liszt|La Campanella|C|2
+1853|Giuseppe Verdi|La Traviata - Libiamo (Brindisi)|C|1
+1853|Bach / Gounod|Ave Maria|C|2
+1856|Richard Wagner|La Chevauchée des Walkyries|C|1
+1858|Jacques Offenbach|Orphée aux Enfers - Galop infernal (French cancan)|C|1
+1859|Charles Gounod|Faust - Air des bijoux|C|2
+1863|Georges Bizet|Les Pêcheurs de perles - Au fond du temple saint|C|2
+1866|Franz von Suppé|Cavalerie légère - Ouverture|C|2
+1867|Johann Strauss fils|Le Beau Danube bleu|C|1
+1867|Modeste Moussorgski|Une nuit sur le mont Chauve|C|2
+1868|Johannes Brahms|Berceuse|C|1
+1868|Edvard Grieg|Concerto pour piano en la mineur|C|2
+1869|Johannes Brahms|Danse hongroise n° 5|C|1
+1869|Johann Strauss fils|Pizzicato Polka|C|2
+1871|Giuseppe Verdi|Aïda - Marche triomphale|C|1
+1872|Georges Bizet|L'Arlésienne - Farandole|C|2
+1872|Charles Gounod|Marche funèbre d'une marionnette|C|2
+1874|Camille Saint-Saëns|Danse macabre|C|2
+1874|Bedřich Smetana|La Moldau|C|1
+1874|Modeste Moussorgski|Tableaux d'une exposition - La Grande Porte de Kiev|C|2
+1874|Giuseppe Verdi|Requiem - Dies irae|C|2
+1875|Georges Bizet|Carmen - L'amour est un oiseau rebelle (Habanera)|C|1
+1875|Georges Bizet|Carmen - Air du Toréador|C|1
+1875|Georges Bizet|Carmen - Ouverture|C|1
+1875|Edvard Grieg|Peer Gynt - Dans l'antre du roi de la montagne|C|1
+1875|Edvard Grieg|Peer Gynt - Au matin|C|1
+1875|Piotr Ilitch Tchaïkovski|Concerto pour piano n° 1|C|1
+1876|Piotr Ilitch Tchaïkovski|Le Lac des cygnes - Thème du cygne|C|1
+1876|Piotr Ilitch Tchaïkovski|Le Lac des cygnes - Danse des petits cygnes|C|1
+1876|Amilcare Ponchielli|La Gioconda - La Danse des heures|C|1
+1877|Camille Saint-Saëns|Samson et Dalila - Mon cœur s'ouvre à ta voix|C|2
+1880|Piotr Ilitch Tchaïkovski|Ouverture 1812|C|1
+1880|Iosif Ivanovici|Les Flots du Danube|C|2
+1881|Jacques Offenbach|Les Contes d'Hoffmann - Barcarolle|C|1
+1882|Émile Waldteufel|Les Patineurs|C|2
+1883|Léo Delibes|Lakmé - Duo des fleurs|C|1
+1886|Camille Saint-Saëns|Le Carnaval des animaux - Le Cygne|C|1
+1886|Camille Saint-Saëns|Le Carnaval des animaux - Aquarium|C|2
+1886|Camille Saint-Saëns|Symphonie n° 3 « avec orgue »|C|2
+1887|Gabriel Fauré|Pavane|C|2
+1888|Erik Satie|Gymnopédie n° 1|C|1
+1888|Nikolaï Rimski-Korsakov|Shéhérazade|C|2
+1889|Piotr Ilitch Tchaïkovski|La Belle au bois dormant - Valse|C|2
+1890|Erik Satie|Gnossienne n° 1|C|2
+1890|Pietro Mascagni|Cavalleria rusticana - Intermezzo|C|2
+1890|Alexandre Borodine|Le Prince Igor - Danses polovtsiennes|C|2
+1892|Piotr Ilitch Tchaïkovski|Casse-Noisette - Danse de la fée Dragée|C|1
+1892|Piotr Ilitch Tchaïkovski|Casse-Noisette - Valse des fleurs|C|1
+1892|Piotr Ilitch Tchaïkovski|Casse-Noisette - Marche|C|2
+1892|Ruggero Leoncavallo|Paillasse - Vesti la giubba|C|2
+1892|Isaac Albéniz|Asturias|C|2
+1893|Antonín Dvořák|Symphonie du Nouveau Monde|C|1
+1894|Jules Massenet|Thaïs - Méditation|C|2
+1894|Claude Debussy|Prélude à l'après-midi d'un faune|C|2
+1896|Richard Strauss|Ainsi parlait Zarathoustra|C|1
+1897|Paul Dukas|L'Apprenti sorcier|C|1
+1897|Julius Fučík|Entrée des gladiateurs|C|1
+1899|Edward Elgar|Variations Enigma - Nimrod|C|2
+1899|Maurice Ravel|Pavane pour une infante défunte|C|2
+1899|Jean Sibelius|Finlandia|C|2
+1899|Scott Joplin|Maple Leaf Rag|C|2
+1900|Nikolaï Rimski-Korsakov|Le Vol du bourdon|C|1
+1901|Edward Elgar|Pomp and Circumstance - Marche n° 1|C|1
+1901|Sergueï Rachmaninov|Concerto pour piano n° 2|C|2
+1902|Scott Joplin|The Entertainer|C|1
+1902|Gustav Mahler|Symphonie n° 5 - Adagietto|C|2
+1904|Giacomo Puccini|Madame Butterfly - Un bel dì vedremo|C|2
+1905|Claude Debussy|Clair de lune|C|1
+1910|Claude Debussy|La Fille aux cheveux de lin|C|2
+1915|Manuel de Falla|L'Amour sorcier - Danse rituelle du feu|C|2
+1916|Gustav Holst|Les Planètes - Mars|C|2
+1916|Gustav Holst|Les Planètes - Jupiter|C|2
+1918|Giacomo Puccini|Gianni Schicchi - O mio babbino caro|C|1
+1924|George Gershwin|Rhapsody in Blue|C|1
+1926|Giacomo Puccini|Turandot - Nessun dorma|C|1
+1928|Maurice Ravel|Boléro|C|1
+1934|Sergueï Rachmaninov|Rhapsodie sur un thème de Paganini - Variation 18|C|2
+1935|George Gershwin|Porgy and Bess - Summertime|C|1
+1936|Sergueï Prokofiev|Pierre et le Loup|C|1
+1936|Samuel Barber|Adagio pour cordes|C|2
+1937|Carl Orff|Carmina Burana - O Fortuna|C|1
+1938|Sergueï Prokofiev|Roméo et Juliette - Danse des chevaliers|C|1
+1938|Dmitri Chostakovitch|Valse n° 2|C|1
+1939|Joaquín Rodrigo|Concerto d'Aranjuez - Adagio|C|1
+1941|Aram Khatchatourian|Mascarade - Valse|C|2
+1942|Aram Khatchatourian|Gayaneh - Danse du sabre|C|1
+1942|Aaron Copland|Fanfare for the Common Man|C|2
+1958|Albinoni / Giazotto|Adagio en sol mineur|C|1

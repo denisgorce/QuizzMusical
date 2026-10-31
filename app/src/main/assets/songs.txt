@@ -1,0 +1,1195 @@
+1960|Dalida|Itsi bitsi petit bikini|V|1
+1960|Edith Piaf|Milord|V|1
+1960|Elvis Presley|It's Now or Never|R,S|1
+1960|Les Chaussettes Noires|Daniela|R|2
+1961|Ben E. King|Stand by Me|S,P|1
+1961|Chubby Checker|Let's Twist Again|R,P|1
+1961|Dalida|Garde-moi la dernière danse|V|2
+1961|Dalida|Nuits d'Espagne|V|2
+1961|Edith Piaf|Non, je ne regrette rien|V|1
+1961|Jacques Brel|Le plat pays|V|2
+1961|Johnny Hallyday|Viens danser le twist|R|1
+1961|Les Chaussettes Noires|Eddie sois bon|R|2
+1961|Ray Charles|Hit the Road Jack|P|1
+1962|Charles Aznavour|For me formidable|V|2
+1962|Claude François|Belles ! Belles ! Belles !|V|1
+1962|Dalida|Le petit Gonzales|V|2
+1962|Elvis Presley|Can't Help Falling in Love|S|1
+1962|Georges Brassens|Les copains d'abord|V|1
+1962|Gilbert Bécaud|Et maintenant|V,S|1
+1962|Johnny Hallyday|L'idole des jeunes|R,S|1
+1962|Les Chats Sauvages|Twist à Saint-Tropez|R|1
+1962|Les Shadows|Apache|R|2
+1962|Petula Clark|Chariot|V|2
+1962|Ray Charles|I Can't Stop Loving You|S|2
+1962|Richard Anthony|J'entends siffler le train|V,S|1
+1962|Sylvie Vartan|Tous mes copains|V|2
+1963|Adamo|Tombe la neige|V,S|1
+1963|Charles Aznavour|Emmenez-moi|V|1
+1963|Claude François|Si j'avais un marteau|V|1
+1963|Frank Alamo|Biche, oh ma biche|V|2
+1963|Françoise Hardy|Tous les garçons et les filles|V,S|1
+1963|Gigliola Cinquetti|Non ho l'età|S|2
+1963|Henri Salvador|Zorro est arrivé|V|1
+1963|Hugues Aufray|Santiano|V|1
+1963|Johnny Hallyday|Da dou ron ron|R|2
+1963|Les Surfs|Si j'avais des millions|V|2
+1963|Sheila|L'école est finie|V|1
+1963|Sylvie Vartan|La plus belle pour aller danser|V,S|1
+1963|The Beatles|She Loves You|P,R|1
+1964|Adamo|Vous permettez, Monsieur ?|V|2
+1964|Barbara|Dis, quand reviendras-tu ?|V,S|2
+1964|Charles Aznavour|La Bohème|V,S|1
+1964|Christophe|Aline|V,S|1
+1964|France Gall|Laisse tomber les filles|V|2
+1964|Gilbert Bécaud|Nathalie|V|2
+1964|Henri Salvador|Le lion est mort ce soir|V|1
+1964|Hugues Aufray|Céline|V,S|1
+1964|Jacques Brel|Amsterdam|V|1
+1964|Johnny Hallyday|Le pénitencier|R,S|1
+1964|Les Surfs|Reviens vite et oublie|V|2
+1964|Michel Polnareff|La poupée qui fait non|V,P|1
+1964|Petula Clark|Downtown|P|2
+1964|Serge Gainsbourg|Couleur café|V|2
+1964|Sheila|Vous les copains, je ne vous oublierai jamais|V|2
+1964|The Animals|The House of the Rising Sun|R|1
+1964|The Beach Boys|I Get Around|P,R|2
+1964|The Beatles|Can't Buy Me Love|P,R|1
+1964|The Beatles|I Want to Hold Your Hand|P,R|1
+1965|Antoine|Les élucubrations d'Antoine|V|2
+1965|Bourvil|La tendresse|V,S|2
+1965|Claude François|J'attendrai|V,S|2
+1965|Enrico Macias|Enfants de tous pays|V|2
+1965|France Gall|Poupée de cire, poupée de son|V,P|1
+1965|Jacques Dutronc|Et moi, et moi, et moi|R,V|2
+1965|Jean Ferrat|La montagne|V|1
+1965|Marie Laforêt|Viens sur la montagne|V|2
+1965|Michel Delpech|Chez Laurette|V|2
+1965|Salvatore Adamo|Mes mains sur tes hanches|V|2
+1965|Sonny & Cher|I Got You Babe|P|1
+1965|Sylvie Vartan|Quand tu es là|V|2
+1965|The Beatles|Help!|R,P|1
+1965|The Beatles|Yesterday|S,P|1
+1965|The Kinks|You Really Got Me|R|2
+1965|The Rolling Stones|(I Can't Get No) Satisfaction|R|1
+1965|The Who|My Generation|R|2
+1966|Barbara|L'aigle noir|V,S|2
+1966|Claude François|Même si tu revenais|V|2
+1966|Eric Charden|Le monde est gris, le monde est bleu|V|2
+1966|Frank Sinatra|Strangers in the Night|S|1
+1966|Gérard Lenorman|Le petit prince|V|2
+1966|Jacques Brel|Ces gens-là|V|2
+1966|Jacques Dutronc|Les cactus|R,V|1
+1966|Johnny Hallyday|Noir c'est noir|R|1
+1966|Michel Fugain|Je n'aurai pas le temps|V,S|2
+1966|Michel Polnareff|Love Me, Please Love Me|S,V|1
+1966|Mireille Mathieu|Mon crédo|V|2
+1966|Nancy Sinatra|These Boots Are Made for Walkin'|P|1
+1966|Nino Ferrer|Les cornichons|V|1
+1966|Nino Ferrer|Mirza|R,V|1
+1966|Percy Sledge|When a Man Loves a Woman|S|1
+1966|Serge Gainsbourg|Les sucettes|V|2
+1966|Serge Gainsbourg|Qui est 'in' qui est 'out'|V|2
+1966|Sheila|Bang Bang|V,S|2
+1966|The Beach Boys|Good Vibrations|P|2
+1966|The Beatles|Yellow Submarine|P|1
+1966|The Mamas & the Papas|California Dreamin'|P|1
+1967|Aretha Franklin|Respect|P|1
+1967|Claude François|Comme d'habitude|V,S|1
+1967|France Gall|Bébé requin|V|2
+1967|Gilbert Bécaud|L'important c'est la rose|V,S|1
+1967|Hugues Aufray|Le petit âne gris|V|2
+1967|Jacques Dutronc|Il est cinq heures, Paris s'éveille|V,R|1
+1967|Joe Dassin|Les Dalton|V|2
+1967|Johnny Hallyday|Si j'étais un charpentier|S,R|2
+1967|Les Charlots|Paulette, la reine des paupiettes|V|2
+1967|Michel Polnareff|Âme câline|V|2
+1967|Mireille Mathieu|La dernière valse|V,S|2
+1967|Nino Ferrer|Le téléfon|V|2
+1967|Procol Harum|A Whiter Shade of Pale|S,R|1
+1967|Scott McKenzie|San Francisco|P|1
+1967|The Beatles|All You Need Is Love|P|1
+1967|The Doors|Light My Fire|R|2
+1967|The Monkees|I'm a Believer|P|2
+1968|Dalida|Le temps des fleurs|V,S|1
+1968|Gérard Lenorman|La ballade des gens heureux|V|1
+1968|Herbert Léonard|Quelque chose et moi|V|2
+1968|Jacques Dutronc|L'opportuniste|V|2
+1968|Joe Cocker|With a Little Help from My Friends|R|2
+1968|Joe Dassin|Le petit pain au chocolat|V|2
+1968|Joe Dassin|Siffler sur la colline|V|1
+1968|Johnny Hallyday|Jeune homme|R|2
+1968|Julien Clerc|La cavalerie|V|2
+1968|Louis Armstrong|What a Wonderful World|S|1
+1968|Marcel Amont|Le mexicain|V|2
+1968|Marie Laforêt|Ivan, Boris et moi|V|2
+1968|Mary Hopkin|Those Were the Days|P|1
+1968|Michel Polnareff|Le bal des Laze|S,V|2
+1968|Otis Redding|(Sittin' On) The Dock of the Bay|S|1
+1968|Serge Gainsbourg|Initials B.B.|V|2
+1968|Steppenwolf|Born to Be Wild|R|1
+1968|The Beatles|Hey Jude|P,S|1
+1968|The Equals|Baby Come Back|R,P|2
+1969|Adamo|Petit bonheur|V|2
+1969|Bee Gees|Words|S|2
+1969|Claude François|Si douce à mon souvenir|V,S|2
+1969|Creedence Clearwater Revival|Proud Mary|R|1
+1969|Dalida|Darla dirladada|V|1
+1969|Elvis Presley|In the Ghetto|S|1
+1969|Elvis Presley|Suspicious Minds|R,P|2
+1969|Frank Sinatra|My Way|S|1
+1969|Georges Moustaki|Le métèque|V,S|1
+1969|Gérard Palaprat|Fais-moi un signe|V|2
+1969|Jacques Brel|Ne me quitte pas|S,V|1
+1969|Jane Birkin|Jane B.|V|2
+1969|Joe Dassin|Les Champs-Élysées|V|1
+1969|Johnny Hallyday|Que je t'aime|R,S|1
+1969|Michel Delpech|Wight Is Wight|V|1
+1969|Nicoletta|Il est mort le soleil|V,S|2
+1969|Serge Gainsbourg & Jane Birkin|Je t'aime... moi non plus|S|1
+1969|Shocking Blue|Venus|R|2
+1969|Sylvie Vartan|Comme un garçon|V|1
+1969|The Archies|Sugar, Sugar|P|1
+1969|The Beatles|Come Together|R|1
+1969|The Rolling Stones|Honky Tonk Women|R|2
+1969|Thunderclap Newman|Something in the Air|R|2
+1969|Zager and Evans|In the Year 2525|P|2
+1970|Christie|Yellow River|P,R|2
+1970|Claude François|Parce que je t'aime mon enfant|V,S|2
+1970|Daniel Guichard|La tendresse|V,S|2
+1970|Deep Purple|Black Night|R|2
+1970|Jimi Hendrix|Voodoo Child|R|2
+1970|Joe Dassin|L'Amérique|V|1
+1970|Julien Clerc|Ce n'est rien|V|2
+1970|Led Zeppelin|Whole Lotta Love|R|1
+1970|Michel Delpech|Pour un flirt|V|1
+1970|Michel Polnareff|Tout tout pour ma chérie|V|1
+1970|Mike Brant|Laisse-moi t'aimer|S,V|1
+1970|Mungo Jerry|In the Summertime|P|1
+1970|Nicoletta|Mamy Blue|V,S|1
+1970|Simon & Garfunkel|Bridge over Troubled Water|S|1
+1970|The Beatles|Let It Be|S,P|1
+1971|Claude François|Il fait beau, il fait bon|V|2
+1971|Dalida|Parle plus bas|V,S|2
+1971|Gérard Lenorman|Il|V|2
+1971|Joe Dassin|Le moustique|V|2
+1971|John Lennon|Imagine|S,P|1
+1971|Led Zeppelin|Stairway to Heaven|R,S|1
+1971|Michel Polnareff|On ira tous au paradis|V|1
+1971|Mike Brant|Qui saura|S,V|1
+1971|Nino Ferrer|La maison près de la fontaine|V|2
+1971|Pop-Tops|Mamy Blue|S,P|2
+1971|Rod Stewart|Maggie May|R|2
+1971|Sylvie Vartan|Annie aime les sucettes|V|2
+1971|Séverine|Un banc, un arbre, une rue|V|2
+1971|The Rolling Stones|Brown Sugar|R|2
+1972|Alice Cooper|School's Out|R|2
+1972|C. Jérôme|Kiss Me|V|2
+1972|Claude François|Le lundi au soleil|V|1
+1972|Deep Purple|Smoke on the Water|R|1
+1972|Demis Roussos|We Shall Dance|P|2
+1972|Don McLean|American Pie|R,P|2
+1972|Elton John|Rocket Man|R,P|2
+1972|Gilbert O'Sullivan|Clair|P|2
+1972|Gérard Lenorman|Michèle|V,S|2
+1972|Il était une fois|J'ai encore rêvé d'elle|S,V|1
+1972|Johnny Hallyday|Oh ! Ma jolie Sarah|R|2
+1972|Lou Reed|Walk on the Wild Side|R|2
+1972|Michel Delpech|Que Marianne était jolie|V|2
+1972|Michel Sardou|Les bals populaires|V|2
+1972|Mike Brant|C'est ma prière|S,V|2
+1972|Nicole Croisille|Une femme avec toi|V,S|2
+1972|Pierre Groscolas|Lady Lay|S|2
+1973|Carpenters|Yesterday Once More|S,P|2
+1973|Charles Aznavour|Comme ils disent|V|2
+1973|Claude François|Chanson populaire|V,D|1
+1973|Dalida & Alain Delon|Paroles, paroles|V,S|1
+1973|Dalida|Il venait d'avoir 18 ans|V,S|2
+1973|Dave|Vanina|V|1
+1973|David Bowie|Life on Mars?|R|2
+1973|Demis Roussos|Forever and Ever|S|1
+1973|Elton John|Crocodile Rock|R,P|2
+1973|Gilbert Montagné|The Fool|S|2
+1973|Gérard Lenorman|Si j'étais président|V|1
+1973|Johnny Hallyday|Toute la musique que j'aime|R|1
+1973|Lynyrd Skynyrd|Free Bird|R|2
+1973|Michel Sardou|La maladie d'amour|V|1
+1973|Pink Floyd|Money|R|2
+1973|Serge Lama|Je suis malade|V,S|1
+1973|Sheila|Les rois mages|V|2
+1973|Stone et Charden|L'avventura|V|1
+1974|ABBA|Waterloo|P|1
+1974|Bad Company|Can't Get Enough|R|2
+1974|Barry White|Can't Get Enough of Your Love, Babe|S|2
+1974|C. Jérôme|C'est moi c'est toi|V|2
+1974|Carl Douglas|Kung Fu Fighting|D|1
+1974|Charles Aznavour|She|S|2
+1974|Claude François|Le téléphone pleure|V,S|1
+1974|Hervé Vilard|Nous|V,S|2
+1974|Michel Fugain|Une belle histoire|V|1
+1974|Michel Sardou|Les vieux mariés|V|2
+1974|Mike Brant|Dis-lui|S|2
+1974|Mud|Tiger Feet|R|2
+1974|Nicole Rieu|Je suis|V|2
+1974|Patrick Juvet|La musica|V,D|2
+1974|Ringo|Elle, je ne pense qu'à ça|V|2
+1974|Serge Reggiani|Il suffirait de presque rien|V|2
+1974|Sheila|Les gondoles à Venise|V|2
+1974|Sylvie Vartan|Bye bye Leroy Brown|V|2
+1975|10cc|I'm Not in Love|S|2
+1975|Alain Souchon|J'ai dix ans|V|2
+1975|Barry White|You're the First, the Last, My Everything|D,S|1
+1975|Bay City Rollers|Bye Bye Baby|P|2
+1975|Bee Gees|Jive Talkin'|D|2
+1975|Bruce Springsteen|Born to Run|R|2
+1975|Frédéric François|Je t'aime à l'italienne|V,S|2
+1975|Gloria Gaynor|Never Can Say Goodbye|D|2
+1975|Il était une fois|Que fais-tu ce soir après la fête|V|2
+1975|Joe Dassin|L'été indien|V,S|1
+1975|Joe Dassin|Ça va pas changer le monde|V,S|2
+1975|KC and the Sunshine Band|That's the Way (I Like It)|D|1
+1975|Maxime Le Forestier|San Francisco|V|1
+1975|Michel Sardou|Le France|V|2
+1975|Patrick Topaloff|J'ai bien mangé, j'ai bien bu|V|2
+1975|Pierre Bachelet|Elle est d'ailleurs|V|1
+1975|Queen|Bohemian Rhapsody|R|1
+1976|ABBA|Dancing Queen|D,P|1
+1976|ABBA|Fernando|S,P|2
+1976|Alain Souchon|Allô maman bobo|V|1
+1976|Boney M.|Daddy Cool|D|1
+1976|Boney M.|Sunny|D|2
+1976|Bonnie Tyler|Lost in France|R,S|2
+1976|Claude François|Cette année-là|V,D|1
+1976|Diana Ross|Love Hangover|D|2
+1976|Eagles|Hotel California|R|1
+1976|Elton John & Kiki Dee|Don't Go Breaking My Heart|P|2
+1976|Elton John|Sorry Seems to Be the Hardest Word|S|2
+1976|Gérard Lenorman|Voici les clés|V|2
+1976|Jean-Michel Jarre|Oxygène (Part IV)|P|2
+1976|Johnny Hallyday|Gabrielle|R|1
+1976|Julien Clerc|Femmes je vous aime|V|2
+1976|Laurent Voulzy|Rockollection|V,R|1
+1976|Michel Delpech|Le chasseur|V|2
+1976|Michel Sardou|La java de Broadway|V|2
+1976|Patrick Juvet|Où sont les femmes ?|V,D|1
+1976|Plastic Bertrand|Ça plane pour moi|R|1
+1976|Sheila|Love Me Baby|D|2
+1976|Wings|Silly Love Songs|P|2
+1977|ABBA|Knowing Me, Knowing You|P|2
+1977|Bee Gees|How Deep Is Your Love|S|1
+1977|Bee Gees|Stayin' Alive|D|1
+1977|Belle Époque|Black Is Black|D|2
+1977|Boney M.|Ma Baker|D|1
+1977|Bonnie Tyler|It's a Heartache|R,S|2
+1977|Cerrone|Supernature|D|2
+1977|Claude François|Magnolias for Ever|V,D|1
+1977|Dalida|Salma ya salama|V|2
+1977|Daniel Balavoine|Le chanteur|V,P|1
+1977|David Bowie|Heroes|R|2
+1977|Donna Summer|I Feel Love|D|1
+1977|Earth, Wind & Fire|Fantasy|D|2
+1977|Elvis Presley|Way Down|R|2
+1977|Fleetwood Mac|Dreams|R,P|2
+1977|Gilbert Bécaud|L'indifférence|V|2
+1977|Joe Dassin|Et si tu n'existais pas|S,V|1
+1977|Lynyrd Skynyrd|Sweet Home Alabama|R|1
+1977|Michel Sardou|Je vais t'aimer|V,S|1
+1977|Patrick Hernandez|Born to Be Alive|D|1
+1977|Plastic Bertrand|Bambino|R|2
+1977|Queen|We Are the Champions|R|1
+1977|Queen|We Will Rock You|R|1
+1977|Sex Pistols|God Save the Queen|R|2
+1977|Space|Magic Fly|D|2
+1977|Téléphone|Anna|R|2
+1977|Téléphone|Hygiaphone|R|2
+1977|Village People|San Francisco (You've Got Me)|D|2
+1977|Yves Duteil|Prendre un enfant|V,S|2
+1978|Alain Souchon|Toto 30 ans, rien que du malheur|V|2
+1978|Bee Gees|Night Fever|D|1
+1978|Bob Marley|Is This Love|P|2
+1978|Boney M.|Rasputin|D|1
+1978|Boney M.|Rivers of Babylon|D|1
+1978|Chic|Le Freak|D|1
+1978|Claude François|Alexandrie Alexandra|V,D|1
+1978|Dalida|Laissez-moi danser (Monday Tuesday)|D,V|1
+1978|Dire Straits|Sultans of Swing|R|1
+1978|Earth, Wind & Fire|September|D|1
+1978|Gloria Gaynor|I Will Survive|D|1
+1978|Gérard Lenorman|Gentil dauphin triste|V|2
+1978|Jean-Jacques Goldman|Je ne vous parlerai pas d'elle|V|2
+1978|John Travolta & Olivia Newton-John|You're the One That I Want|P|1
+1978|Julien Clerc|Ma préférence|S|2
+1978|Kate Bush|Wuthering Heights|P|2
+1978|Michel Sardou|En chantant|V|1
+1978|Patrick Hernandez|Disco Queen|D|2
+1978|Rod Stewart|Da Ya Think I'm Sexy?|D,R|1
+1978|Sheila & B. Devotion|Singin' in the Rain|D|2
+1978|Starmania|Les uns contre les autres|V|2
+1978|Toto|Hold the Line|R|2
+1978|Village People|Y.M.C.A.|D|1
+1979|ABBA|Gimme! Gimme! Gimme!|D,P|1
+1979|AC/DC|Highway to Hell|R|1
+1979|Alain Bashung|Gaby oh Gaby|R,V|1
+1979|Amii Stewart|Knock on Wood|D|2
+1979|Bee Gees|Tragedy|D|2
+1979|Bernard Lavilliers|Stand the Ghetto|V|2
+1979|Chic|Good Times|D|2
+1979|Francis Cabrel|Je l'aime à mourir|S,V|1
+1979|Gloria Gaynor|I Am What I Am|D|2
+1979|Kiss|I Was Made for Lovin' You|R,D|1
+1979|Lio|Banana Split|V,P|1
+1979|Marie Myriam|L'oiseau et l'enfant|V|2
+1979|Michael Jackson|Don't Stop 'Til You Get Enough|D|1
+1979|Patrick Coutin|J'aime regarder les filles|R,V|1
+1979|Patrick Juvet|I Love America|D|2
+1979|Pink Floyd|Another Brick in the Wall|R|1
+1979|Sheila|Spacer|D|2
+1979|Sister Sledge|We Are Family|D|1
+1979|Supertramp|Breakfast in America|R|2
+1979|Supertramp|Goodbye Stranger|R|2
+1979|Supertramp|The Logical Song|R|1
+1979|The Buggles|Video Killed the Radio Star|P|1
+1979|The Clash|London Calling|R|2
+1979|The Police|Message in a Bottle|R|1
+1979|Village People|Go West|D|2
+1979|Village People|In the Navy|D|2
+1980|ABBA|The Winner Takes It All|S,P|1
+1980|AC/DC|Back in Black|R|1
+1980|Alain Bashung|Vertige de l'amour|R,V|1
+1980|Blondie|Call Me|R,P|1
+1980|Daniel Balavoine|Je ne suis pas un héros|V,R|1
+1980|Diana Ross|Upside Down|D|1
+1980|Francis Cabrel|L'encre de tes yeux|S,V|1
+1980|Gérard Blanchard|Rock amadour|R,V|2
+1980|Jean-Patrick Capdevielle|Quand t'es dans le désert|R,V|2
+1980|Kool & the Gang|Celebration|D|1
+1980|Lio|Amoureux solitaires|P,V|1
+1980|Michel Berger|Quelques mots d'amour|V,S|2
+1980|Michel Sardou|Les lacs du Connemara|V|1
+1980|Pink Floyd|Comfortably Numb|R|2
+1980|Queen|Another One Bites the Dust|R,D|1
+1980|Renaud|Marche à l'ombre|V,R|1
+1980|The Korgis|Everybody's Got to Learn Sometime|S|2
+1980|The Police|Don't Stand So Close to Me|R|2
+1980|Téléphone|Ça (c'est vraiment toi)|R|1
+1981|Alain Souchon|On avance|V|2
+1981|Bernard Lavilliers|Pigalle la blanche|V|2
+1981|Dalida|Mourir sur scène|V,S|2
+1981|Gilbert Montagné|On va s'aimer|V|1
+1981|Indochine|L'aventurier|R,P|1
+1981|Jacques Higelin|Pars|V|2
+1981|Jean-Jacques Goldman|Il suffira d'un signe|R,V|1
+1981|Jean-Luc Lahaye|Femme que j'aime|S,V|2
+1981|Julio Iglesias|Je n'ai pas changé|S|2
+1981|Kim Carnes|Bette Davis Eyes|P|2
+1981|Kim Wilde|Kids in America|P,R|1
+1981|Kool & the Gang|Get Down On It|D|2
+1981|Laurent Voulzy|Belle-Île-en-Mer, Marie-Galante|V|1
+1981|Pierre Bachelet|Les corons|V|1
+1981|Plastic Bertrand|Hula Hoop|V|2
+1981|Richard Sanderson|Reality|S|1
+1981|Soft Cell|Tainted Love|P|1
+1981|Starshooter|Machine à laver|R|2
+1981|The Human League|Don't You Want Me|P|2
+1981|Téléphone|Un autre monde|R|1
+1982|Bob Marley|Buffalo Soldier|P|2
+1982|Daniel Balavoine|Vivre ou survivre|V|2
+1982|Dexys Midnight Runners|Come On Eileen|P,R|1
+1982|Herbert Léonard|Puissance et gloire|V|2
+1982|Jean-Jacques Goldman|Quand la musique est bonne|R,V|1
+1982|Kim Wilde|Cambodia|P|2
+1982|Les Forbans|Chante|V,R|2
+1982|Michael Jackson|Billie Jean|P,D|1
+1982|Patrick Bruel|Marre de cette nana-là|V|2
+1982|Peter Gabriel|Shock the Monkey|R|2
+1982|Phil Collins|You Can't Hurry Love|P|2
+1982|Rose Laurens|Africa|P,V|1
+1982|Sabine Paturel|Les bêtises|V|1
+1982|Survivor|Eye of the Tiger|R|1
+1982|Toto|Africa|R,P|1
+1983|Al Bano & Romina Power|Felicità|V,P|1
+1983|Bananarama|Cruel Summer|P|2
+1983|Bonnie Tyler|Total Eclipse of the Heart|S,R|1
+1983|Culture Club|Karma Chameleon|P|1
+1983|Cyndi Lauper|Girls Just Want to Have Fun|P|1
+1983|Daniel Balavoine|Pour la femme veuve qui s'éveille|V|2
+1983|David Bowie|Let's Dance|P,R|1
+1983|Elli et Jacno|Main dans la main|P|2
+1983|Eurythmics|Sweet Dreams (Are Made of This)|P|1
+1983|Gazebo|I Like Chopin|P,S|1
+1983|Indochine|Trois nuits par semaine|R,P|1
+1983|Irene Cara|Flashdance... What a Feeling|D,P|1
+1983|Jean-Jacques Goldman|Comme toi|V,S|1
+1983|Jean-Jacques Goldman|Encore un matin|R,V|1
+1983|Kajagoogoo|Too Shy|P|2
+1983|Lionel Richie|All Night Long|D,P|1
+1983|Michael Jackson|Beat It|R,P|1
+1983|Michael Jackson|Thriller|P,D|1
+1983|Michel Sardou|Être une femme|V|1
+1983|Peter & Sloane|Besoin de rien, envie de toi|V,S|1
+1983|Philippe Lafontaine|Cœur de loup|V|2
+1983|Renaud|Morgane de toi|V,S|1
+1983|Spandau Ballet|True|S|2
+1983|Stevie Wonder|Ebony and Ivory|P|2
+1983|The Police|Every Breath You Take|R,S|1
+1984|Alphaville|Big in Japan|P|2
+1984|Alphaville|Forever Young|S,P|2
+1984|Bronski Beat|Smalltown Boy|P|2
+1984|Bruce Springsteen|Born in the U.S.A.|R|1
+1984|Cookie Dingler|Femme libérée|V|1
+1984|Daniel Balavoine|Sauver l'amour|V|2
+1984|Den Harrow|Future Brain|D|2
+1984|Duran Duran|The Reflex|P|2
+1984|France Gall|Débranche|P,V|2
+1984|Frankie Goes to Hollywood|Relax|P|1
+1984|Gilbert Montagné|Les sunlights des tropiques|V,D|2
+1984|Jean-Jacques Goldman|Envole-moi|R,V|1
+1984|Jean-Jacques Goldman|Je te donne|V|1
+1984|Jean-Luc Lahaye|Papa chanteur|V|2
+1984|Jeanne Mas|Toute première fois|P,V|1
+1984|Kenny Loggins|Footloose|R,P|1
+1984|Kim Wilde|You Keep Me Hangin' On|P|2
+1984|Laura Branigan|Self Control|P|1
+1984|Lionel Richie|Hello|S|1
+1984|Madonna|Like a Virgin|P|1
+1984|Michel Sardou|Musulmanes|V|2
+1984|Murray Head|One Night in Bangkok|P|2
+1984|Mylène Farmer|Maman a tort|P,V|2
+1984|Prince|Purple Rain|R,S|1
+1984|Ray Parker Jr.|Ghostbusters|P,D|1
+1984|Rita Mitsouko|Marcia Baila|P,V|1
+1984|Stevie Wonder|I Just Called to Say I Love You|S,P|1
+1984|Talk Talk|Such a Shame|P|2
+1984|Toto Cutugno|L'Italiano|V,P|1
+1984|Vanessa Paradis|Joe le taxi|P,V|1
+1984|Wham!|Last Christmas|P|1
+1984|Wham!|Wake Me Up Before You Go-Go|P|1
+1985|Baltimora|Tarzan Boy|P,D|1
+1985|Chanteurs sans frontières|Éthiopie|V|2
+1985|Daniel Balavoine|L'Aziza|V,P|1
+1985|Daniel Balavoine|Tous les cris les S.O.S.|S,V|1
+1985|Dire Straits|Brothers in Arms|R,S|2
+1985|Dire Straits|Money for Nothing|R|1
+1985|Eddy Mitchell|Couleur menthe à l'eau|V|2
+1985|Gilbert Montagné|Sous le soleil des tropiques|V|2
+1985|Gold|Capitaine abandonné|P,V|1
+1985|Gold|Plus près des étoiles|P,V|1
+1985|Images|Love Emotion|P|2
+1985|Indochine|3e sexe|R,P|1
+1985|Jakie Quartz|Mise au point|P|2
+1985|Jean-Jacques Goldman|Américain|R|2
+1985|Jean-Jacques Goldman|Je marche seul|R,V|1
+1985|Jeanne Mas|En rouge et noir|P,V|1
+1985|Jeanne Mas|Johnny Johnny|P|2
+1985|Johnny Hallyday|Quelque chose de Tennessee|S,V|1
+1985|Laroche Valmont|T'as le look coco|V|1
+1985|Laurent Voulzy|Les nuits sans Kim Wilde|V|2
+1985|Les Enfoirés|La chanson des restos|V|2
+1985|Madonna|Into the Groove|D,P|1
+1985|Michel Sardou|Chanteur de jazz|V|2
+1985|Modern Talking|You're My Heart, You're My Soul|D,P|1
+1985|Mylène Farmer|Libertine|P|1
+1985|Opus|Live Is Life|R|1
+1985|Patrick Bruel|Comment ça va pas ?|V|2
+1985|Patrick Sébastien|Les sardines|V|2
+1985|Paul Hardcastle|19|P|2
+1985|Phil Collins|One More Night|S|2
+1985|Rose Laurens|Quand tu pars|V|2
+1985|Ryan Paris|Dolce Vita|P,D|1
+1985|Sabine Paturel|P'tit con|V|2
+1985|Sandra|Maria Magdalena|P,D|2
+1985|Simple Minds|Don't You (Forget About Me)|R|1
+1985|Tears for Fears|Everybody Wants to Rule the World|P|1
+1985|Tina Turner|We Don't Need Another Hero|R,P|2
+1985|USA for Africa|We Are the World|P,S|1
+1985|Viktor Lazlo|Canoë rose|P|2
+1985|a-ha|Take On Me|P|1
+1985|Étienne Daho|Week-end à Rome|P|2
+1986|Bananarama|Venus|P,D|1
+1986|Berlin|Take My Breath Away|S|1
+1986|Bon Jovi|Livin' on a Prayer|R|1
+1986|Bruce Hornsby|The Way It Is|P|2
+1986|Charlélie Couture|Comme un avion sans aile|R,V|1
+1986|Desireless|Voyage voyage|P,D|1
+1986|Début de Soirée|Nuit de folie|D,V|1
+1986|Eddy Mitchell|Il ne rentre pas ce soir|V|2
+1986|Europe|The Final Countdown|R|1
+1986|Gold|Calicoba|P|2
+1986|Gold|Ville de lumière|P,V|2
+1986|Herbert Léonard|Pour le plaisir|V|1
+1986|Images|Corps à corps|P|2
+1986|Images|Les démons de minuit|P,D|1
+1986|Jean-Jacques Goldman|Là-bas|V|2
+1986|Jean-Pierre Mader|Macumba|P,V|1
+1986|Madonna|La Isla Bonita|P|1
+1986|Madonna|Papa Don't Preach|P|2
+1986|Modern Talking|Brother Louie|D,P|1
+1986|Mylène Farmer|Tristana|P|2
+1986|Peter Gabriel|Sledgehammer|R,P|2
+1986|Run-DMC|Walk This Way|R|2
+1986|Samantha Fox|Touch Me|P|2
+1986|Whitney Houston|Greatest Love of All|S|2
+1987|Bananarama|I Heard a Rumour|P|2
+1987|Bill Medley & Jennifer Warnes|(I've Had) The Time of My Life|P,S|1
+1987|Christophe|Succès fou|V|2
+1987|Elsa|T'en va pas|V,S|1
+1987|George Michael|Faith|P|2
+1987|Guesch Patti|Étienne|P|2
+1987|Jean-Jacques Goldman|Elle a fait un bébé toute seule|V|1
+1987|Johnny Hallyday|Laura|R|2
+1987|Les Rita Mitsouko|C'est comme ça|R,P|1
+1987|Les Rita Mitsouko|Les histoires d'A.|P|2
+1987|Licence IV|Viens boire un p'tit coup à la maison|V|1
+1987|Los Lobos|La Bamba|R|1
+1987|Michael Jackson|Bad|P|1
+1987|Mory Kanté|Yé ké yé ké|P,D|1
+1987|Mylène Farmer|Sans contrefaçon|P|1
+1987|Patricia Kaas|Mademoiselle chante le blues|V|1
+1987|Patrick Bruel|Casser la voix|V|1
+1987|Patrick Bruel|Place des grands hommes|V|1
+1987|Patrick Swayze|She's Like the Wind|S|2
+1987|Pet Shop Boys|It's a Sin|P|2
+1987|Rick Astley|Never Gonna Give You Up|P|1
+1987|Sabrina|Boys (Summertime Love)|D,P|1
+1987|U2|With or Without You|R,S|1
+1987|Whitney Houston|I Wanna Dance with Somebody|P,D|1
+1988|Bobby McFerrin|Don't Worry, Be Happy|P|1
+1988|Bros|When Will I Be Famous?|P|2
+1988|David & Jonathan|Gwendoline|V|2
+1988|Elsa|Jour de neige|V|2
+1988|Francis Cabrel|Encore et encore|V|2
+1988|Francis Cabrel|Petite Marie|S,V|1
+1988|Gipsy Kings|Bamboléo|V,P|1
+1988|Gipsy Kings|Djobi Djoba|V,P|1
+1988|Indochine|Tes yeux noirs|R|2
+1988|Jean-Jacques Goldman|Puisque tu pars|V,S|1
+1988|Joe Cocker|Unchain My Heart|R|2
+1988|Johnny Hallyday|Je te promets|S,V|1
+1988|Kylie Minogue|I Should Be So Lucky|P|2
+1988|Michael Jackson|Smooth Criminal|P,D|1
+1988|Mylène Farmer|Ainsi soit je...|S|2
+1988|Mylène Farmer|Pourvu qu'elles soient douces|P|1
+1988|Patricia Kaas|Mon mec à moi|V|1
+1988|Patrick Bruel|Alors regarde|V,S|1
+1988|Phil Collins|A Groovy Kind of Love|S|2
+1988|Tracy Chapman|Talkin' 'bout a Revolution|P|2
+1988|Vanessa Paradis|Marilyn & John|P|2
+1989|Alain Souchon|Quand j'serai KO|V|2
+1989|Black Box|Ride on Time|D|2
+1989|Bon Jovi|Bad Medicine|R|2
+1989|David & Jonathan|Est-ce que tu viens pour les vacances ?|V|1
+1989|Elsa|Quelque chose dans mon cœur|V|2
+1989|Florent Pagny|N'importe quoi|V|2
+1989|Gloria Estefan|Don't Wanna Lose You|S|2
+1989|Guns N' Roses|Sweet Child o' Mine|R|1
+1989|Indochine|Le baiser|R|2
+1989|Jean-Jacques Goldman|Il changeait la vie|V|2
+1989|Jean-Pierre François|Je te survivrai|V|2
+1989|Kaoma|Lambada|D,P|1
+1989|Les Négresses Vertes|Zobi la mouche|V|2
+1989|Madonna|Like a Prayer|P|1
+1989|Mano Negra|King Kong Five|R|2
+1989|Mano Negra|Mala vida|R|2
+1989|Michel Sardou|Le bac G|V|2
+1989|Milli Vanilli|Girl You Know It's True|P,D|2
+1989|Mylène Farmer|À quoi je sers...|P|2
+1989|Noir Désir|Aux sombres héros de l'amer|R|1
+1989|Patricia Kaas|Les mannequins d'osier|V|2
+1989|Patrick Bruel|J'te l'dis quand même|S,V|2
+1989|Phil Collins|Another Day in Paradise|S,P|1
+1989|Roxette|Listen to Your Heart|R,S|2
+1989|Roxette|The Look|R,P|2
+1989|Technotronic|Pump Up the Jam|D|1
+1989|Tina Turner|The Best|R,P|1
+1989|Tom Novembre|Toute seule à une fête|V|2
+1989|Vanessa Paradis|Tandem|P|2
+1990|Deee-Lite|Groove Is in the Heart|D|2
+1990|Enigma|Sadeness (Part I)|P|1
+1990|Gipsy Kings|Volare|V|2
+1990|Indochine|Des fleurs pour Salinger|R|2
+1990|Johnny Hallyday|Diego libre dans sa tête|S|2
+1990|Les Inconnus|Auteuil, Neuilly, Passy|V|1
+1990|MC Hammer|U Can't Touch This|D,P|1
+1990|Madonna|Vogue|D,P|1
+1990|Maurane|Sur un prélude de Bach|S,V|2
+1990|Mylène Farmer|Désenchantée|P|1
+1990|Niagara|Pendant que les champs brûlent|P,R|2
+1990|Partenaire Particulier|Partenaire particulier|P|1
+1990|Patrick Bruel|Qui a le droit|V,S|1
+1990|Pauline Ester|Il fait chaud|P,V|1
+1990|Righteous Brothers|Unchained Melody|S|1
+1990|Roxette|It Must Have Been Love|S,P|1
+1990|Sinéad O'Connor|Nothing Compares 2 U|S|1
+1990|Snap!|The Power|D|1
+1990|Vanilla Ice|Ice Ice Baby|P|1
+1990|Zouk Machine|Maldòn|D|2
+1991|Bryan Adams|(Everything I Do) I Do It for You|S,R|1
+1991|C+C Music Factory|Gonna Make You Sweat|D|1
+1991|Guns N' Roses|November Rain|R,S|1
+1991|Jean-Jacques Goldman|À nos actes manqués|V|2
+1991|MC Solaar|Bouge de là|P|1
+1991|Michael Jackson|Black or White|P,R|1
+1991|Michel Sardou|Le successeur|V|2
+1991|Mylène Farmer|Je t'aime mélancolie|P|2
+1991|Mylène Farmer|Regrets|S,P|2
+1991|Nirvana|Smells Like Teen Spirit|R|1
+1991|Patricia Kaas|Entrer dans la lumière|V|2
+1991|Prince|Cream|P|2
+1991|Queen|The Show Must Go On|R|1
+1991|R.E.M.|Losing My Religion|R|1
+1991|Scorpions|Wind of Change|R,S|1
+1991|Simply Red|Stars|P|2
+1991|Stephan Eicher|Déjeuner en paix|V|2
+1991|Vanessa Paradis|Be My Baby|P|1
+1991|Zucchero|Diavolo in me|R|2
+1992|Bon Jovi|Bed of Roses|S,R|2
+1992|Boyz II Men|End of the Road|S|2
+1992|Charles & Eddie|Would I Lie to You?|P|2
+1992|Dr. Alban|It's My Life|D|1
+1992|Eric Clapton|Tears in Heaven|S|1
+1992|Felix|Don't You Want Me|D|2
+1992|Gloria Estefan|Mi tierra|P|2
+1992|Jordy|Dur dur d'être bébé !|P|1
+1992|Kris Kross|Jump|P|2
+1992|Les Innocents|L'autre Finistère|V,R|2
+1992|Liane Foly|Au fur et à mesure|V|2
+1992|Mylène Farmer|Que mon cœur lâche|P|2
+1992|Pow Wow|Le chat|V|1
+1992|Snap!|Rhythm Is a Dancer|D|1
+1992|U2|One|R,S|2
+1992|Vanessa Paradis|Sunday Mondays|P|2
+1992|Whitney Houston|I Will Always Love You|S|1
+1993|2 Unlimited|No Limit|D|1
+1993|4 Non Blondes|What's Up?|R|1
+1993|Ace of Base|All That She Wants|P|1
+1993|Ace of Base|Happy Nation|P|2
+1993|Alain Souchon|Foule sentimentale|V|1
+1993|Corona|The Rhythm of the Night|D|1
+1993|Cranberries|Zombie|R|1
+1993|Culture Beat|Mr. Vain|D|1
+1993|Francis Cabrel|Il faudra leur dire|V|2
+1993|Haddaway|Life|D|2
+1993|Haddaway|What Is Love|D|1
+1993|Jamiroquai|Too Young to Die|D|2
+1993|Jean-Jacques Goldman|Rouge|V|2
+1993|Mariah Carey|Hero|S|2
+1993|Meat Loaf|I'd Do Anything for Love|R,S|2
+1993|Nirvana|Come as You Are|R|2
+1993|Patrick Bruel|Bouge|V|2
+1993|Patrick Fiori|Mama Corsica|V|2
+1993|Toni Braxton|Breathe Again|S|2
+1993|UB40|(I Can't Help) Falling in Love with You|S,P|2
+1994|Ace of Base|The Sign|P|2
+1994|Big Mountain|Baby, I Love Your Way|S,P|2
+1994|Bon Jovi|Always|S,R|1
+1994|Bruce Springsteen|Streets of Philadelphia|S|2
+1994|Celine Dion|Pour que tu m'aimes encore|S,V|1
+1994|Celine Dion|The Power of Love|S|2
+1994|Celine Dion|Think Twice|S|2
+1994|Francis Cabrel|Octobre|S|2
+1994|IAM|Je danse le mia|P,D|1
+1994|Ice MC|It's a Rainy Day|D|2
+1994|Ini Kamoze|Here Comes the Hotstepper|P|2
+1994|Kylie Minogue|Confide in Me|P|2
+1994|La Bouche|Be My Lover|D|1
+1994|Laurent Voulzy|Le pouvoir des fleurs|V|2
+1994|Les Innocents|Un homme extraordinaire|V|2
+1994|Mariah Carey|All I Want for Christmas Is You|P|1
+1994|Mylène Farmer|California|P|2
+1994|Wet Wet Wet|Love Is All Around|S,P|1
+1994|Whigfield|Saturday Night|D|1
+1994|Youssou N'Dour & Neneh Cherry|7 Seconds|S,P|1
+1994|Zazie|Je suis un homme|V|2
+1995|Alain Bashung|Ma petite entreprise|R,V|1
+1995|Alanis Morissette|Ironic|R|2
+1995|Axelle Red|Sensualité|S|1
+1995|Billy Ze Kick|Mangez-moi ! Mangez-moi !|P|2
+1995|Celine Dion|Je sais pas|S,V|2
+1995|Coolio|Gangsta's Paradise|P|1
+1995|Dune|Hardcore Vibes|D|2
+1995|Jean-Jacques Goldman|Aïcha|V|1
+1995|Los del Río|Macarena|D,P|1
+1995|Michael Jackson|Earth Song|S|1
+1995|Michael Jackson|They Don't Care About Us|P|2
+1995|Mylène Farmer|L'instant X|P|2
+1995|Mylène Farmer|XXL|P|2
+1995|Oasis|Wonderwall|R,S|1
+1995|Ophélie Winter|Le feu qui m'attise|P|2
+1995|Queen|Too Much Love Will Kill You|S|2
+1995|Robert Miles|Children|D|1
+1995|Scatman John|Scatman (Ski-Ba-Bop-Ba-Dop-Bop)|D|1
+1995|Seal|Kiss from a Rose|S|2
+1995|Tina Arena|Aller plus haut|V|2
+1995|Tonton David|Chacun sa route|P|2
+1996|2Be3|Partir un jour|P|1
+1996|Andrea Bocelli|Con te partirò|S|2
+1996|Celine Dion|All by Myself|S|2
+1996|Doc Gynéco|Né ici|P|2
+1996|Eric Clapton|Change the World|S|2
+1996|Florent Pagny|Savoir aimer|S,V|1
+1996|Fugees|Killing Me Softly|S,P|1
+1996|Fugees|Ready or Not|P|2
+1996|Jamiroquai|Virtual Insanity|D|1
+1996|Khaled|Aïcha|V,P|1
+1996|Mark Snow|The X-Files|P|2
+1996|Native|Si tu pars|P|2
+1996|No Doubt|Don't Speak|R,S|1
+1996|Ophélie Winter|Dieu m'a donné la foi|P|2
+1996|Ophélie Winter|Shame on U|P|2
+1996|Pascal Obispo|Lucie|V|1
+1996|Spice Girls|Say You'll Be There|P|2
+1996|Spice Girls|Wannabe|P|1
+1996|Toni Braxton|Un-Break My Heart|S|1
+1996|Zazie|Zen|V|2
+1997|2Be3|Toujours là pour toi|P|2
+1997|Aqua|Barbie Girl|P,D|1
+1997|Backstreet Boys|Quit Playing Games (with My Heart)|P,S|2
+1997|Celine Dion|My Heart Will Go On|S|1
+1997|Chumbawamba|Tubthumping|R|2
+1997|Daft Punk|Da Funk|D|2
+1997|Elton John|Candle in the Wind 1997|S|1
+1997|Florent Pagny|Si tu veux m'essayer|V|2
+1997|Hanson|MMMBop|P|1
+1997|Hélène Ségara|Je vous aime adieu|S|2
+1997|Lara Fabian|Tout|S|2
+1997|Mylène Farmer|Comme j'ai mal|P|2
+1997|Puff Daddy|I'll Be Missing You|S,P|1
+1997|Ricky Martin|María|P,D|2
+1997|Robbie Williams|Angels|S|1
+1997|Spice Girls|2 Become 1|S|2
+1997|Wes|Alane|P,D|1
+1997|Will Smith|Men in Black|P|2
+1998|Aerosmith|I Don't Want to Miss a Thing|R,S|1
+1998|Backstreet Boys|Everybody (Backstreet's Back)|P|1
+1998|Brandy & Monica|The Boy Is Mine|P|2
+1998|Celine Dion|S'il suffisait d'aimer|S,V|2
+1998|Cher|Believe|D,P|1
+1998|Doc Gynéco|Nirvana|P|2
+1998|Fool's Garden|Lemon Tree|P|1
+1998|Garou, Daniel Lavoie & Patrick Fiori|Belle|V,S|1
+1998|Larusso|Tu m'oublieras|S,V|1
+1998|Les Nubians|Makeda|P|2
+1998|Lââm|Chanter pour ceux qui sont loin de chez eux|V|2
+1998|Lââm|Jamais loin de toi|V|2
+1998|Manau|La tribu de Dana|P|1
+1998|Ménélik|Bye Bye|P|2
+1998|Natalie Imbruglia|Big Mistake|P|2
+1998|Natalie Imbruglia|Torn|P|2
+1998|Notre-Dame de Paris|Le temps des cathédrales|V|2
+1998|Pascal Obispo|Millésime|V|2
+1998|Ricky Martin|The Cup of Life|P,D|1
+1998|Spice Girls|Viva Forever|S|2
+1998|Stardust|Music Sounds Better with You|D|1
+1999|Alizée|Moi... Lolita|P|1
+1999|Alliance Ethnik|Simple et funky|P|2
+1999|Assia|Elle est à toi|S|2
+1999|Backstreet Boys|I Want It That Way|P,S|1
+1999|Britney Spears|...Baby One More Time|P|1
+1999|Christina Aguilera|Genie in a Bottle|P|2
+1999|Daft Punk|Around the World|D|1
+1999|Eiffel 65|Blue (Da Ba Dee)|D|1
+1999|Emilia|Big Big World|P|2
+1999|Hélène Ségara|Il y a trop de gens qui t'aiment|S|2
+1999|Lara Fabian|Je t'aime|S|1
+1999|Les 2 Be 3|Donne|P|2
+1999|Lou Bega|Mambo No. 5|D,P|1
+1999|Louise Attaque|Je t'emmène au vent|R,V|1
+1999|Matmatah|Lambé an dro|R|2
+1999|Moby|Porcelain|P|2
+1999|Mylène Farmer|L'âme-stram-gram|P|2
+1999|Noir Désir|Le vent nous portera|R|2
+1999|Ricky Martin|Livin' la Vida Loca|P|1
+1999|Robbie Williams|She's the One|S|2
+1999|Santana|Smooth|R|2
+1999|Sinclair|Si c'est bon comme ça|V|2
+1999|Vengaboys|Boom, Boom, Boom, Boom!!|D|2
+1999|Zebda|Tomber la chemise|R,V|1
+2000|Alizée|L'alizé|P|2
+2000|Anastacia|I'm Outta Love|P|1
+2000|Bob Sinclar|I Feel for You|D|2
+2000|Britney Spears|Oops!... I Did It Again|P|1
+2000|Calogero|Aussi libre que moi|V|2
+2000|Coldplay|Yellow|R|1
+2000|Daniel Lévi|Les Dix Commandements|V|2
+2000|Dido|Thank You|S|2
+2000|Eminem|The Real Slim Shady|P|1
+2000|Garou|Seul|S,V|1
+2000|Hélène Ségara|Elle, tu l'aimes|S|2
+2000|Kelly Family|An Angel|S|2
+2000|Lara Fabian|J'y crois encore|S|2
+2000|Les Rita Mitsouko|Andy|R|2
+2000|Lââm|Petite sœur|V|2
+2000|Madonna|Music|D,P|1
+2000|Mickey 3D|Respire|R,V|2
+2000|Modjo|Lady (Hear Me Tonight)|D|1
+2000|Mylène Farmer|Optimistique-moi|P|2
+2000|Ricky Martin|She Bangs|P|2
+2000|Robbie Williams|Rock DJ|P|2
+2000|Sonique|It Feels So Good|D|2
+2000|Yannick|Ces soirées-là|D,P|1
+2001|Daft Punk|One More Time|D|1
+2001|Destiny's Child|Survivor|P|2
+2001|Garou|Sous le vent|S,V|1
+2001|Gorillaz|Clint Eastwood|P|2
+2001|Gérald De Palmas|J'en rêve encore|V,R|1
+2001|Jenifer|J'attends l'amour|P|1
+2001|Kylie Minogue|Can't Get You Out of My Head|D,P|1
+2001|Linkin Park|In the End|R|1
+2001|Lorie|Près de moi|P|2
+2001|Lorie|Toute seule|P|2
+2001|Manu Chao|Me gustas tú|P|1
+2001|Mylène Farmer|Les mots|S|2
+2001|Natasha St-Pier|Tu trouveras|S|2
+2001|Nelly Furtado|I'm Like a Bird|P|2
+2001|Robbie Williams & Nicole Kidman|Somethin' Stupid|S|2
+2001|Shaggy|It Wasn't Me|P|1
+2001|Star Academy|La musique (Angelica)|P|2
+2002|Alain Souchon|Rive gauche|V|2
+2002|Avril Lavigne|Complicated|R,P|1
+2002|Diam's|DJ|P|2
+2002|Eminem|Without Me|P|1
+2002|Jean-Louis Aubert|Alter ego|R|2
+2002|Jenifer|Au soleil|P|2
+2002|Kyo|Dernière danse|R|1
+2002|Las Ketchup|Aserejé (The Ketchup Song)|D,P|1
+2002|Lorie|J'ai besoin d'amour|P|2
+2002|Nelly ft. Kelly Rowland|Dilemma|S,P|2
+2002|Nickelback|How You Remind Me|R|2
+2002|Nolwenn Leroy|Cassé|S|2
+2002|Renaud|Docteur Renaud, Mister Renard|V|2
+2002|Renaud|Manhattan-Kaboul|S,V|1
+2002|Shakira|Whenever, Wherever|P|1
+2002|Tragédie|Hey oh|P|1
+2003|Beyoncé|Crazy in Love|P,D|1
+2003|Black Eyed Peas|Where Is the Love?|P|1
+2003|Calogero|En apesanteur|V|1
+2003|Calogero|Si seulement je pouvais lui manquer|S,V|2
+2003|Coldplay|Clocks|R|2
+2003|Corneille|Parce qu'on vient de loin|P|1
+2003|Evanescence|Bring Me to Life|R|1
+2003|Johnny Hallyday|Marie|S|2
+2003|Kyo|Le chemin|R|1
+2003|Michal|Pas toi|P|2
+2003|Natasha St-Pier|Un ange frappe à ma porte|S|2
+2003|Nolwenn Leroy|Suivre une étoile|P|2
+2003|Pascal Obispo|Fan|V|2
+2003|Raphaël|Caravane|V|1
+2003|Sean Paul|Get Busy|P|2
+2003|Sinsemilia|Tout le bonheur du monde|V|1
+2003|t.A.T.u.|All the Things She Said|P,R|2
+2004|Anastacia|Left Outside Alone|R,P|2
+2004|Bénabar|Le dîner|V|1
+2004|Calogero & Passi|Face à la mer|V|1
+2004|Calogero|Yalla|V|2
+2004|Crazy Frog|Axel F|D|1
+2004|Franz Ferdinand|Take Me Out|R|2
+2004|Grégory Lemarchal|Écris l'histoire|S,V|1
+2004|Ilona Mitrecey|Un monde parfait|P|1
+2004|Jenifer|Ma révolution|P|2
+2004|Keane|Somewhere Only We Know|R,S|2
+2004|Kyo|Je saigne encore|R|2
+2004|Lorie|Ensorcelée|P|2
+2004|M. Pokora|Showbiz|P|2
+2004|Maroon 5|This Love|P,R|2
+2004|O-Zone|Dragostea din tei|D,P|1
+2004|Patrick Bruel|Mon amant de Saint-Jean|V|2
+2004|Usher|Yeah!|P,D|1
+2005|Amel Bent|Ma philosophie|P|1
+2005|Bénabar|Maritie et Gilbert Carpentier|V|2
+2005|Daddy Yankee|Gasolina|D|1
+2005|Diam's|La boulette|P|1
+2005|Gwen Stefani|Hollaback Girl|P|2
+2005|Il Divo|Regresa a mí|S|2
+2005|James Blunt|You're Beautiful|S|1
+2005|M. Pokora|Elle me contrôle|P|2
+2005|Mattafix|Big City Life|P|2
+2005|Mylène Farmer|Fuck Them All|P|2
+2005|Shakira|La tortura|P|1
+2006|Amy Winehouse|Rehab|P|1
+2006|Booba|Pitbull|P|2
+2006|Christophe Maé|On s'attache|V|1
+2006|Christophe Willem|Double je|P|1
+2006|Gnarls Barkley|Crazy|P|1
+2006|Grand Corps Malade|Saint-Denis|V|2
+2006|Grégory Lemarchal|De temps en temps|S|2
+2006|Johnny Hallyday|Ma religion dans sa bouche|R|2
+2006|Justin Timberlake|SexyBack|P|2
+2006|Kamini|Marly-Gomont|P|1
+2006|Kenza Farah|Je me bats|P|2
+2006|Laurent Wolf|No Stress|D|1
+2006|Mika|Relax, Take It Easy|P|1
+2006|Nelly Furtado|Maneater|P|2
+2006|Pakito|Living on Video|D|1
+2006|Rihanna|SOS|D|2
+2006|Shakira|Hips Don't Lie|D,P|1
+2006|Snow Patrol|Chasing Cars|R,S|2
+2006|Vitaa|À fleur de toi|S|2
+2007|Abd al Malik|Gibraltar|P|2
+2007|Amy Macdonald|This Is the Life|P,R|1
+2007|Amy Winehouse|Back to Black|S|2
+2007|Avril Lavigne|Girlfriend|R,P|2
+2007|Christophe Maé|Il est où le bonheur|V|1
+2007|Fatal Bazooka|Fous ta cagoule|P|1
+2007|Kanye West|Stronger|P|2
+2007|Kenza Farah|Lettre du front|P|2
+2007|Mika|Grace Kelly|P|1
+2007|Rihanna|Umbrella|P|1
+2007|Sheryfa Luna|Il avait les mots|S|2
+2007|Soprano|Halla Halla|P|2
+2007|Timbaland|Apologize|S,P|1
+2007|Tokio Hotel|Monsoon|R|2
+2007|Yael Naim|New Soul|P|1
+2008|Alain Bashung|Résidents de la République|V|2
+2008|Bob Sinclar|Love Generation|D|1
+2008|Christophe Maé|Belle demoiselle|V|2
+2008|Coldplay|Viva la Vida|R,P|1
+2008|Cœur de pirate|Comme des enfants|S,V|1
+2008|Duffy|Mercy|P|2
+2008|Duffy|Warwick Avenue|S|2
+2008|Grégoire|Toi + moi|V|1
+2008|Julien Doré|Les limites|P|2
+2008|Katy Perry|I Kissed a Girl|P|1
+2008|Lady Gaga|Just Dance|D|1
+2008|Lady Gaga|Poker Face|P,D|1
+2008|Leona Lewis|Bleeding Love|S|2
+2009|Beyoncé|Halo|S|1
+2009|Black Eyed Peas|Boom Boom Pow|D|2
+2009|Black Eyed Peas|I Gotta Feeling|D,P|1
+2009|Charlie Winston|Like a Hobo|P|1
+2009|Collectif Métissé|Laisse-toi aller bébé|D|2
+2009|David Guetta ft. Akon|Sexy Bitch|D|2
+2009|David Guetta ft. Kelly Rowland|When Love Takes Over|D|1
+2009|Joyce Jonathan|Pas besoin de toi|P|2
+2009|Kings of Leon|Use Somebody|R|2
+2009|Lady Gaga|Bad Romance|P,D|1
+2009|Michael Jackson|Man in the Mirror|P|2
+2009|Muse|Uprising|R|2
+2009|Mylène Farmer|Dégénération|P|2
+2009|Pink|So What|R|2
+2009|Shakira|She Wolf|D|2
+2010|Amel Bent|Je reste|P|2
+2010|Ben l'Oncle Soul|Soulman|P|2
+2010|Bruno Mars|Just the Way You Are|S,P|1
+2010|Christophe Willem|Berlin|P|2
+2010|Indochine|Little Dolls|R|2
+2010|Inna|Hot|D|2
+2010|Katy Perry|California Gurls|P|2
+2010|Ke$ha|Tik Tok|P,D|1
+2010|Lady Gaga|Alejandro|P|2
+2010|M. Pokora|Juste une photo de toi|S|2
+2010|Mylène Farmer|Oui mais... non|P|2
+2010|Rihanna|Only Girl (In the World)|D|2
+2010|Sexion d'Assaut|Désolé|P|1
+2010|Shakira|Waka Waka (This Time for Africa)|P,D|1
+2010|Stromae|Alors on danse|D,P|1
+2010|Yolanda Be Cool|We No Speak Americano|D|1
+2010|Zaz|Je veux|V|1
+2011|Adele|Rolling in the Deep|P|1
+2011|Adele|Someone Like You|S|1
+2011|Bruno Mars|Grenade|P|2
+2011|Christophe Maé|Dingue, dingue, dingue|V|2
+2011|Coldplay|Paradise|R|2
+2011|David Guetta ft. Sia|Titanium|D|1
+2011|Gotye|Somebody That I Used to Know|P|1
+2011|Jennifer Lopez|On the Floor|D|1
+2011|LMFAO|Party Rock Anthem|D|1
+2011|Michel Teló|Ai se eu te pego!|D|1
+2011|Mylène Farmer|Lonely Lisa|P|2
+2011|Nolwenn Leroy|Tri Martolod|V|2
+2011|Pitbull|Give Me Everything|D|2
+2011|Rihanna|We Found Love|D|1
+2011|Sexion d'Assaut|Avant qu'elle parte|P|1
+2011|Shy'm|Et alors !|P|2
+2011|Zaz|Les passants|V|2
+2012|Adele|Skyfall|S|2
+2012|Asaf Avidan|One Day / Reckoning Song|P|1
+2012|Bénabar|Politiquement correct|V|2
+2012|Carly Rae Jepsen|Call Me Maybe|P|1
+2012|Gusttavo Lima|Balada (Tchê tcherere tchê tchê)|D|1
+2012|Kavinsky|Nightcall|D|2
+2012|Lana Del Rey|Video Games|S|2
+2012|Lykke Li|I Follow Rivers|P|2
+2012|Psy|Gangnam Style|D|1
+2012|Psy|Gentleman|D|2
+2012|Rihanna|Diamonds|S,P|1
+2012|Sexion d'Assaut|Ma direction|P|2
+2012|Shy'm|Et si...|P|2
+2012|Tal|Le sens de la vie|P|2
+2013|Avicii|Wake Me Up|D|1
+2013|Bastille|Pompeii|P|2
+2013|Calogero|Un jour au mauvais endroit|V|2
+2013|Christine and the Queens|Saint Claude|P|2
+2013|Daft Punk|Get Lucky|D|1
+2013|Imagine Dragons|Radioactive|R|1
+2013|Indila|Dernière danse|P,S|1
+2013|John Newman|Love Me Again|P|2
+2013|Lorde|Royals|P|2
+2013|Maître Gims|Bella|P|1
+2013|Maître Gims|J'me tire|P|1
+2013|Passenger|Let Her Go|S|1
+2013|Pharrell Williams|Happy|P|1
+2013|Robin Thicke|Blurred Lines|P|2
+2013|Shakira|Can't Remember to Forget You|P|2
+2013|Stromae|Formidable|P,S|1
+2013|Stromae|Papaoutai|P,D|1
+2013|Zaz|On ira|V|2
+2014|Black M|Sur ma route|P|1
+2014|Calvin Harris|Summer|D|2
+2014|Christine and the Queens|Christine|P|1
+2014|Clean Bandit|Rather Be|D|2
+2014|Ed Sheeran|Thinking Out Loud|S|1
+2014|Fauve|Blizzard|V|2
+2014|Indila|Tourner dans le vide|P|1
+2014|John Legend|All of Me|S|1
+2014|Kendji Girac|Andalouse|P,D|1
+2014|Kendji Girac|Color Gitano|P,D|1
+2014|Kids United|Un monde meilleur|V|2
+2014|Louane|Jour 1|P|1
+2014|Magic System|Magic in the Air|D|1
+2014|Mark Ronson ft. Bruno Mars|Uptown Funk|D,P|1
+2014|Pharrell Williams|Freedom|P|2
+2014|Sia|Chandelier|P|1
+2014|Stromae|Tous les mêmes|P|1
+2014|Taylor Swift|Shake It Off|P|1
+2015|Adele|Hello|S|1
+2015|Christine and the Queens|Tilted|P|2
+2015|Ed Sheeran|Photograph|S|2
+2015|Feder|Goodbye|D|2
+2015|Justin Bieber|Sorry|P|1
+2015|Kendji Girac|Conmigo|P,D|2
+2015|Kids United|On écrit sur les murs|V|2
+2015|Kygo|Firestone|D|2
+2015|Lost Frequencies|Are You with Me|D|1
+2015|Louane|Avenir|P|1
+2015|Major Lazer & DJ Snake|Lean On|D|1
+2015|Maître Gims|Est-ce que tu m'aimes ?|S,P|1
+2015|Mika|Boum boum boum|P|2
+2015|OMI|Cheerleader|P|1
+2015|Vianney|Pas là|V|2
+2015|Wiz Khalifa|See You Again|S|1
+2016|Amir|J'ai cherché|P|1
+2016|Calogero|Je joue de la musique|V|2
+2016|Imany|Don't Be So Shy|P|1
+2016|Jain|Come|P|2
+2016|Jain|Makeba|P|1
+2016|Julien Doré|Le lac|V|2
+2016|Lartiste|Chocolat|P|2
+2016|Major Lazer|Cold Water|D|2
+2016|Maître Gims|Sapés comme jamais|P|1
+2016|Mike Posner|I Took a Pill in Ibiza|P|2
+2016|Soprano|Cosmo|P|1
+2016|Soprano|En feu|P|2
+2016|Twenty One Pilots|Stressed Out|R|2
+2016|Vianney|Je m'en vais|V|1
+2017|Amir|On dirait|P|2
+2017|Bigflo & Oli|Dommage|P|1
+2017|Calvin Harris|Feels|D|2
+2017|Claudio Capéo|Un homme debout|V|1
+2017|Damso|Macarena|P|2
+2017|Dua Lipa|New Rules|P|1
+2017|Ed Sheeran|Perfect|S|1
+2017|Ed Sheeran|Shape of You|P,D|1
+2017|Imagine Dragons|Believer|R|1
+2017|Kendji Girac|Tiago|P|2
+2017|Lartiste|Mafiosa|P|2
+2017|Luis Fonsi ft. Daddy Yankee|Despacito|P,D|1
+2017|Ofenbach|Be Mine|D|2
+2017|Orelsan|Basique|P|1
+2017|Orelsan|Tout va bien|P|2
+2017|Soprano|Mon précieux|P|2
+2017|Vitaa & Claudio Capéo|Un peu de rêve|V|2
+2018|Angèle|Balance ton quoi|P|1
+2018|Angèle|La loi de Murphy|P|1
+2018|Aya Nakamura|Djadja|P,D|1
+2018|Bigflo & Oli|Demain|P|2
+2018|Black Eyed Peas ft. J Balvin|Ritmo|D|2
+2018|Calogero|On fait comme si|V|2
+2018|Clara Luciani|Respire encore|P|2
+2018|Clean Bandit|Solo|D|2
+2018|Dadju|Reine|P,S|1
+2018|Dua Lipa & Calvin Harris|One Kiss|D|1
+2018|Eddy de Pretto|Kid|P|2
+2018|Indochine|La vie est belle|R|2
+2018|Lady Gaga & Bradley Cooper|Shallow|S|1
+2018|Vegedream|Ramenez la coupe à la maison|V|1
+2019|Angèle|Tout oublier|P,D|1
+2019|Aya Nakamura|Pookie|P|1
+2019|Bilal Hassani|Roi|P|2
+2019|Billie Eilish|Bad Guy|P|1
+2019|Juliette Armanet|L'amour en solitaire|V,S|2
+2019|Kendji Girac|Habibi|P|2
+2019|Lewis Capaldi|Someone You Loved|S|1
+2019|Lizzo|Juice|P|2
+2019|Lomepal|Trop beau|P|2
+2019|Maître Gims|Hola Señorita|P|2
+2019|Shawn Mendes & Camila Cabello|Señorita|P|2
+2019|Soolking|Dalida|P|2
+2019|Tones and I|Dance Monkey|P|1
+2019|Vitaa & Slimane|Ça va ça vient|S|1
+2020|Angèle|Oui ou non|P|2
+2020|Aya Nakamura|Jolie nana|P|2
+2020|Claudio Capéo|Riche|V|2
+2020|Dua Lipa|Don't Start Now|D|1
+2020|Dua Lipa|Levitating|D,P|2
+2020|Gims & Dhurata Dora|Only You|P|2
+2020|Grand Corps Malade & Camille Lellouche|Mais je t'aime|S|1
+2020|Harry Styles|Watermelon Sugar|P|2
+2020|Joel Corry|Head & Heart|D|2
+2020|Jul|Bande organisée|P|1
+2020|SAINt JHN|Roses (Imanbek Remix)|D|2
+2020|The Weeknd|Blinding Lights|P,D|1
+2020|Topic & A7S|Breaking Me|D|2
+2020|Vitaa & Slimane|Avant toi|S|1
+2021|Amel Bent & Hatik|1 2 3|P|2
+2021|Barbara Pravi|Voilà|V,S|1
+2021|Clara Luciani|Le reste|P,D|1
+2021|Ed Sheeran|Bad Habits|P,D|1
+2021|Elton John & Dua Lipa|Cold Heart (Pnau Remix)|D|1
+2021|Glass Animals|Heat Waves|P|2
+2021|Juliette Armanet|Le dernier jour du disco|D,V|1
+2021|Lil Nas X|Montero (Call Me by Your Name)|P|2
+2021|Mentissa|Et bam|P|2
+2021|Måneskin|Beggin'|R|1
+2021|Måneskin|Zitti e buoni|R|2
+2021|Ninho|Jefe|P|2
+2021|Olivia Rodrigo|Drivers License|S|1
+2022|Angèle|Bruxelles je t'aime|P|2
+2022|David Guetta & Bebe Rexha|I'm Good (Blue)|D|1
+2022|Gazo & Tiakola|Notre-Dame|P|2
+2022|Harry Styles|As It Was|P|1
+2022|Indochine|Nos célébrations|R|2
+2022|Kate Bush|Running Up That Hill|P|2
+2022|Lizzo|About Damn Time|D|2
+2022|Mylène Farmer|L'Emprise|P|2
+2022|Pierre de Maere|Un jour je marierai un ange|P|2
+2022|Shakira & Bizarrap|Bzrp Music Sessions, Vol. 53|P|2
+2022|Stromae|L'enfer|S|2
+2022|Stromae|Santé|P,D|1
+2022|Zaho de Sagazan|La symphonie des éclairs|S|1
+2023|Aya Nakamura|Doudou|P|2
+2023|Billie Eilish|What Was I Made For?|S|2
+2023|Calvin Harris & Ellie Goulding|Miracle|D|2
+2023|Doja Cat|Paint the Town Red|P|2
+2023|Joé Dwèt Filé|4 Kampé|P|2
+2023|Kendji Girac & Gims|Dernier métro|P|2
+2023|Kylie Minogue|Padam Padam|D|2
+2023|Loreen|Tattoo|P|1
+2023|Miley Cyrus|Flowers|P|1
+2023|Rema & Selena Gomez|Calm Down|P|1
+2023|Slimane|Mon amour|S|1
+2023|Theodora|Kongolese sous BBL|P|2
+2023|Zaho de Sagazan|Tristesse|S|2
+2024|Benson Boone|Beautiful Things|R,S|1
+2024|Billie Eilish|Birds of a Feather|P,S|1
+2024|Gims|Ciel|P|1
+2024|Lady Gaga & Bruno Mars|Die with a Smile|S|1
+2024|Pierre Garnier|Ceux qu'on était|V|1
+2024|Rose & Bruno Mars|APT.|P|1
+2024|Sabrina Carpenter|Espresso|P|1
+2024|Santa|Popcorn salé|P,S|1
+2024|Teddy Swims|Lose Control|S|2
+2025|Alex Warren|Ordinary|S|2
+2025|Ed Sheeran|Azizam|P|2
+2025|Lady Gaga|Abracadabra|P,D|2
+2025|Louane|Maman|S,V|1
+2025|Santa|Recommence-moi|S|2
