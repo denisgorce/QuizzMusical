@@ -6,11 +6,11 @@ import java.util.List;
 /** Playlists : genre (code) ou décennie. Une chanson peut appartenir à plusieurs playlists. */
 public final class Styles {
     public static final String[] KEYS = {"random", "intemporel", "pop", "rock", "disco", "slow", "variete", "60", "70", "80", "90", "2000", "2010", "2020",
-            "inter", "en", "es", "it", "instru", "ru", "classique"};
+            "film", "inter", "en", "es", "it", "instru", "ru", "classique"};
     public static final String[] LABELS = {"Random", "Tubes français intemporels", "Pop", "Rock", "Disco / Dance", "Slow", "Variété", "60's", "70's", "80's", "90's", "2000's", "2010's", "2020's",
-            "International", "English", "Español", "Italiano", "Instrumental", "Russie", "Classique"};
+            "Musique de film", "International", "English", "Español", "Italiano", "Instrumental", "Russie", "Classique"};
     public static final String[] EMOJI = {"🎲", "⭐", "🎤", "🎸", "🪩", "💞", "🇫🇷", "📻", "🕺", "📼", "💿", "📱", "🎧", "🔥",
-            "🇪🇺", "🇬🇧", "🇪🇸", "🇮🇹", "🎹", "🪆", "🎻"};
+            "🎬", "🇪🇺", "🇬🇧", "🇪🇸", "🇮🇹", "🎹", "🪆", "🎻"};
     /** Premier thème du groupe "langues et thèmes spéciaux" (séparé par un trait, hors jauge française). */
     public static final int FIRST_SPECIAL = 14;
     /** Dégradé de chaque tuile de playlist (même ordre que KEYS). */
@@ -19,7 +19,7 @@ public final class Styles {
             {0xFFF683CE, 0xFF9B6BE8}, {0xFFF08AD8, 0xFFA8329A}, {0xFF46A8F3, 0xFFF683CE}, {0xFF8DBDF0, 0xFF2F6FD0},
             {0xFFF7931E, 0xFFF683CE}, {0xFF46A8F3, 0xFF9B6BE8}, {0xFF2F6FD0, 0xFFF683CE}, {0xFF9B6BE8, 0xFF46A8F3},
             {0xFFE8650A, 0xFFA8329A}, {0xFFF683CE, 0xFFF7931E},
-            {0xFF1D4ED8, 0xFFFFC14D}, {0xFF2F6FD0, 0xFFD43F3F}, {0xFFE8650A, 0xFFD43F3F}, {0xFF2E9E5B, 0xFFD43F3F},
+            {0xFFD43F3F, 0xFFFFC14D}, {0xFF1D4ED8, 0xFFFFC14D}, {0xFF2F6FD0, 0xFFD43F3F}, {0xFFE8650A, 0xFFD43F3F}, {0xFF2E9E5B, 0xFFD43F3F},
             {0xFF46A8F3, 0xFF2E9E8F}, {0xFFD43F3F, 0xFF2F6FD0}, {0xFF8A94A6, 0xFF4D1B60}
     };
 
@@ -34,7 +34,7 @@ public final class Styles {
     public static String genres(Song s) {
         if (s.hasGenre('C')) return "Classique · " + period(s.year);
         StringBuilder b = new StringBuilder();
-        String[][] g = {{"N", "Instrumental"}, {"H", "Espagnol"}, {"I", "Italien"}, {"P", "Pop"}, {"R", "Rock"}, {"D", "Disco / Dance"}, {"S", "Slow"}, {"V", "Variété"}};
+        String[][] g = {{"M", "Musique de film"}, {"N", "Instrumental"}, {"H", "Espagnol"}, {"I", "Italien"}, {"P", "Pop"}, {"R", "Rock"}, {"D", "Disco / Dance"}, {"S", "Slow"}, {"V", "Variété"}};
         for (String[] x : g) {
             if (s.hasGenre(x[0].charAt(0))) {
                 if (b.length() > 0) b.append(" · ");
@@ -60,11 +60,12 @@ public final class Styles {
     }
 
     public static boolean matches(Song s, String key) {
-        // Modules isolés : Russie (U), English (E), Classique (C), International (X)
+        // Modules isolés : Russie (U), English (E), Classique (C), International (X), Musique de film (M)
         if ("ru".equals(key)) return s.hasGenre('U');
         if ("en".equals(key)) return s.hasGenre('E');
         if ("classique".equals(key)) return s.hasGenre('C');
         if ("inter".equals(key)) return s.hasGenre('X');
+        if ("film".equals(key)) return s.hasGenre('M');
         if (s.isModule()) return false;
         return base(s, key);
     }
@@ -98,7 +99,7 @@ public final class Styles {
         List<Song> out = new ArrayList<>();
         java.util.Set<String> ids = new java.util.HashSet<>();
         for (Song s : all) {
-            if (s.hasGenre('F') || s.hasGenre('U') || s.hasGenre('C') || s.hasGenre('X')) continue;
+            if (s.hasGenre('F') || s.hasGenre('U') || s.hasGenre('C') || s.hasGenre('X') || s.hasGenre('M')) continue;
             if (difficulty != 0 && s.difficulty != difficulty) continue;
             if (!base(s, key) || !ids.add(s.id)) continue;
             out.add(s);

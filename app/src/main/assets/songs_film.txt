@@ -1,0 +1,224 @@
+# Module Musique de film : année|artiste|titre|M + genres|difficulté|film (affiché sous le titre)
+1937|Blanche-Neige (les sept nains)|Heigh-Ho (Hé ho, on rentre du boulot)|M,V|1|Blanche-Neige et les Sept Nains
+1937|Blanche-Neige|Un jour mon prince viendra|M,S|1|Blanche-Neige et les Sept Nains
+1939|Judy Garland|Over the Rainbow|M,S|1|Le Magicien d'Oz
+1942|Dooley Wilson|As Time Goes By|M,S|2|Casablanca
+1950|Cendrillon (la marraine)|Bibbidi-Bobbidi-Boo|M,V|2|Cendrillon
+1952|Gene Kelly|Singin' in the Rain|M,P|1|Chantons sous la pluie
+1955|Bill Haley & His Comets|Rock Around the Clock|M,R|1|Graine de violence
+1957|Elvis Presley|Jailhouse Rock|M,R|1|Le Rock du bagne
+1960|Bernard Herrmann|Psychose (la douche)|M,N|1|Psychose
+1960|Ernest Gold|Exodus|M,N|2|Exodus
+1960|Françoise Hardy|Le Temps de l'amour|M,V|2|Moonrise Kingdom
+1961|Audrey Hepburn|Moon River|M,S|1|Diamants sur canapé
+1961|Elvis Presley|Can't Help Falling in Love|M,S|1|Sous le ciel bleu de Hawaï
+1962|Brigitte Bardot|Sidonie|M,V|2|Vie privée
+1962|Jeanne Moreau|Le Tourbillon|M,V|2|Jules et Jim
+1962|Maurice Jarre|Lawrence d'Arabie|M,N|2|Lawrence d'Arabie
+1962|Monty Norman|James Bond Theme|M,N|1|James Bond 007
+1962|Riz Ortolani|Mondo Cane (More)|M,N|2|Mondo Cane
+1963|Michel Magne|Les Tontons flingueurs (thème)|M,N|2|Les Tontons flingueurs
+1964|Geneviève Grad|Douliou douliou Saint-Tropez|M,V|1|Le Gendarme de Saint-Tropez
+1964|Henry Mancini|La Panthère rose|M,N|1|La Panthère rose
+1964|Julie Andrews|Supercalifragilisticexpialidocious|M,P|1|Mary Poppins
+1964|Julie Andrews|Un morceau de sucre (A Spoonful of Sugar)|M,P|2|Mary Poppins
+1964|Michel Legrand|Je ne pourrai jamais vivre sans toi|M,S|1|Les Parapluies de Cherbourg
+1964|Shirley Bassey|Goldfinger|M,S|1|Goldfinger
+1965|Georges Delerue|Le Corniaud (thème)|M,N|2|Le Corniaud
+1965|Julie Andrews|Do-Re-Mi|M,P|1|La Mélodie du bonheur
+1965|Julie Andrews|The Sound of Music|M,S|2|La Mélodie du bonheur
+1965|Maurice Jarre|Le Docteur Jivago (thème de Lara)|M,N|1|Le Docteur Jivago
+1965|Simon & Garfunkel|The Sound of Silence|M,S|1|Le Lauréat
+1966|Lalo Schifrin|Mission: Impossible|M,N|1|Mission impossible
+1966|Nancy Sinatra|Bang Bang|M,S|2|Kill Bill
+1966|Nicole Croisille & Pierre Barouh|Un homme et une femme|M,V|1|Un homme et une femme
+1967|Le Livre de la jungle (Baloo)|Il en faut peu pour être heureux|M,V|1|Le Livre de la jungle
+1967|Louis Prima|Je voudrais être comme vous (I Wan'na Be Like You)|M,V|2|Le Livre de la jungle
+1967|Michel Legrand|Chanson de Maxence|M,S|2|Les Demoiselles de Rochefort
+1967|Michel Legrand|Chanson des jumelles|M,V|1|Les Demoiselles de Rochefort
+1968|Ennio Morricone|L'Homme à l'harmonica|M,N|1|Il était une fois dans l'Ouest
+1968|Richard Strauss|Ainsi parlait Zarathoustra|M,N|1|2001, l'Odyssée de l'espace
+1968|Simon & Garfunkel|Mrs. Robinson|M,P|1|Le Lauréat
+1969|B.J. Thomas|Raindrops Keep Fallin' on My Head|M,P|1|Butch Cassidy et le Kid
+1969|Ennio Morricone|Le Clan des Siciliens|M,N|2|Le Clan des Siciliens
+1969|Harry Nilsson|Everybody's Talkin'|M,P|2|Macadam Cowboy
+1970|Catherine Deneuve|Recette pour un cake d'amour|M,V|1|Peau d'âne
+1970|Francis Lai|Love Story|M,N|1|Love Story
+1970|Les Aristochats (casting)|Tout le monde veut devenir un cat|M,V|1|Les Aristochats
+1971|Isaac Hayes|Theme from Shaft|M,D|2|Shaft
+1971|Michel Legrand|Un été 42|M,N|2|Un été 42
+1971|Wendy Carlos|Orange mécanique (thème)|M,N|2|Orange mécanique
+1972|Nino Rota|Speak Softly Love (thème du Parrain)|M,S|1|Le Parrain
+1972|Vladimir Cosma|Le Grand Blond avec une chaussure noire|M,V|1|Le Grand Blond avec une chaussure noire
+1973|Marvin Hamlisch|The Entertainer|M,N|1|L'Arnaque
+1973|Mike Oldfield|Tubular Bells|M,N|2|L'Exorciste
+1973|Paul McCartney & Wings|Live and Let Die|M,R|1|Vivre et laisser mourir
+1973|Vladimir Cosma|Rabbi Jacob (danse)|M,V|1|Les Aventures de Rabbi Jacob
+1974|Pierre Bachelet|Emmanuelle|M,S|2|Emmanuelle
+1975|Ennio Morricone|Le Bon, la Brute et le Truand|M,N|1|Le Bon, la Brute et le Truand
+1975|John Williams|Les Dents de la mer|M,N|1|Les Dents de la mer
+1976|Bill Conti|Gonna Fly Now|M,R|1|Rocky
+1976|Plastic Bertrand|Ça plane pour moi|M,R|2|127 heures
+1977|Bee Gees|How Deep Is Your Love|M,S|1|La Fièvre du samedi soir
+1977|Bee Gees|Night Fever|M,D|1|La Fièvre du samedi soir
+1977|Bee Gees|Stayin' Alive|M,D|1|La Fièvre du samedi soir
+1977|Carly Simon|Nobody Does It Better|M,S|2|L'espion qui m'aimait
+1977|John Williams|Cantina Band|M,N|2|Star Wars
+1977|John Williams|Rencontres du troisième type (5 notes)|M,N|2|Rencontres du troisième type
+1977|John Williams|Star Wars (thème principal)|M,N|1|Star Wars
+1978|Giorgio Moroder|Chase|M,N|2|Midnight Express
+1978|John Carpenter|Halloween (thème)|M,N|2|Halloween
+1978|John Travolta & Olivia Newton-John|Summer Nights|M,P|1|Grease
+1978|John Travolta & Olivia Newton-John|You're the One That I Want|M,P|1|Grease
+1978|John Travolta|Greased Lightnin'|M,R|2|Grease
+1978|John Williams|Superman|M,N|2|Superman
+1978|Olivia Newton-John|Hopelessly Devoted to You|M,S|2|Grease
+1979|Les Bronzés (casting)|Quand te reverrai-je (pays merveilleux)|M,V|1|Les Bronzés font du ski
+1980|Irene Cara|Fame|M,D|1|Fame
+1980|John Williams|La Marche impériale|M,N|1|L'Empire contre-attaque
+1980|Richard Sanderson|Reality|M,S|1|La Boum
+1980|The Blues Brothers|Everybody Needs Somebody to Love|M,R|1|The Blues Brothers
+1981|Ennio Morricone|Chi Mai|M,N|1|Le Professionnel
+1981|John Williams|Indiana Jones (Raiders March)|M,N|1|Les Aventuriers de l'arche perdue
+1981|Raymond Lefebvre|La Soupe aux choux (thème)|M,N|2|La Soupe aux choux
+1981|Vangelis|Chariots of Fire|M,N|1|Les Chariots de feu
+1982|Cook da Books|Your Eyes|M,S|2|La Boum 2
+1982|Guy Marchand|Destinée|M,S|1|Le père Noël est une ordure
+1982|John Williams|E.T. (Flying Theme)|M,N|1|E.T. l'extra-terrestre
+1982|Survivor|Eye of the Tiger|M,R|1|Rocky III
+1982|Vangelis|Blade Runner (End Titles)|M,N|2|Blade Runner
+1983|Ennio Morricone|Le Marginal|M,N|2|Le Marginal
+1983|Irene Cara|Flashdance... What a Feeling|M,D|1|Flashdance
+1983|Michael Sembello|Maniac|M,D|1|Flashdance
+1984|Brad Fiedel|Terminator (thème)|M,N|1|Terminator
+1984|Deniece Williams|Let's Hear It for the Boy|M,P|2|Footloose
+1984|Harold Faltermeyer|Axel F|M,N|1|Le Flic de Beverly Hills
+1984|Kenny Loggins|Footloose|M,R|1|Footloose
+1984|Phil Collins|Against All Odds|M,S|2|Contre toute attente
+1984|Prince|Purple Rain|M,R|1|Purple Rain
+1984|Ray Parker Jr.|Ghostbusters|M,P|1|SOS Fantômes
+1984|Stevie Wonder|I Just Called to Say I Love You|M,S|1|La Fille en rouge
+1985|Alan Silvestri|Retour vers le futur (thème)|M,N|1|Retour vers le futur
+1985|Ben E. King|Stand by Me|M,S|1|Stand by Me
+1985|Duran Duran|A View to a Kill|M,P|2|Dangereusement vôtre
+1985|Huey Lewis and the News|The Power of Love|M,R|1|Retour vers le futur
+1985|John Cafferty|Hearts on Fire|M,R|2|Rocky IV
+1985|Ricchi e Poveri|Sarà perché ti amo|M,P|2|L'Effrontée
+1985|Simple Minds|Don't You (Forget About Me)|M,R|1|The Breakfast Club
+1985|Tina Turner|We Don't Need Another Hero|M,R|2|Mad Max 3
+1986|Berlin|Take My Breath Away|M,S|1|Top Gun
+1986|David Bowie|Modern Love|M,R|2|Mauvais Sang
+1986|Ennio Morricone|Gabriel's Oboe|M,N|2|Mission
+1986|Gabriel Yared|Betty et Zorg|M,N|2|37°2 le matin
+1986|Harold Faltermeyer|Top Gun Anthem|M,N|2|Top Gun
+1986|Jean-Claude Petit|Jean de Florette (La Force du destin)|M,N|2|Jean de Florette
+1986|Kenny Loggins|Danger Zone|M,R|1|Top Gun
+1986|Queen|Princes of the Universe|M,R|2|Highlander
+1986|Queen|Who Wants to Live Forever|M,S|1|Highlander
+1987|Bill Medley & Jennifer Warnes|(I've Had) The Time of My Life|M,S|1|Dirty Dancing
+1987|Eric Carmen|Hungry Eyes|M,S|2|Dirty Dancing
+1987|Los Lobos|La Bamba|M,R|1|La Bamba
+1987|Patrick Swayze|She's Like the Wind|M,S|1|Dirty Dancing
+1988|Ennio Morricone|Cinema Paradiso|M,N|2|Cinema Paradiso
+1988|Joe Hisaishi|Mon voisin Totoro|M,N|2|Mon voisin Totoro
+1988|Phil Collins|A Groovy Kind of Love|M,S|2|Buster
+1988|Éric Serra|The Big Blue Overture|M,S|2|Le Grand Bleu
+1989|Danny Elfman|Batman (thème)|M,N|2|Batman
+1989|Henri Salvador|Sous l'océan|M,V|1|La Petite Sirène
+1989|Prince|Batdance|M,P|2|Batman
+1990|Danny Elfman|Edward aux mains d'argent|M,N|2|Edward aux mains d'argent
+1990|Righteous Brothers|Unchained Melody|M,S|1|Ghost
+1990|Roxette|It Must Have Been Love|M,S|1|Pretty Woman
+1990|Roy Orbison|Oh, Pretty Woman|M,R|1|Pretty Woman
+1991|Bryan Adams|(Everything I Do) I Do It for You|M,S|1|Robin des Bois
+1991|La Belle et la Bête (Lumière)|C'est la fête|M,V|2|La Belle et la Bête
+1991|La Belle et la Bête (Mme Samovar)|Histoire éternelle|M,S|1|La Belle et la Bête
+1992|Aladdin (le Génie)|Je suis ton meilleur ami|M,V|2|Aladdin
+1992|Karine Costa & Paolo Domingo|Ce rêve bleu|M,S|1|Aladdin
+1992|Stealers Wheel|Stuck in the Middle with You|M,R|2|Reservoir Dogs
+1992|Vangelis|Conquest of Paradise|M,N|1|1492 : Christophe Colomb
+1992|Whitney Houston|I Will Always Love You|M,S|1|Bodyguard
+1992|Whitney Houston|I'm Every Woman|M,D|2|Bodyguard
+1992|Whoopi Goldberg|I Will Follow Him|M,P|1|Sister Act
+1993|Bruce Springsteen|Streets of Philadelphia|M,S|1|Philadelphia
+1993|Danny Elfman|L'Étrange Noël de Monsieur Jack (C'est Halloween)|M,N|2|L'Étrange Noël de Monsieur Jack
+1993|John Williams|Jurassic Park|M,N|1|Jurassic Park
+1993|John Williams|La Liste de Schindler|M,N|2|La Liste de Schindler
+1993|UB40|(I Can't Help) Falling in Love with You|M,S|1|Sliver
+1994|Alain Chabat & Gérard Darmon|La Carioca|M,V|1|La Cité de la peur
+1994|Alan Silvestri|Forrest Gump (Feather Theme)|M,N|2|Forrest Gump
+1994|Chuck Berry|You Never Can Tell|M,R|1|Pulp Fiction
+1994|Dick Dale|Misirlou|M,R|1|Pulp Fiction
+1994|Elton John|Can You Feel the Love Tonight|M,S|1|Le Roi lion
+1994|Elton John|Circle of Life|M,S|1|Le Roi lion
+1994|Hans Zimmer|Le Roi lion (This Land)|M,N|2|Le Roi lion
+1994|Jim Carrey|Cuban Pete|M,D|2|The Mask
+1994|Le Roi lion (Simba)|Je voudrais déjà être roi|M,V|2|Le Roi lion
+1994|Le Roi lion (Timon & Pumbaa)|Hakuna Matata|M,V|1|Le Roi lion
+1994|Sting|Shape of My Heart|M,S|2|Léon
+1994|Urge Overkill|Girl, You'll Be a Woman Soon|M,R|2|Pulp Fiction
+1994|Wet Wet Wet|Love Is All Around|M,S|1|Quatre mariages et un enterrement
+1995|Charlélie Couture|Je suis ton ami|M,V|1|Toy Story
+1995|Coolio|Gangsta's Paradise|M,P|1|Esprits rebelles
+1995|James Horner|Braveheart (For the Love of a Princess)|M,N|2|Braveheart
+1995|Laura Mayne|L'air du vent|M,S|1|Pocahontas
+1995|Seal|Kiss from a Rose|M,S|1|Batman Forever
+1996|R. Kelly|I Believe I Can Fly|M,S|1|Space Jam
+1996|Underworld|Born Slippy .NUXX|M,D|2|Trainspotting
+1996|Will Smith|Men in Black|M,P|1|Men in Black
+1997|Céline Dion|My Heart Will Go On|M,S|1|Titanic
+1997|Hot Chocolate|You Sexy Thing|M,D|2|The Full Monty
+1997|James Horner|Hymn to the Sea|M,N|2|Titanic
+1998|Aerosmith|I Don't Want to Miss a Thing|M,R,S|1|Armageddon
+1998|Goo Goo Dolls|Iris|M,R|2|La Cité des anges
+1999|Elvis Costello|She|M,S|2|Coup de foudre à Notting Hill
+1999|Madonna|Beautiful Stranger|M,P|2|Austin Powers 2
+2000|Hans Zimmer & Lisa Gerrard|Now We Are Free|M,N|1|Gladiator
+2000|LeAnn Rimes|Can't Fight the Moonlight|M,P|2|Coyote Girls
+2001|Christina Aguilera, Lil' Kim, Mýa & Pink|Lady Marmalade|M,P|2|Moulin Rouge
+2001|Howard Shore|Concerning Hobbits|M,N|1|Le Seigneur des anneaux
+2001|Howard Shore|La Communauté de l'anneau|M,N|2|Le Seigneur des anneaux
+2001|Jamie O'Neal|All by Myself|M,S|2|Le Journal de Bridget Jones
+2001|Joe Hisaishi|One Summer's Day|M,N|2|Le Voyage de Chihiro
+2001|John Williams|Hedwig's Theme|M,N|1|Harry Potter
+2001|Smash Mouth|All Star|M,R|1|Shrek
+2001|Smash Mouth|I'm a Believer|M,P|1|Shrek
+2001|Yann Tiersen|Comptine d'un autre été|M,S|1|Le Fabuleux Destin d'Amélie Poulain
+2001|Yann Tiersen|La Valse d'Amélie|M,N|2|Le Fabuleux Destin d'Amélie Poulain
+2002|Eminem|Lose Yourself|M,P|1|8 Mile
+2003|Klaus Badelt|He's a Pirate|M,N|1|Pirates des Caraïbes
+2004|Les Petits Chanteurs de Saint-Marc|Caresse sur l'océan|M,S|1|Les Choristes
+2004|Les Petits Chanteurs de Saint-Marc|Vois sur ton chemin|M,S|1|Les Choristes
+2006|Beyoncé|Listen|M,S|2|Dreamgirls
+2006|Chris Cornell|You Know My Name|M,R|2|Casino Royale
+2008|ABBA|Dancing Queen|M,D|1|Mamma Mia!
+2008|ABBA|Mamma Mia|M,P|1|Mamma Mia!
+2008|Hans Zimmer|Why So Serious?|M,N|2|The Dark Knight
+2009|Leona Lewis|I See You|M,S|2|Avatar
+2010|Hans Zimmer|Time|M,N|2|Inception
+2011|Earth, Wind & Fire|September|M,D|1|Intouchables
+2011|Ludovico Einaudi|Una Mattina|M,S|1|Intouchables
+2012|Adele|Skyfall|M,S|1|Skyfall
+2012|Anne Hathaway|I Dreamed a Dream|M,S|2|Les Misérables
+2013|Anaïs Delva|Libérée, délivrée|M,V|1|La Reine des neiges
+2013|Idina Menzel|Let It Go|M,S|1|La Reine des neiges
+2013|Pharrell Williams|Happy|M,P|1|Moi, moche et méchant 2
+2014|Ellie Goulding|Love Me Like You Do|M,S|2|Cinquante nuances de Grey
+2014|Hans Zimmer|Cornfield Chase|M,N|2|Interstellar
+2014|Louane|Je vole|M,S|1|La Famille Bélier
+2015|Sam Smith|Writing's on the Wall|M,S|2|Spectre
+2015|Wiz Khalifa ft. Charlie Puth|See You Again|M,S|1|Fast & Furious 7
+2016|Auli'i Cravalho|How Far I'll Go (Le bleu lumière)|M,S|2|Vaiana
+2016|Justin Hurwitz|Mia & Sebastian's Theme|M,N|2|La La Land
+2016|Justin Timberlake|Can't Stop the Feeling!|M,D|1|Les Trolls
+2016|Ryan Gosling & Emma Stone|City of Stars|M,S|2|La La Land
+2017|Coco (casting)|Ne m'oublie pas|M,S|2|Coco
+2017|Hugh Jackman|The Greatest Show|M,P|2|The Greatest Showman
+2017|Keala Settle|This Is Me|M,P|2|The Greatest Showman
+2018|Lady Gaga & Bradley Cooper|Shallow|M,S|1|A Star Is Born
+2018|Queen|Bohemian Rhapsody|M,R|1|Bohemian Rhapsody
+2019|Billie Eilish|No Time to Die|M,S|2|Mourir peut attendre
+2019|Charlotte Hervieux|Dans un autre monde|M,S|2|La Reine des neiges 2
+2021|Encanto (casting)|Ne parlons pas de Bruno|M,P|1|Encanto
+2023|Billie Eilish|What Was I Made For?|M,S|2|Barbie
+2023|Ryan Gosling|I'm Just Ken|M,R|2|Barbie

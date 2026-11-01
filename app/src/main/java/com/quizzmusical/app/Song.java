@@ -11,7 +11,7 @@ public class Song {
     public final String title;
     public final String genres; // P,R,D,S,V
     public final int difficulty; // 1 incontournable, 2 connaisseur
-    public final String translation; // traduction française (module Russie), sinon null
+    public final String translation; // traduction française (Russie) ou film d'origine (Musique de film), sinon null
     public final String id;
 
     public Song(int year, String artist, String title, String genres, int difficulty) {
@@ -50,7 +50,13 @@ public class Song {
     }
 
     /** Module isolé (Russie, English, Classique, International) : jamais fusionné avec le catalogue principal. */
-    public boolean isModule() { return hasGenre('U') || hasGenre('E') || hasGenre('C') || hasGenre('X'); }
+    public boolean isModule() { return hasGenre('U') || hasGenre('E') || hasGenre('C') || hasGenre('X') || hasGenre('M'); }
+
+    /** Ligne affichée sous le titre : traduction (Russie) ou film d'origine (Musique de film). */
+    public String noteLine() {
+        if (translation == null) return null;
+        return (hasGenre('M') ? "🎬 " : "🇫🇷 ") + translation;
+    }
 
     /** Fusionne les doublons hors modules (même artiste + titre) : genres cumulés, difficulté la plus facile. */
     public static List<Song> merge(List<Song> all) {

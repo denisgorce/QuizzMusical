@@ -27,6 +27,8 @@ public class YouTubeActivity extends Activity {
     public static final String EXTRA_QUERY = "q";
     public static final String EXTRA_TITLE = "t";
     public static final String EXTRA_ARTIST = "a";
+    /** Rattrapage : masque le titre et l'interprète. */
+    public static final String EXTRA_HIDDEN = "h";
 
     private Ui ui;
     private ExoPlayer player;
@@ -64,6 +66,10 @@ public class YouTubeActivity extends Activity {
         String title = getIntent().getStringExtra(EXTRA_TITLE);
         String artist = getIntent().getStringExtra(EXTRA_ARTIST);
         if (q == null) q = "";
+        if (getIntent().getBooleanExtra(EXTRA_HIDDEN, false)) {
+            title = "🎵 Chanson mystère";
+            artist = "Écoutez et devinez !";
+        }
 
         FrameLayout root = new FrameLayout(this);
         root.addView(new MusicViews.Backdrop(this), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));

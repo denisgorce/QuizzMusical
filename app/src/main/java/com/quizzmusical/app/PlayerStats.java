@@ -26,6 +26,7 @@ public class PlayerStats {
         List<PlayerStats> out = new ArrayList<>();
         for (GameEngine.Player p : g.players) out.add(new PlayerStats(p.name));
         for (GameEngine.Proposal p : g.history) {
+            if (!p.shown) continue;
             PlayerStats s = out.get(p.singer);
             s.proposed++;
             int[] st = s.byStyle.get(p.style);

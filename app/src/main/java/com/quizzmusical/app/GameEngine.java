@@ -14,6 +14,15 @@ public class GameEngine {
     public static final int MODE_SOLO = 0;
     public static final int MODE_TEAMS = 1;
     public static final long SPEED_BONUS_MS = 5000;
+    /** Nombre de chansons proposées par passage. */
+    public static final int TURN_SONGS = 10;
+    /** Bonus si les 10 chansons du passage sont toutes trouvées. */
+    public static final int FULL_LIST_BONUS = 10;
+
+    /** Ce qui a été trouvé : titre, interprète ou les deux. */
+    public static final int FOUND_TITLE = 0, FOUND_ARTIST = 1, FOUND_BOTH = 2;
+
+    public static int pointsFor(int what) { return what == FOUND_BOTH ? 3 : 1; }
 
     public static class Config {
         public int mode = MODE_SOLO;
@@ -23,13 +32,15 @@ public class GameEngine {
         public int difficulty = 0; // 0 mix, 1 incontournables, 2 connaisseurs
         public boolean challenges = true;
         public boolean speedBonus = true;
+        public boolean catchUp = true; // rattrapage des autres joueurs en fin de passage
         public int frenchShare = 75; // % de chansons françaises (thèmes généraux)
+        public String theme = "random"; // thème unique pour toute la partie
         public List<String> names = new ArrayList<>();
     }
 
     public static class Player {
         public final String name;
-        public int score, sungFound, guessed, passes, bonus;
+        public int score, sungFound, guessed, passes, bonus, lateGuessed, fullLists;
         public long bestMs = -1;
         public String bestSong;
         Player(String n) { name = n; }
@@ -43,9 +54,16 @@ public class GameEngine {
         public int singer;
         public int round;
         public boolean found;
+        public int what = -1;
+        public int points;
         public int guesser = -1;
         public long ms;
         public boolean bonus;
+        public boolean shown;         // affichée au moins une fois au chanteur
+        public boolean revealed;      // écoutée pendant le passage : retirée de la liste
+        public int lateGuesser = -1;  // rattrapage
+        public int lateWhat = -1;
+        public int latePoints;
     }
 
     public static final String[] ONOMATOS = {
@@ -65,11 +83,15 @@ public class GameEngine {
     public final Config config;
     public final List<Player> players = new ArrayList<>();
     public final List<Proposal> history = new ArrayList<>();
+    /** Les 10 chansons du passage en cours (récapitulatif). */
     public final List<Proposal> currentTurn = new ArrayList<>();
+    /** File d'attente : chansons restant à faire deviner (les passées repartent en fin de file). */
+    public final List<Proposal> queue = new ArrayList<>();
     public int firstPlayer;
     public int round = 1;
     public int turnInRound = 0;
     public Proposal current;
+    public boolean lastTurnComplete;
 
     private final List<Song> catalog;
     private final Set<String> played; // historique persistant (anti-répétition)
@@ -94,9 +116,129 @@ public class GameEngine {
 
     public Set<String> playedSet() { return played; }
 
-    /** Tire une chanson dans la playlist demandée, en évitant les répétitions. */
-    public Proposal draw(String styleKey) {
-        String style = styleKey;
+    // ---------- Passage ----------
+
+    /** Prépare les 10 chansons du passage et place la première en cours. */
+    public void startTurn() {
+        currentTurn.clear();
+        queue.clear();
+        lastTurnComplete = false;
+        for (int i = 0; i < TURN_SONGS; i++) {
+            Proposal p = newProposal(config.theme);
+            currentTurn.add(p);
+            queue.add(p);
+            history.add(p);
+        }
+        current = queue.isEmpty() ? null : queue.get(0);
+    }
+
+    public int foundCount() {
+        int n = 0;
+        for (Proposal p : currentTurn) if (p.found) n++;
+        return n;
+    }
+
+    /** Position (1-based) de la chanson en cours dans la liste du passage. */
+    public int currentNumber() { return current == null ? 0 : currentTurn.indexOf(current) + 1; }
+
+    public boolean turnComplete() { return queue.isEmpty(); }
+
+    private void advance() { current = queue.isEmpty() ? null : queue.get(0); }
+
+    /** Passe : la chanson repart en fin de file (reproposée s'il reste du temps). */
+    public void pass() {
+        if (current == null) return;
+        Proposal p = current;
+        players.get(p.singer).passes += 1;
+        queue.remove(p);
+        queue.add(p);
+        advance();
+    }
+
+    /** Chanson passée puis écoutée : elle n'est plus reproposée ni jouée en rattrapage. */
+    public void reveal(Proposal p) {
+        p.revealed = true;
+        queue.remove(p);
+        advance();
+    }
+
+    /**
+     * Chanson trouvée. guesser : index du joueur (mode individuel) ou -1 (mode équipes).
+     * Le chanteur et celui qui devine marquent chacun 1 (titre), 1 (interprète) ou 3 (les deux).
+     */
+    public void found(int guesser, int what, long elapsedMs) {
+        if (current == null) return;
+        Proposal p = current;
+        int pts = pointsFor(what);
+        p.found = true;
+        p.what = what;
+        p.points = pts;
+        p.guesser = guesser;
+        p.ms = elapsedMs;
+        Player s = players.get(p.singer);
+        s.score += pts;
+        s.sungFound += 1;
+        boolean bonus = config.speedBonus && elapsedMs < SPEED_BONUS_MS;
+        p.bonus = bonus;
+        if (bonus) { s.score += 1; s.bonus += 1; }
+        if (s.bestMs < 0 || elapsedMs < s.bestMs) { s.bestMs = elapsedMs; s.bestSong = p.song.title; }
+        if (!isTeams() && guesser >= 0 && guesser != p.singer) {
+            Player g = players.get(guesser);
+            g.score += pts;
+            g.guessed += 1;
+            if (bonus) { g.score += 1; g.bonus += 1; }
+        }
+        queue.remove(p);
+        if (queue.isEmpty() && foundCount() == currentTurn.size()) {
+            s.score += FULL_LIST_BONUS;
+            s.fullLists += 1;
+            lastTurnComplete = true;
+        }
+        advance();
+    }
+
+    /** Fin du chrono : la chanson en cours reste non trouvée. */
+    public void abandon() { current = null; }
+
+    /** Chansons non trouvées et non écoutées pendant le passage (rattrapage). */
+    public List<Proposal> unfound() {
+        List<Proposal> out = new ArrayList<>();
+        for (Proposal p : currentTurn) if (!p.found && !p.revealed) out.add(p);
+        return out;
+    }
+
+    /** Rattrapage : un autre joueur trouve en écoutant l'original. Le chanteur ne marque rien. */
+    public void lateFound(Proposal p, int guesser, int what) {
+        if (guesser < 0 || guesser == p.singer || p.lateGuesser >= 0) return;
+        int pts = pointsFor(what);
+        p.lateGuesser = guesser;
+        p.lateWhat = what;
+        p.latePoints = pts;
+        Player g = players.get(guesser);
+        g.score += pts;
+        g.lateGuessed += 1;
+    }
+
+    // ---------- Tirage ----------
+
+    private Proposal newProposal(String styleKey) {
+        Song song = pickSong(styleKey);
+        Proposal p = new Proposal();
+        p.song = song;
+        p.style = styleKey;
+        p.singer = singerIndex();
+        p.round = round;
+        p.onomato = nextOnomato();
+        if (config.challenges && rnd.nextInt(100) < 30) {
+            p.challenge = CHALLENGES[rnd.nextInt(CHALLENGES.length)];
+            if ("En sifflant".equals(p.challenge)) p.onomato = "FIUU FIUU";
+            else if ("Bouche fermée".equals(p.challenge)) p.onomato = "HMMM HMMM";
+        }
+        return p;
+    }
+
+    /** Tire une chanson dans le thème, en évitant les répétitions. */
+    private Song pickSong(String style) {
         List<Song> pool = Styles.pool(catalog, style, config.difficulty);
         if (pool.isEmpty()) pool = Styles.pool(catalog, style, 0);
         if (Styles.usesFrenchShare(style)) {
@@ -115,7 +257,7 @@ public class GameEngine {
         List<Song> fresh = new ArrayList<>();
         for (Song s : pool) if (!usedThisGame.contains(s.id) && !played.contains(s.id)) fresh.add(s);
         if (fresh.isEmpty()) {
-            // Playlist épuisée : on oublie l'historique de cette playlist
+            // Thème épuisé : on oublie l'historique de ce thème
             for (Song s : pool) played.remove(s.id);
             for (Song s : pool) if (!usedThisGame.contains(s.id)) fresh.add(s);
         }
@@ -124,22 +266,7 @@ public class GameEngine {
         Song song = fresh.get(rnd.nextInt(fresh.size()));
         usedThisGame.add(song.id);
         played.add(song.id);
-
-        Proposal p = new Proposal();
-        p.song = song;
-        p.style = styleKey;
-        p.singer = singerIndex();
-        p.round = round;
-        p.onomato = nextOnomato();
-        if (config.challenges && rnd.nextInt(100) < 30) {
-            p.challenge = CHALLENGES[rnd.nextInt(CHALLENGES.length)];
-            if ("En sifflant".equals(p.challenge)) p.onomato = "FIUU FIUU";
-            else if ("Bouche fermée".equals(p.challenge)) p.onomato = "HMMM HMMM";
-        }
-        current = p;
-        currentTurn.add(p);
-        history.add(p);
-        return p;
+        return song;
     }
 
     private int freshCount(List<Song> l) {
@@ -155,42 +282,13 @@ public class GameEngine {
         return o;
     }
 
-    /** Chanson trouvée. guesser : index du joueur (mode solo) ou -1 (mode équipes). */
-    public void found(int guesser, long elapsedMs) {
-        if (current == null) return;
-        Proposal p = current;
-        p.found = true;
-        p.guesser = guesser;
-        p.ms = elapsedMs;
-        Player s = players.get(p.singer);
-        s.score += 1;
-        s.sungFound += 1;
-        boolean bonus = config.speedBonus && elapsedMs < SPEED_BONUS_MS;
-        p.bonus = bonus;
-        if (bonus) { s.score += 1; s.bonus += 1; }
-        if (s.bestMs < 0 || elapsedMs < s.bestMs) { s.bestMs = elapsedMs; s.bestSong = p.song.title; }
-        if (!isTeams() && guesser >= 0 && guesser != p.singer) {
-            Player g = players.get(guesser);
-            g.score += 1;
-            g.guessed += 1;
-            if (bonus) { g.score += 1; g.bonus += 1; }
-        }
-        current = null;
-    }
-
-    /** Fin du chrono : la chanson en cours reste non trouvée, sans compter de passe. */
-    public void abandon() { current = null; }
-
-    public void pass() {
-        if (current == null) return;
-        players.get(current.singer).passes += 1;
-        current = null;
-    }
+    // ---------- Enchaînement ----------
 
     /** Termine le passage du joueur. Retourne false si la partie est finie. */
     public boolean nextTurn() {
         current = null;
         currentTurn.clear();
+        queue.clear();
         turnInRound++;
         if (turnInRound >= players.size()) {
             turnInRound = 0;

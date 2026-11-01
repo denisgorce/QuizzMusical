@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
     private static final int[] PENALTIES = {0, 3, 5, 10};
     private static final String[] DIFFS = {"Mix", "Incontournables", "Connaisseurs"};
 
-    private static final int SC_HOME = 0, SC_SETUP = 1, SC_NAMES = 2, SC_GAME = 3, SC_PLAY = 4, SC_FINAL = 5;
+    private static final int SC_HOME = 0, SC_SETUP = 1, SC_NAMES = 2, SC_GAME = 3, SC_PLAY = 4, SC_FINAL = 5, SC_THEME = 6;
 
     private Ui ui;
     private FrameLayout root;
@@ -56,12 +56,13 @@ public class MainActivity extends Activity {
 
     // Réglages
     private int modeIdx, playersN, teamsN, secIdx, roundsN, penIdx, diffIdx;
-    private boolean challengesOn, bonusOn, listenOnPass;
+    private boolean challengesOn, bonusOn, listenOnPass, catchUpOn;
+    private String themeKey = "random";
+    private int frShare = 75;
     private List<EditText> nameFields = new ArrayList<>();
 
     // Partie
     private GameEngine game;
-    private String currentStyle;
     private long remainingMs, songElapsedMs, lastTick, totalMs;
     private boolean running;
     private int lastBeepSec;
@@ -133,7 +134,8 @@ public class MainActivity extends Activity {
         switch (screen) {
             case SC_HOME: super.onBackPressed(); break;
             case SC_SETUP: showHome(); break;
-            case SC_NAMES: showSetup(); break;
+            case SC_THEME: showSetup(); break;
+            case SC_NAMES: showThemePicker(); break;
             case SC_FINAL: showHome(); break;
             default: confirmQuit(); break;
         }
@@ -143,7 +145,7 @@ public class MainActivity extends Activity {
 
     private void loadCatalog() {
         List<String> lines = new ArrayList<>();
-        for (String f : new String[]{"songs.txt", "songs_monde.txt", "songs_ru.txt", "songs_en.txt", "songs_classique.txt", "songs_inter.txt"}) {
+        for (String f : new String[]{"songs.txt", "songs_monde.txt", "songs_ru.txt", "songs_en.txt", "songs_classique.txt", "songs_inter.txt", "songs_film.txt"}) {
             try (BufferedReader r = new BufferedReader(new InputStreamReader(getAssets().open(f), StandardCharsets.UTF_8))) {
                 String l;
                 while ((l = r.readLine()) != null) lines.add(l);
@@ -165,12 +167,16 @@ public class MainActivity extends Activity {
         challengesOn = prefs.getBoolean("chal", true);
         bonusOn = prefs.getBoolean("bonus", true);
         listenOnPass = prefs.getBoolean("listen", true);
+        catchUpOn = prefs.getBoolean("catchup", true);
+        themeKey = prefs.getString("theme", "random");
+        frShare = prefs.getInt("frShare", 75);
     }
 
     private void saveSettings() {
         prefs.edit().putInt("mode", modeIdx).putInt("players", playersN).putInt("teams", teamsN)
                 .putInt("sec", secIdx).putInt("rounds", roundsN).putInt("pen", penIdx).putInt("diff", diffIdx)
-                .putBoolean("chal", challengesOn).putBoolean("bonus", bonusOn).putBoolean("listen", listenOnPass).apply();
+                .putBoolean("chal", challengesOn).putBoolean("bonus", bonusOn).putBoolean("listen", listenOnPass).putBoolean("catchup", catchUpOn)
+                .putString("theme", themeKey).putInt("frShare", frShare).apply();
     }
 
     private Set<String> loadPlayed() {
@@ -260,12 +266,14 @@ public class MainActivity extends Activity {
         int en = Styles.pool(catalog, "en", 0).size();
         int cl = Styles.pool(catalog, "classique", 0).size();
         int it = Styles.pool(catalog, "inter", 0).size();
-        info.addView(ui.text("📀 " + (catalog.size() - ru - en - cl - it) + " chansons du Top 50 et des hit-parades depuis 1960", 14, Ui.MUTED, false));
+        int fm = Styles.pool(catalog, "film", 0).size();
+        info.addView(ui.text("📀 " + (catalog.size() - ru - en - cl - it - fm) + " chansons du Top 50 et des hit-parades depuis 1960", 14, Ui.MUTED, false));
         info.addView(ui.text("🌍 dont " + Styles.pool(catalog, "es", 0).size() + " en espagnol, " + Styles.pool(catalog, "it", 0).size()
                 + " en italien, " + Styles.pool(catalog, "instru", 0).size() + " instrumentaux", 14, Ui.MUTED, false), ui.full(6));
         info.addView(ui.text("🪆 + module Russie : " + ru + " tubes (titres en cyrillique)", 14, Ui.MUTED, false), ui.full(6));
         info.addView(ui.text("🇬🇧 + module English : " + en + " tubes mondiaux en anglais", 14, Ui.MUTED, false), ui.full(6));
         info.addView(ui.text("🇪🇺 + module International : " + it + " tubes connus dans toute l'Europe", 14, Ui.MUTED, false), ui.full(6));
+        info.addView(ui.text("🎬 + module Musique de film : " + fm + " chansons et thèmes de films", 14, Ui.MUTED, false), ui.full(6));
         info.addView(ui.text("🎻 + module Classique : " + cl + " œuvres célèbres", 14, Ui.MUTED, false), ui.full(6));
         info.addView(ui.text("🔁 " + played + " déjà jouées (évitées aux prochains tirages)", 14, Ui.MUTED, false), ui.full(6));
         ui.add(l, info, 28);
@@ -282,13 +290,15 @@ public class MainActivity extends Activity {
     }
 
     private void showRules() {
-        String msg = "• Le chanteur reçoit une chanson et une onomatopée tirées au sort (ex. « NA NA NA »). Il doit faire deviner la chanson en la fredonnant uniquement avec cette onomatopée.\n\n"
+        String msg = "• Le thème est choisi au début de la partie et reste le même jusqu'à la fin.\n\n"
+                + "• À chaque passage, le chanteur reçoit une liste de 10 chansons. Pour chacune, une onomatopée tirée au sort (ex. « NA NA NA ») : il doit la faire deviner en fredonnant uniquement avec elle.\n\n"
                 + "• Défis : parfois une contrainte s'ajoute (chuchoter, voix de robot, siffler...).\n\n"
-                + "• Trouvé : le chanteur ET celui qui a deviné marquent 1 point. En équipes, l'équipe marque 1 point.\n\n"
-                + "• Bonus éclair : chanson trouvée en moins de 5 s = +1 point supplémentaire pour chacun.\n\n"
-                + "• Passer : le jeu se met en pause, on peut écouter la chanson passée puis reprendre. Une nouvelle chanson est tirée, mais le chanteur perd du temps (pénalité réglable).\n\n"
-                + "• Bip bip pendant les 5 dernières secondes.\n\n"
-                + "• Fin de passage : les chansons proposées s'affichent, touchez-en une pour l'écouter sur YouTube Music.";
+                + "• Points : titre trouvé = 1 pt, interprète = 1 pt, les deux = 3 pts. Le chanteur ET celui qui a deviné marquent ces points (en équipes, l'équipe marque).\n\n"
+                + "• Liste complète : les 10 chansons trouvées = +10 pts pour le chanteur.\n\n"
+                + "• Bonus éclair : trouvé en moins de 5 s = +1 pt supplémentaire pour chacun.\n\n"
+                + "• Passer : perte de temps (pénalité réglable). La chanson passée revient en fin de liste s'il reste du temps. Si on l'écoute pendant la pause, elle n'est plus reproposée.\n\n"
+                + "• Trouvé : on peut écouter l'original avant de continuer (chrono en pause).\n\n"
+                + "• Rattrapage (option) : à la fin du passage, les autres joueurs écoutent l'original des chansons non trouvées et peuvent marquer 1 / 1 / 3 pts. Le chanteur ne joue pas.";
         new AlertDialog.Builder(this).setTitle("Règles").setMessage(msg).setPositiveButton("Compris", null).show();
     }
 
@@ -344,14 +354,17 @@ public class MainActivity extends Activity {
         ui.add(l, stepper("Défis surprises", new String[]{"Oui", "Non"}, challengesOn ? 0 : 1, i -> challengesOn = i == 0), 10);
         ui.add(l, stepper("Bonus éclair (< 5 s)", new String[]{"Oui", "Non"}, bonusOn ? 0 : 1, i -> bonusOn = i == 0), 10);
         ui.add(l, stepper("Écouter après un passe", new String[]{"Oui", "Non"}, listenOnPass ? 0 : 1, i -> listenOnPass = i == 0), 10);
+        ui.add(l, stepper("Rattrapage des autres joueurs", new String[]{"Oui", "Non"}, catchUpOn ? 0 : 1, i -> catchUpOn = i == 0), 10);
 
-        TextView help = ui.text(modeIdx == 0
-                ? "Individuel : le chanteur et celui qui devine marquent chacun 1 point."
-                : "Équipes : un membre chante, ses coéquipiers devinent. L'équipe marque 1 point par chanson.", 13, Ui.MUTED, false);
+        TextView help = ui.text((modeIdx == 0
+                ? "Individuel : le chanteur et celui qui devine marquent chacun les points."
+                : "Équipes : un membre chante, ses coéquipiers devinent. L'équipe marque les points.")
+                + "\nTitre = 1 pt · Interprète = 1 pt · Les deux = 3 pts · 10 chansons trouvées = +10 pts."
+                + "\nRattrapage : en fin de passage, les autres écoutent l'original des chansons non trouvées et peuvent marquer.", 13, Ui.MUTED, false);
         ui.add(l, help, 14);
 
         TextView next = ui.button("Suivant  ›", Ui.PINK, Ui.TXT);
-        next.setOnClickListener(v -> { saveSettings(); showNames(); });
+        next.setOnClickListener(v -> { saveSettings(); showThemePicker(); });
         ui.add(l, next, 20);
     }
 
@@ -414,7 +427,9 @@ public class MainActivity extends Activity {
         c.difficulty = diffIdx;
         c.challenges = challengesOn;
         c.speedBonus = bonusOn;
-        c.frenchShare = prefs.getInt("frShare", 75);
+        c.frenchShare = frShare;
+        c.theme = themeKey;
+        c.catchUp = catchUpOn;
         c.names = names;
         return c;
     }
@@ -471,6 +486,7 @@ public class MainActivity extends Activity {
         LinearLayout l = page();
         l.setGravity(Gravity.CENTER_HORIZONTAL);
         ui.add(l, ui.center("Tour " + game.round + " / " + game.config.rounds, 16, Ui.MUTED, true), 20);
+        ui.add(l, ui.center(themeTitle(), 15, Ui.CYAN, true), 4);
         ui.add(l, ui.center("📱 Passe le téléphone à", 18, Ui.TXT, false), 30);
         ui.add(l, ui.center(game.singer().name, 40, Ui.GOLD, true), 8);
         l.addView(equalizer(160, 30));
@@ -478,7 +494,7 @@ public class MainActivity extends Activity {
                 ? "Un membre de l'équipe chante, les autres devinent.\nLes autres équipes ne regardent pas l'écran !"
                 : "Ne montre pas l'écran aux autres joueurs !", 14, Ui.MUTED, false), 12);
         TextView ready = ui.button("Je suis prêt  ›", Ui.PINK, Ui.TXT);
-        ready.setOnClickListener(v -> showStylePicker());
+        ready.setOnClickListener(v -> startTurn());
         ui.add(l, ready, 30);
         ui.add(l, scoreboard(false), 30);
     }
@@ -500,11 +516,18 @@ public class MainActivity extends Activity {
         return c;
     }
 
-    private void showStylePicker() {
-        screen = SC_GAME;
+    private String themeTitle() {
+        String k = game != null ? game.config.theme : themeKey;
+        for (int i = 0; i < Styles.KEYS.length; i++) if (Styles.KEYS[i].equals(k)) return Styles.EMOJI[i] + " Thème : " + Styles.LABELS[i];
+        return k;
+    }
+
+    /** Choix du thème, une seule fois pour toute la partie. */
+    private void showThemePicker() {
+        screen = SC_THEME;
         LinearLayout l = page();
-        ui.add(l, ui.text(game.singer().name + ", choisis ta playlist", 22, Ui.TXT, true), 0);
-        ui.add(l, ui.text("Le chrono démarre dès que tu choisis.", 14, Ui.MUTED, false), 4);
+        ui.add(l, ui.text("Choisis le thème de la partie", 22, Ui.TXT, true), 0);
+        ui.add(l, ui.text("Il restera le même jusqu'à la fin de la partie.", 14, Ui.MUTED, false), 4);
 
         // Jauge "part de chansons françaises" (tout en haut)
         LinearLayout gauge = ui.card();
@@ -512,17 +535,17 @@ public class MainActivity extends Activity {
         gauge.addView(gLabel);
         android.widget.SeekBar sb = new android.widget.SeekBar(this);
         sb.setMax(10);
-        sb.setProgress(game.config.frenchShare / 10);
+        sb.setProgress(frShare / 10);
         sb.setProgressTintList(android.content.res.ColorStateList.valueOf(Ui.NEON_PINK));
         sb.setThumbTintList(android.content.res.ColorStateList.valueOf(Ui.ORANGE));
         gauge.addView(sb, ui.full(8));
         gauge.addView(ui.text("S'applique à Random, aux styles et aux décennies. Les thèmes sous le trait ne sont pas concernés.", 12, Ui.MUTED, false), ui.full(4));
-        gLabel.setText("🇫🇷 Chansons françaises : " + game.config.frenchShare + " %");
+        gLabel.setText("🇫🇷 Chansons françaises : " + frShare + " %");
         sb.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener() {
             @Override public void onProgressChanged(android.widget.SeekBar s, int p, boolean fromUser) {
-                game.config.frenchShare = p * 10;
-                gLabel.setText("🇫🇷 Chansons françaises : " + game.config.frenchShare + " %");
-                prefs.edit().putInt("frShare", game.config.frenchShare).apply();
+                frShare = p * 10;
+                gLabel.setText("🇫🇷 Chansons françaises : " + frShare + " %");
+                prefs.edit().putInt("frShare", frShare).apply();
             }
             @Override public void onStartTrackingTouch(android.widget.SeekBar s) { }
             @Override public void onStopTrackingTouch(android.widget.SeekBar s) { }
@@ -535,7 +558,7 @@ public class MainActivity extends Activity {
         star.setTextSize(26);
         star.setPadding(ui.dp(10), ui.dp(30), ui.dp(10), ui.dp(30));
         star.setShadowLayer(12, 0, 0, Ui.NEON_PINK);
-        star.setOnClickListener(v -> startTurn(Styles.KEYS[0]));
+        star.setOnClickListener(v -> chooseTheme(Styles.KEYS[0]));
         ui.add(l, star, 16);
 
         addTileGrid(l, 1, Styles.FIRST_SPECIAL);
@@ -550,6 +573,12 @@ public class MainActivity extends Activity {
         addTileGrid(l, Styles.FIRST_SPECIAL, Styles.KEYS.length);
     }
 
+    private void chooseTheme(String key) {
+        themeKey = key;
+        saveSettings();
+        showNames();
+    }
+
     private void addTileGrid(LinearLayout l, int from, int to) {
         LinearLayout row = null;
         for (int i = from; i < to; i++) {
@@ -562,7 +591,7 @@ public class MainActivity extends Activity {
             TextView b = ui.gbutton(Styles.EMOJI[i] + "  " + Styles.LABELS[i], col[0], col[1]);
             b.setTextSize(16);
             b.setPadding(ui.dp(8), ui.dp(18), ui.dp(8), ui.dp(18));
-            b.setOnClickListener(v -> startTurn(key));
+            b.setOnClickListener(v -> chooseTheme(key));
             row.addView(b, ui.weight(1, 5));
         }
         if ((to - from) % 2 == 1 && row != null) row.addView(new View(this), ui.weight(1, 5));
@@ -570,14 +599,14 @@ public class MainActivity extends Activity {
 
     // ---------- Jeu chronométré ----------
 
-    private void startTurn(String style) {
+    private void startTurn() {
         screen = SC_PLAY;
-        currentStyle = style;
+        game.startTurn();
         totalMs = game.config.seconds * 1000L;
         remainingMs = totalMs;
         lastBeepSec = -1;
         buildPlayScreen();
-        nextSong();
+        showCurrent();
         resumeTimer();
     }
 
@@ -629,13 +658,16 @@ public class MainActivity extends Activity {
         ui.add(l, actions, 18);
     }
 
-    private void nextSong() {
-        GameEngine.Proposal p = game.draw(currentStyle);
+    /** Affiche la chanson en cours de la liste ; fin du passage si la liste est vide. */
+    private void showCurrent() {
+        GameEngine.Proposal p = game.current;
+        if (p == null) { turnOver(); return; }
+        p.shown = true;
         songElapsedMs = 0;
         songCard.removeAllViews();
-        songCard.addView(ui.center(Styles.label(currentStyle).toUpperCase() + "  •  " + p.song.year, 13, Ui.MUTED, true));
+        songCard.addView(ui.center("CHANSON " + game.currentNumber() + " / " + GameEngine.TURN_SONGS + "  •  " + p.song.year, 13, Ui.MUTED, true));
         String genre = Styles.genres(p.song);
-        if (!genre.isEmpty()) songCard.addView(ui.center((p.song.hasGenre('C') ? "🎻 " : "🎵 ") + genre, 14, Ui.CYAN, true), ui.full(4));
+        if (!genre.isEmpty()) songCard.addView(ui.center((p.song.hasGenre('M') ? "🎬 " : p.song.hasGenre('C') ? "🎻 " : "🎵 ") + genre, 14, Ui.CYAN, true), ui.full(4));
         songCard.addView(ui.center("Fais deviner avec", 15, Ui.MUTED, false), ui.full(14));
         TextView ono = ui.center(p.onomato, 38, Ui.YELLOW, true);
         ono.setShadowLayer(14, 0, 0, Ui.ORANGE_DARK);
@@ -655,8 +687,8 @@ public class MainActivity extends Activity {
         slp.topMargin = ui.dp(18);
         songCard.addView(sep, slp);
         songCard.addView(ui.center(p.song.title, 26, Ui.TXT, true), ui.full(16));
-        if (p.song.translation != null) {
-            TextView tr = ui.center("🇫🇷 " + p.song.translation, 16, Ui.GOLD, false);
+        if (p.song.noteLine() != null) {
+            TextView tr = ui.center(p.song.noteLine(), 16, Ui.GOLD, false);
             tr.setTypeface(android.graphics.Typeface.DEFAULT, android.graphics.Typeface.ITALIC);
             songCard.addView(tr, ui.full(4));
         }
@@ -665,9 +697,8 @@ public class MainActivity extends Activity {
     }
 
     private void updateStats() {
-        int found = 0;
-        for (GameEngine.Proposal p : game.currentTurn) if (p.found) found++;
-        foundText.setText("✓ " + found + " trouvée" + (found > 1 ? "s" : ""));
+        int found = game.foundCount();
+        foundText.setText("✓ " + found + " / " + GameEngine.TURN_SONGS + "  ·  " + game.queue.size() + " restante" + (game.queue.size() > 1 ? "s" : ""));
         scoreText.setText("Score : " + game.singer().score);
     }
 
@@ -712,7 +743,7 @@ public class MainActivity extends Activity {
             showPassedOverlay(passed);
             return;
         }
-        nextSong();
+        showCurrent();
         updateTimerUi();
     }
 
@@ -721,48 +752,111 @@ public class MainActivity extends Activity {
         LinearLayout box = overlayBox("⏭ Chanson passée");
         box.addView(ui.center("⏸ Jeu en pause", 13, Ui.CYAN, true), ui.full(4));
         box.addView(ui.center(p.song.title, 22, Ui.TXT, true), ui.full(14));
-        if (p.song.translation != null) box.addView(ui.center("🇫🇷 " + p.song.translation, 14, Ui.GOLD, false), ui.full(2));
+        if (p.song.noteLine() != null) box.addView(ui.center(p.song.noteLine(), 14, Ui.GOLD, false), ui.full(2));
         box.addView(ui.center(p.song.artist + " • " + p.song.year, 15, Ui.MUTED, false), ui.full(4));
+        box.addView(ui.center("Elle reviendra en fin de liste s'il reste du temps.\nSi tu l'écoutes, elle ne sera plus reproposée.", 12, Ui.MUTED, false), ui.full(10));
         TextView listen = ui.button("🎧 Écouter la chanson", Ui.CARD2, Ui.TXT);
-        listen.setOnClickListener(v -> openYouTube(p.song));
-        box.addView(listen, ui.full(18));
+        listen.setOnClickListener(v -> {
+            if (!p.revealed) game.reveal(p);
+            openYouTube(p.song, false);
+        });
+        box.addView(listen, ui.full(14));
         TextView resume = ui.button("▶ Reprendre le jeu", Ui.PINK, Ui.TXT);
-        resume.setOnClickListener(v -> { closeOverlay(); nextSong(); resumeTimer(); });
+        resume.setOnClickListener(v -> {
+            closeOverlay();
+            if (game.current == null) { turnOver(); return; }
+            showCurrent();
+            resumeTimer();
+        });
         box.addView(resume, ui.full(10));
     }
 
+    /** Trouvé : on indique qui (mode individuel) et quoi (titre / interprète / les deux), on peut écouter l'original. */
     private void onFound() {
         if (!running) return;
         final long ms = songElapsedMs;
-        if (game.isTeams()) {
-            scoreFound(-1, ms);
-            return;
-        }
+        final GameEngine.Proposal p = game.current;
+        if (p == null) return;
         pauseTimer();
-        LinearLayout box = overlayBox("Qui a trouvé ?");
+        final int[] who = {-1};
+        LinearLayout box = overlayBox("🎉 Trouvé !");
+        box.addView(ui.center(p.song.title + "\n" + p.song.artist, 15, Ui.MUTED, false), ui.full(6));
+        if (!game.isTeams()) {
+            box.addView(ui.text("Qui a trouvé ?", 15, Ui.TXT, true), ui.full(14));
+            addPlayerChips(box, game.singerIndex(), who);
+        }
+        box.addView(ui.text("Qu'a-t-on trouvé ?", 15, Ui.TXT, true), ui.full(14));
+        addWhatButtons(box, what -> {
+            if (!game.isTeams() && who[0] < 0) {
+                Toast.makeText(this, "Indique d'abord qui a trouvé", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            closeOverlay();
+            scoreFound(who[0], what, ms);
+        });
+        TextView listen = ui.button("🎧 Écouter l'original", Ui.CARD2, Ui.TXT);
+        listen.setTextSize(15);
+        listen.setOnClickListener(v -> openYouTube(p.song, false));
+        box.addView(listen, ui.full(14));
+        TextView cancel = ui.button("Annuler", Ui.BG, Ui.MUTED);
+        cancel.setOnClickListener(v -> { closeOverlay(); resumeTimer(); });
+        box.addView(cancel, ui.full(10));
+    }
+
+    /** Boutons de sélection d'un joueur (sélection unique), en excluant le chanteur. */
+    private void addPlayerChips(LinearLayout box, int exclude, final int[] who) {
+        final List<TextView> chips = new ArrayList<>();
         LinearLayout row = null;
         int col = 0;
         for (int i = 0; i < game.players.size(); i++) {
-            if (i == game.singerIndex()) continue;
-            if (col % 2 == 0) { row = ui.hbox(); box.addView(row, ui.full(10)); }
+            if (i == exclude) continue;
+            if (col % 2 == 0) { row = ui.hbox(); box.addView(row, ui.full(8)); }
             col++;
             final int idx = i;
-            TextView b = ui.button(game.players.get(i).name, Ui.CARD2, Ui.TXT);
-            b.setOnClickListener(v -> { closeOverlay(); scoreFound(idx, ms); resumeTimer(); });
+            final TextView b = ui.button(game.players.get(i).name, Ui.BG, Ui.TXT);
+            b.setTextSize(15);
+            b.setOnClickListener(v -> {
+                who[0] = idx;
+                for (TextView c : chips) c.setBackground(ui.rounded(0x22FFFFFF, 16));
+                b.setBackground(ui.gradient(Ui.NEON_BLUE, Ui.CUP_BLUE, 16));
+            });
+            chips.add(b);
             row.addView(b, ui.weight(1, 4));
         }
         if (col % 2 == 1 && row != null) row.addView(new View(this), ui.weight(1, 4));
-        TextView cancel = ui.button("Annuler", Ui.BG, Ui.MUTED);
-        cancel.setOnClickListener(v -> { closeOverlay(); resumeTimer(); });
-        box.addView(cancel, ui.full(16));
     }
 
-    private void scoreFound(int guesser, long ms) {
-        game.found(guesser, ms);
-        GameEngine.Proposal last = game.history.get(game.history.size() - 1);
-        flash(last.bonus ? "⚡ +2 éclair !" : "+1", Ui.GREEN);
+    private void addWhatButtons(LinearLayout box, IntCb cb) {
+        TextView title = ui.button("🎵 Titre  +1", Ui.CARD2, Ui.TXT);
+        TextView artist = ui.button("🎤 Interprète  +1", Ui.CARD2, Ui.TXT);
+        TextView both = ui.button("⭐ Les deux  +3", Ui.GREEN, Ui.TXT);
+        title.setTextSize(15);
+        artist.setTextSize(15);
+        title.setOnClickListener(v -> cb.on(GameEngine.FOUND_TITLE));
+        artist.setOnClickListener(v -> cb.on(GameEngine.FOUND_ARTIST));
+        both.setOnClickListener(v -> cb.on(GameEngine.FOUND_BOTH));
+        LinearLayout row = ui.hbox();
+        row.addView(title, ui.weight(1, 4));
+        row.addView(artist, ui.weight(1, 4));
+        box.addView(row, ui.full(8));
+        box.addView(both, ui.full(8));
+    }
+
+    private void scoreFound(int guesser, int what, long ms) {
+        game.found(guesser, what, ms);
+        GameEngine.Proposal last = null;
+        for (GameEngine.Proposal q : game.currentTurn) if (q.found && q.ms == ms && q.what == what) last = q;
+        int pts = GameEngine.pointsFor(what) + (last != null && last.bonus ? 1 : 0);
+        flash("+" + pts + (last != null && last.bonus ? " ⚡" : ""), Ui.GREEN);
         vibrate(40);
-        nextSong();
+        if (game.lastTurnComplete) {
+            flash("🏆 Liste complète  +" + GameEngine.FULL_LIST_BONUS, Ui.YELLOW);
+            sound.endGame();
+            h.postDelayed(this::turnOver, 900);
+            return;
+        }
+        showCurrent();
+        resumeTimer();
     }
 
     private void timeUp() {
@@ -770,9 +864,68 @@ public class MainActivity extends Activity {
         game.abandon(); // chanson en cours non trouvée
         sound.endTurn();
         vibrate(250);
+        turnOver();
+    }
+
+    /** Fin du passage (temps écoulé ou liste terminée) : rattrapage éventuel puis récapitulatif. */
+    private void turnOver() {
+        pauseTimer();
         savePlayed();
         backdrop.setAlert(false);
-        showTurnRecap();
+        List<GameEngine.Proposal> missed = game.unfound();
+        if (game.config.catchUp && !missed.isEmpty() && game.players.size() > 1) showCatchUp(missed, 0, false);
+        else showTurnRecap();
+    }
+
+    /** Rattrapage : les autres joueurs écoutent l'original de chaque chanson non trouvée. */
+    private void showCatchUp(final List<GameEngine.Proposal> list, final int idx, boolean revealed) {
+        screen = SC_GAME;
+        if (idx >= list.size()) { showTurnRecap(); return; }
+        final GameEngine.Proposal p = list.get(idx);
+        LinearLayout l = page();
+        l.setGravity(Gravity.CENTER_HORIZONTAL);
+        ui.add(l, ui.center("🎧 Rattrapage", 28, Ui.TXT, true), 0);
+        ui.add(l, ui.center("Les autres " + (game.isTeams() ? "équipes" : "joueurs") + " écoutent l'original et tentent leur chance.\n"
+                + game.singer().name + " ne joue pas.", 14, Ui.MUTED, false), 6);
+        LinearLayout card = ui.vbox();
+        card.setGravity(Gravity.CENTER_HORIZONTAL);
+        card.setBackground(new MusicViews.Neon(ui.dp(22), ui.dp(2)));
+        card.setPadding(ui.dp(22), ui.dp(24), ui.dp(22), ui.dp(24));
+        ui.add(l, card, 16);
+        card.addView(ui.center("CHANSON " + (idx + 1) + " / " + list.size(), 13, Ui.MUTED, true));
+        TextView play = ui.button("▶ Écouter l'original", Ui.PINK, Ui.TXT);
+        play.setOnClickListener(v -> openYouTube(p.song, !revealed));
+        card.addView(play, ui.full(14));
+        if (!revealed) {
+            card.addView(ui.center("🎵 Chanson mystère", 20, Ui.YELLOW, true), ui.full(18));
+            TextView show = ui.button("👁 Révéler la réponse", Ui.CARD2, Ui.TXT);
+            show.setOnClickListener(v -> showCatchUp(list, idx, true));
+            card.addView(show, ui.full(14));
+        } else {
+            card.addView(ui.center(p.song.title, 24, Ui.TXT, true), ui.full(18));
+            if (p.song.noteLine() != null) card.addView(ui.center(p.song.noteLine(), 14, Ui.GOLD, false), ui.full(2));
+            card.addView(ui.center(p.song.artist + " • " + p.song.year, 16, Ui.MUTED, false), ui.full(4));
+            final int[] who = {-1};
+            card.addView(ui.text("Qui a trouvé ?", 15, Ui.TXT, true), ui.full(16));
+            addPlayerChips(card, p.singer, who);
+            card.addView(ui.text("Qu'a-t-il trouvé ?", 15, Ui.TXT, true), ui.full(14));
+            addWhatButtons(card, what -> {
+                if (who[0] < 0) {
+                    Toast.makeText(this, "Indique d'abord qui a trouvé", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                game.lateFound(p, who[0], what);
+                flash("+" + GameEngine.pointsFor(what), Ui.GREEN);
+                showCatchUp(list, idx + 1, false);
+            });
+            TextView nobody = ui.button("Personne n'a trouvé", Ui.BG, Ui.MUTED);
+            nobody.setOnClickListener(v -> showCatchUp(list, idx + 1, false));
+            card.addView(nobody, ui.full(12));
+        }
+        TextView skip = ui.button("Terminer le rattrapage  ›", Ui.BG, Ui.MUTED);
+        skip.setTextSize(14);
+        skip.setOnClickListener(v -> showTurnRecap());
+        ui.add(l, skip, 16);
     }
 
     private void beep() {
@@ -867,6 +1020,8 @@ public class MainActivity extends Activity {
 
     // ---------- Récapitulatifs ----------
 
+    private static final String[] WHAT = {"titre", "interprète", "titre + interprète"};
+
     private void addSongRows(LinearLayout parent, List<GameEngine.Proposal> list, boolean showSinger) {
         for (final GameEngine.Proposal p : list) {
             LinearLayout row = ui.hbox();
@@ -874,45 +1029,64 @@ public class MainActivity extends Activity {
                     android.content.res.ColorStateList.valueOf(0x33FFFFFF), ui.rounded(Ui.CARD, 14), null));
             row.setPadding(ui.dp(12), ui.dp(10), ui.dp(12), ui.dp(10));
             row.setClickable(true);
-            row.addView(ui.text(p.found ? "✅" : "⏭", 20, Ui.TXT, false), new LinearLayout.LayoutParams(ui.dp(36), ViewGroup.LayoutParams.WRAP_CONTENT));
+            String icon = p.found ? "✅" : p.lateGuesser >= 0 ? "🔁" : p.revealed ? "🎧" : p.shown ? "⏭" : "⏳";
+            row.addView(ui.text(icon, 20, Ui.TXT, false), new LinearLayout.LayoutParams(ui.dp(36), ViewGroup.LayoutParams.WRAP_CONTENT));
             LinearLayout col = ui.vbox();
             col.addView(ui.text(p.song.title, 16, Ui.TXT, true));
-            if (p.song.translation != null) col.addView(ui.text("🇫🇷 " + p.song.translation, 13, Ui.GOLD, false));
+            if (p.song.noteLine() != null) col.addView(ui.text(p.song.noteLine(), 13, Ui.GOLD, false));
             StringBuilder sub = new StringBuilder(p.song.artist).append(" • ").append(p.song.year);
             String genre = Styles.genres(p.song);
             if (!genre.isEmpty()) sub.append(" • ").append(genre);
             if (showSinger) sub.append("\n🎤 ").append(game.players.get(p.singer).name);
-            if (p.found && p.guesser >= 0) sub.append(showSinger ? " → " : "\nTrouvée par ").append(game.players.get(p.guesser).name);
-            if (p.found) sub.append(" (").append(Math.max(1, Math.round(p.ms / 1000.0))).append(" s)");
-            if (p.bonus) sub.append(" ⚡");
+            if (p.found) {
+                if (p.guesser >= 0) sub.append(showSinger ? " → " : "\nTrouvée par ").append(game.players.get(p.guesser).name);
+                else if (!showSinger) sub.append("\nTrouvée");
+                sub.append(" : ").append(WHAT[p.what]).append(" +").append(p.points);
+                sub.append(" (").append(Math.max(1, Math.round(p.ms / 1000.0))).append(" s)");
+                if (p.bonus) sub.append(" ⚡");
+            } else if (p.lateGuesser >= 0) {
+                sub.append("\nRattrapage : ").append(game.players.get(p.lateGuesser).name)
+                        .append(" (").append(WHAT[p.lateWhat]).append(" +").append(p.latePoints).append(")");
+            } else if (!p.shown) {
+                sub.append("\nPas eu le temps");
+            }
             col.addView(ui.text(sub.toString(), 13, Ui.MUTED, false));
             row.addView(col, ui.weight(1, 0));
             row.addView(ui.text("▶", 20, Ui.PINK, true));
-            row.setOnClickListener(v -> openYouTube(p.song));
+            row.setOnClickListener(v -> openYouTube(p.song, false));
             ui.add(parent, row, 8);
         }
     }
 
-    private void openYouTube(Song s) {
+    private void openYouTube(Song s, boolean hidden) {
         Intent i = new Intent(this, YouTubeActivity.class);
         i.putExtra(YouTubeActivity.EXTRA_QUERY, s.query());
         i.putExtra(YouTubeActivity.EXTRA_TITLE, s.title);
         i.putExtra(YouTubeActivity.EXTRA_ARTIST, s.artist);
+        i.putExtra(YouTubeActivity.EXTRA_HIDDEN, hidden);
         startActivity(i);
+    }
+
+    /** Chansons effectivement jouées (affichées, rattrapées ou écoutées). */
+    private List<GameEngine.Proposal> played(List<GameEngine.Proposal> l) {
+        List<GameEngine.Proposal> out = new ArrayList<>();
+        for (GameEngine.Proposal p : l) if (p.shown) out.add(p);
+        return out;
     }
 
     private void showTurnRecap() {
         screen = SC_GAME;
         List<GameEngine.Proposal> turn = new ArrayList<>(game.currentTurn);
-        int found = 0;
-        for (GameEngine.Proposal p : turn) if (p.found) found++;
+        int found = game.foundCount();
+        boolean full = game.lastTurnComplete;
         String singer = game.singer().name;
         boolean endOfRound = game.isLastTurnOfRound();
         int round = game.round;
 
         LinearLayout l = page();
-        ui.add(l, ui.center("⏰ Temps écoulé !", 28, Ui.TXT, true), 0);
-        ui.add(l, ui.center(singer + " a fait deviner " + found + " chanson" + (found > 1 ? "s" : ""), 17, Ui.GOLD, true), 8);
+        ui.add(l, ui.center(full ? "🏆 Liste complète !" : "⏰ Temps écoulé !", 28, Ui.TXT, true), 0);
+        ui.add(l, ui.center(singer + " a fait deviner " + found + " / " + GameEngine.TURN_SONGS + " chanson" + (found > 1 ? "s" : "")
+                + (full ? "\n+" + GameEngine.FULL_LIST_BONUS + " pts de bonus" : ""), 17, Ui.GOLD, true), 8);
         ui.add(l, ui.text("Chansons proposées (touchez pour écouter) :", 14, Ui.MUTED, false), 18);
         addSongRows(l, turn, false);
         if (turn.isEmpty()) ui.add(l, ui.text("Aucune chanson.", 14, Ui.MUTED, false), 8);
@@ -933,7 +1107,7 @@ public class MainActivity extends Activity {
         ui.add(l, ui.center("Fin du tour " + round, 28, Ui.TXT, true), 0);
         ui.add(l, scoreboard(true), 16);
         ui.add(l, ui.text("Chansons du tour :", 14, Ui.MUTED, false), 18);
-        addSongRows(l, game.roundProposals(round), true);
+        addSongRows(l, played(game.roundProposals(round)), true);
         TextView next = ui.button("Tour " + game.round + "  ›", Ui.PINK, Ui.TXT);
         next.setOnClickListener(v -> showHandoff());
         ui.add(l, next, 22);
@@ -988,6 +1162,15 @@ public class MainActivity extends Activity {
             st.addView(ui.text("⚡ Plus rapide : " + fastest.name + " - « " + fastest.bestSong + " » en " + Math.max(1, Math.round(fastest.bestMs / 1000.0)) + " s", 15, Ui.TXT, false), ui.full(8));
         if (passer != null && passer.passes > 0)
             st.addView(ui.text("🙈 Roi du joker : " + passer.name + " (" + passer.passes + " passes)", 15, Ui.TXT, false), ui.full(8));
+        GameEngine.Player lister = null, catcher = null;
+        for (GameEngine.Player p : game.players) {
+            if (p.fullLists > 0 && (lister == null || p.fullLists > lister.fullLists)) lister = p;
+            if (p.lateGuessed > 0 && (catcher == null || p.lateGuessed > catcher.lateGuessed)) catcher = p;
+        }
+        if (lister != null)
+            st.addView(ui.text("🏆 Liste complète : " + lister.name + " (" + lister.fullLists + " fois)", 15, Ui.TXT, false), ui.full(8));
+        if (catcher != null)
+            st.addView(ui.text("🔁 Roi du rattrapage : " + catcher.name + " (" + catcher.lateGuessed + ")", 15, Ui.TXT, false), ui.full(8));
         ui.add(l, st, 14);
 
         ui.add(l, ui.text("Statistiques par joueur", 18, Ui.TXT, true), 22);
@@ -1008,7 +1191,7 @@ public class MainActivity extends Activity {
 
         ui.add(l, ui.text("Toutes les chansons de la partie (touchez pour écouter) :", 14, Ui.MUTED, false), 22);
         for (int rr = 1; rr <= game.config.rounds; rr++) {
-            List<GameEngine.Proposal> list = game.roundProposals(rr);
+            List<GameEngine.Proposal> list = played(game.roundProposals(rr));
             if (list.isEmpty()) continue;
             ui.add(l, ui.text("Tour " + rr, 16, Ui.GOLD, true), 14);
             addSongRows(l, list, true);
