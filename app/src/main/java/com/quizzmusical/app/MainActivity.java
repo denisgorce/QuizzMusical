@@ -771,56 +771,59 @@ public class MainActivity extends Activity {
         box.addView(resume, ui.full(10));
     }
 
-    /** Trouvé : on indique qui (mode individuel) et quoi (titre / interprète / les deux), on peut écouter l'original. */
+    /** Trouvé, étape 1 : ce qui a été trouvé (titre / interprète / les deux), écoute de l'original possible. */
     private void onFound() {
         if (!running) return;
-        final long ms = songElapsedMs;
         final GameEngine.Proposal p = game.current;
         if (p == null) return;
         pauseTimer();
-        final int[] who = {-1};
+        showFoundWhat(p, songElapsedMs);
+    }
+
+    private void showFoundWhat(final GameEngine.Proposal p, final long ms) {
         LinearLayout box = overlayBox("🎉 Trouvé !");
         box.addView(ui.center(p.song.title + "\n" + p.song.artist, 15, Ui.MUTED, false), ui.full(6));
-        if (!game.isTeams()) {
-            box.addView(ui.text("Qui a trouvé ?", 15, Ui.TXT, true), ui.full(14));
-            addPlayerChips(box, game.singerIndex(), who);
-        }
-        box.addView(ui.text("Qu'a-t-on trouvé ?", 15, Ui.TXT, true), ui.full(14));
+        box.addView(ui.center("Qu'a-t-on trouvé ?", 16, Ui.TXT, true), ui.full(16));
         addWhatButtons(box, what -> {
-            if (!game.isTeams() && who[0] < 0) {
-                Toast.makeText(this, "Indique d'abord qui a trouvé", Toast.LENGTH_SHORT).show();
-                return;
-            }
             closeOverlay();
-            scoreFound(who[0], what, ms);
+            if (game.isTeams()) scoreFound(-1, what, ms);
+            else showFoundWho(p, what, ms);
         });
         TextView listen = ui.button("🎧 Écouter l'original", Ui.CARD2, Ui.TXT);
         listen.setTextSize(15);
         listen.setOnClickListener(v -> openYouTube(p.song, false));
-        box.addView(listen, ui.full(14));
+        box.addView(listen, ui.full(16));
         TextView cancel = ui.button("Annuler", Ui.BG, Ui.MUTED);
         cancel.setOnClickListener(v -> { closeOverlay(); resumeTimer(); });
         box.addView(cancel, ui.full(10));
     }
 
-    /** Boutons de sélection d'un joueur (sélection unique), en excluant le chanteur. */
-    private void addPlayerChips(LinearLayout box, int exclude, final int[] who) {
-        final List<TextView> chips = new ArrayList<>();
+    /** Trouvé, étape 2 (mode individuel) : un appui sur le joueur valide et reprend le jeu. */
+    private void showFoundWho(final GameEngine.Proposal p, final int what, final long ms) {
+        LinearLayout box = overlayBox("Qui a trouvé ?");
+        box.addView(ui.center("+" + GameEngine.pointsFor(what) + " pt" + (GameEngine.pointsFor(what) > 1 ? "s" : "")
+                + " pour " + game.singer().name + " et pour le joueur choisi", 14, Ui.MUTED, false), ui.full(6));
+        addPlayerButtons(box, game.singerIndex(), idx -> {
+            closeOverlay();
+            scoreFound(idx, what, ms);
+        });
+        TextView back = ui.button("‹ Retour", Ui.BG, Ui.MUTED);
+        back.setOnClickListener(v -> { closeOverlay(); showFoundWhat(p, ms); });
+        box.addView(back, ui.full(16));
+    }
+
+    /** Un bouton par joueur (chanteur exclu) : un seul appui suffit. */
+    private void addPlayerButtons(LinearLayout box, int exclude, IntCb cb) {
         LinearLayout row = null;
         int col = 0;
         for (int i = 0; i < game.players.size(); i++) {
             if (i == exclude) continue;
-            if (col % 2 == 0) { row = ui.hbox(); box.addView(row, ui.full(8)); }
+            if (col % 2 == 0) { row = ui.hbox(); box.addView(row, ui.full(10)); }
             col++;
             final int idx = i;
-            final TextView b = ui.button(game.players.get(i).name, Ui.BG, Ui.TXT);
-            b.setTextSize(15);
-            b.setOnClickListener(v -> {
-                who[0] = idx;
-                for (TextView c : chips) c.setBackground(ui.rounded(0x22FFFFFF, 16));
-                b.setBackground(ui.gradient(Ui.NEON_BLUE, Ui.CUP_BLUE, 16));
-            });
-            chips.add(b);
+            TextView b = ui.button(game.players.get(i).name, Ui.CARD2, Ui.TXT);
+            b.setTextSize(16);
+            b.setOnClickListener(v -> cb.on(idx));
             row.addView(b, ui.weight(1, 4));
         }
         if (col % 2 == 1 && row != null) row.addView(new View(this), ui.weight(1, 4));
@@ -905,18 +908,19 @@ public class MainActivity extends Activity {
             card.addView(ui.center(p.song.title, 24, Ui.TXT, true), ui.full(18));
             if (p.song.noteLine() != null) card.addView(ui.center(p.song.noteLine(), 14, Ui.GOLD, false), ui.full(2));
             card.addView(ui.center(p.song.artist + " • " + p.song.year, 16, Ui.MUTED, false), ui.full(4));
-            final int[] who = {-1};
-            card.addView(ui.text("Qui a trouvé ?", 15, Ui.TXT, true), ui.full(16));
-            addPlayerChips(card, p.singer, who);
-            card.addView(ui.text("Qu'a-t-il trouvé ?", 15, Ui.TXT, true), ui.full(14));
+            card.addView(ui.center("Qu'a-t-on trouvé ?", 16, Ui.TXT, true), ui.full(16));
             addWhatButtons(card, what -> {
-                if (who[0] < 0) {
-                    Toast.makeText(this, "Indique d'abord qui a trouvé", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                game.lateFound(p, who[0], what);
-                flash("+" + GameEngine.pointsFor(what), Ui.GREEN);
-                showCatchUp(list, idx + 1, false);
+                LinearLayout box = overlayBox("Qui a trouvé ?");
+                box.addView(ui.center("+" + GameEngine.pointsFor(what) + " pt" + (GameEngine.pointsFor(what) > 1 ? "s" : ""), 14, Ui.MUTED, false), ui.full(6));
+                addPlayerButtons(box, p.singer, who -> {
+                    closeOverlay();
+                    game.lateFound(p, who, what);
+                    flash("+" + GameEngine.pointsFor(what), Ui.GREEN);
+                    showCatchUp(list, idx + 1, false);
+                });
+                TextView back = ui.button("‹ Retour", Ui.BG, Ui.MUTED);
+                back.setOnClickListener(v -> closeOverlay());
+                box.addView(back, ui.full(16));
             });
             TextView nobody = ui.button("Personne n'a trouvé", Ui.BG, Ui.MUTED);
             nobody.setOnClickListener(v -> showCatchUp(list, idx + 1, false));
@@ -958,10 +962,15 @@ public class MainActivity extends Activity {
         box.setBackground(new MusicViews.Neon(ui.dp(22), ui.dp(2)));
         box.setPadding(ui.dp(24), ui.dp(24), ui.dp(24), ui.dp(24));
         box.addView(ui.center(title, 22, Ui.TXT, true));
-        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
-        lp.leftMargin = ui.dp(20);
-        lp.rightMargin = ui.dp(20);
-        dim.addView(box, lp);
+        // Contenu défilant : le panneau n'est jamais coupé, même sur petit écran
+        ScrollView sv = new ScrollView(this);
+        sv.setFillViewport(true);
+        LinearLayout holder = ui.vbox();
+        holder.setGravity(Gravity.CENTER);
+        holder.setPadding(ui.dp(20), ui.dp(24), ui.dp(20), ui.dp(24));
+        holder.addView(box, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        sv.addView(holder, new ScrollView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        dim.addView(sv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         root.addView(dim, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         overlay = dim;
         return box;
