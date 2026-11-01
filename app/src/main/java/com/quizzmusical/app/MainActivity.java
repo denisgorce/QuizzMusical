@@ -40,9 +40,11 @@ public class MainActivity extends Activity {
 
     private static final int[] SECONDS = {30, 45, 60, 75, 90, 120};
     private static final int[] PENALTIES = {0, 3, 5, 10};
+    private static final int[] BLIND_SONGS = {10, 15, 20, 30, 50};
+    private static final int[] LISTEN = {10, 15, 20, 30, 45};
     private static final String[] DIFFS = {"Mix", "Incontournables", "Connaisseurs"};
 
-    private static final int SC_HOME = 0, SC_SETUP = 1, SC_NAMES = 2, SC_GAME = 3, SC_PLAY = 4, SC_FINAL = 5, SC_THEME = 6;
+    private static final int SC_HOME = 0, SC_SETUP = 1, SC_NAMES = 2, SC_GAME = 3, SC_PLAY = 4, SC_FINAL = 5, SC_THEME = 6, SC_BLIND = 7;
 
     private Ui ui;
     private FrameLayout root;
@@ -58,6 +60,8 @@ public class MainActivity extends Activity {
     private int modeIdx, playersN, teamsN, secIdx, roundsN, penIdx, diffIdx;
     private boolean challengesOn, bonusOn, listenOnPass, catchUpOn;
     private String themeKey = "random";
+    private int gameType, blindIdx = 1, listenIdx = 2;
+    private boolean blindMiddle = true;
     private int frShare = 75;
     private List<EditText> nameFields = new ArrayList<>();
 
@@ -73,6 +77,9 @@ public class MainActivity extends Activity {
     private View overlay;
     private MusicViews.Backdrop backdrop;
     private boolean stoppedEarly;
+    private BlindAudio audio;
+    private boolean blindActive;
+    private int blindFails;
 
     private final Runnable ticker = new Runnable() {
         @Override public void run() {
@@ -88,7 +95,10 @@ public class MainActivity extends Activity {
                 lastBeepSec = sec;
                 beep();
             }
-            if (remainingMs <= 0) { timeUp(); return; }
+            if (remainingMs <= 0) {
+                if (game != null && game.config.blind) blindTimeUp(); else timeUp();
+                return;
+            }
             h.postDelayed(this, 100);
         }
     };
@@ -118,6 +128,7 @@ public class MainActivity extends Activity {
             pauseTimer();
             showPauseOverlay();
         }
+        if (audio != null) audio.pause();
         savePlayed();
     }
 
@@ -126,6 +137,7 @@ public class MainActivity extends Activity {
         super.onDestroy();
         h.removeCallbacksAndMessages(null);
         sound.shutdown();
+        if (audio != null) audio.release();
     }
 
     @Override
@@ -135,6 +147,7 @@ public class MainActivity extends Activity {
             case SC_HOME: super.onBackPressed(); break;
             case SC_SETUP: showHome(); break;
             case SC_THEME: showSetup(); break;
+            case SC_BLIND: confirmQuit(); break;
             case SC_NAMES: showThemePicker(); break;
             case SC_FINAL: showHome(); break;
             default: confirmQuit(); break;
@@ -168,6 +181,10 @@ public class MainActivity extends Activity {
         bonusOn = prefs.getBoolean("bonus", true);
         listenOnPass = prefs.getBoolean("listen", true);
         catchUpOn = prefs.getBoolean("catchup", true);
+        gameType = prefs.getInt("gameType", 0);
+        blindIdx = prefs.getInt("blindSongs", 1);
+        listenIdx = prefs.getInt("listen", 2);
+        blindMiddle = prefs.getBoolean("blindMiddle", true);
         themeKey = prefs.getString("theme", "random");
         frShare = prefs.getInt("frShare", 75);
     }
@@ -176,7 +193,9 @@ public class MainActivity extends Activity {
         prefs.edit().putInt("mode", modeIdx).putInt("players", playersN).putInt("teams", teamsN)
                 .putInt("sec", secIdx).putInt("rounds", roundsN).putInt("pen", penIdx).putInt("diff", diffIdx)
                 .putBoolean("chal", challengesOn).putBoolean("bonus", bonusOn).putBoolean("listen", listenOnPass).putBoolean("catchup", catchUpOn)
-                .putString("theme", themeKey).putInt("frShare", frShare).apply();
+                .putString("theme", themeKey).putInt("frShare", frShare)
+                .putInt("gameType", gameType).putInt("blindSongs", blindIdx).putInt("listen", listenIdx)
+                .putBoolean("blindMiddle", blindMiddle).apply();
     }
 
     private Set<String> loadPlayed() {
@@ -224,6 +243,8 @@ public class MainActivity extends Activity {
 
     private void showHome() {
         screen = SC_HOME;
+        blindActive = false;
+        if (audio != null) audio.stop();
         keepScreenOn(false);
         game = null;
         LinearLayout l = page();
@@ -252,11 +273,15 @@ public class MainActivity extends Activity {
         ui.add(l, hero, 6);
         ui.add(l, ui.center("Fredonne. Fais deviner. Marque des points.", 16, Ui.MUTED, false), 12);
 
-        TextView play = ui.button("▶  Nouvelle partie", Ui.PINK, Ui.TXT);
-        play.setOnClickListener(v -> showSetup());
+        TextView play = ui.button("🎤  Fredonne et fais deviner", Ui.PINK, Ui.TXT);
+        play.setOnClickListener(v -> { gameType = 0; showSetup(); });
         ui.add(l, play, 40);
 
-        TextView rules = ui.button("📖  Règles du jeu", Ui.CARD2, Ui.TXT);
+        TextView blindBtn = ui.button("🎧  Blind test", Ui.CARD2, Ui.TXT);
+        blindBtn.setOnClickListener(v -> { gameType = 1; showSetup(); });
+        ui.add(l, blindBtn, 12);
+
+        TextView rules = ui.button("📖  Règles du jeu", Ui.BG, Ui.TXT);
         rules.setOnClickListener(v -> showRules());
         ui.add(l, rules, 12);
 
@@ -298,6 +323,7 @@ public class MainActivity extends Activity {
                 + "• Bonus éclair : trouvé en moins de 5 s = +1 pt supplémentaire pour chacun.\n\n"
                 + "• Passer : perte de temps (pénalité réglable). La chanson passée revient en fin de liste s'il reste du temps. Si on l'écoute pendant la pause, elle n'est plus reproposée.\n\n"
                 + "• Trouvé : on peut écouter l'original avant de continuer (chrono en pause).\n\n"
+                + "• Blind test : l'application joue l'original (titre masqué), tout le monde écoute en même temps. Le premier qui trouve marque 1 (titre), 1 (interprète) ou 3 pts (les deux), +1 en moins de 5 s.\n\n"
                 + "• Rattrapage (option) : à la fin du passage, les autres joueurs écoutent l'original des chansons non trouvées et peuvent marquer 1 / 1 / 3 pts. Le chanteur ne joue pas.";
         new AlertDialog.Builder(this).setTitle("Règles").setMessage(msg).setPositiveButton("Compris", null).show();
     }
@@ -335,32 +361,49 @@ public class MainActivity extends Activity {
     private void showSetup() {
         screen = SC_SETUP;
         LinearLayout l = page();
-        ui.add(l, ui.text("Réglages de la partie", 26, Ui.TXT, true), 0);
+        ui.add(l, ui.text(gameType == 1 ? "🎧 Blind test" : "Réglages de la partie", 26, Ui.TXT, true), 0);
 
-        ui.add(l, stepper("Mode", new String[]{"Individuel", "Équipes"}, modeIdx, i -> { modeIdx = i; showSetup(); }), 18);
+        ui.add(l, stepper("Type de jeu", new String[]{"🎤 Fredonne", "🎧 Blind test"}, gameType, i -> { gameType = i; showSetup(); }), 18);
+        ui.add(l, stepper("Mode", new String[]{"Individuel", "Équipes"}, modeIdx, i -> { modeIdx = i; showSetup(); }), 10);
         if (modeIdx == 0) {
             ui.add(l, stepper("Joueurs", range(2, 12, ""), playersN - 2, i -> playersN = i + 2), 10);
         } else {
             ui.add(l, stepper("Équipes", range(2, 4, ""), teamsN - 2, i -> teamsN = i + 2), 10);
         }
-        String[] secs = new String[SECONDS.length];
-        for (int i = 0; i < SECONDS.length; i++) secs[i] = SECONDS[i] + " s";
-        ui.add(l, stepper("Temps par joueur", secs, secIdx, i -> secIdx = i), 10);
-        ui.add(l, stepper("Nombre de tours", range(1, 10, ""), roundsN - 1, i -> roundsN = i + 1), 10);
-        String[] pens = new String[PENALTIES.length];
-        for (int i = 0; i < PENALTIES.length; i++) pens[i] = PENALTIES[i] == 0 ? "Aucune" : "-" + PENALTIES[i] + " s";
-        ui.add(l, stepper("Pénalité si on passe", pens, penIdx, i -> penIdx = i), 10);
-        ui.add(l, stepper("Difficulté", DIFFS, diffIdx, i -> diffIdx = i), 10);
-        ui.add(l, stepper("Défis surprises", new String[]{"Oui", "Non"}, challengesOn ? 0 : 1, i -> challengesOn = i == 0), 10);
-        ui.add(l, stepper("Bonus éclair (< 5 s)", new String[]{"Oui", "Non"}, bonusOn ? 0 : 1, i -> bonusOn = i == 0), 10);
-        ui.add(l, stepper("Écouter après un passe", new String[]{"Oui", "Non"}, listenOnPass ? 0 : 1, i -> listenOnPass = i == 0), 10);
-        ui.add(l, stepper("Rattrapage des autres joueurs", new String[]{"Oui", "Non"}, catchUpOn ? 0 : 1, i -> catchUpOn = i == 0), 10);
-
-        TextView help = ui.text((modeIdx == 0
-                ? "Individuel : le chanteur et celui qui devine marquent chacun les points."
-                : "Équipes : un membre chante, ses coéquipiers devinent. L'équipe marque les points.")
-                + "\nTitre = 1 pt · Interprète = 1 pt · Les deux = 3 pts · 10 chansons trouvées = +10 pts."
-                + "\nRattrapage : en fin de passage, les autres écoutent l'original des chansons non trouvées et peuvent marquer.", 13, Ui.MUTED, false);
+        TextView help;
+        if (gameType == 1) {
+            String[] nb = new String[BLIND_SONGS.length];
+            for (int i = 0; i < nb.length; i++) nb[i] = BLIND_SONGS[i] + " chansons";
+            ui.add(l, stepper("Nombre de chansons", nb, blindIdx, i -> blindIdx = i), 10);
+            String[] ls = new String[LISTEN.length];
+            for (int i = 0; i < ls.length; i++) ls[i] = LISTEN[i] + " s";
+            ui.add(l, stepper("Temps d'écoute", ls, listenIdx, i -> listenIdx = i), 10);
+            ui.add(l, stepper("Extrait", new String[]{"Au cœur", "Début"}, blindMiddle ? 0 : 1, i -> blindMiddle = i == 0), 10);
+            ui.add(l, stepper("Difficulté", DIFFS, diffIdx, i -> diffIdx = i), 10);
+            ui.add(l, stepper("Bonus éclair (< 5 s)", new String[]{"Oui", "Non"}, bonusOn ? 0 : 1, i -> bonusOn = i == 0), 10);
+            help = ui.text("Blind test : l'application joue l'original, titre masqué. Tout le monde écoute en même temps ; "
+                    + "le premier qui trouve le dit à voix haute, on appuie sur ✋ Trouvé.\n"
+                    + "Titre = 1 pt · Interprète = 1 pt · Les deux = 3 pts (+1 si trouvé en moins de 5 s).\n"
+                    + "Connexion Internet nécessaire.", 13, Ui.MUTED, false);
+        } else {
+            String[] secs = new String[SECONDS.length];
+            for (int i = 0; i < SECONDS.length; i++) secs[i] = SECONDS[i] + " s";
+            ui.add(l, stepper("Temps par joueur", secs, secIdx, i -> secIdx = i), 10);
+            ui.add(l, stepper("Nombre de tours", range(1, 10, ""), roundsN - 1, i -> roundsN = i + 1), 10);
+            String[] pens = new String[PENALTIES.length];
+            for (int i = 0; i < PENALTIES.length; i++) pens[i] = PENALTIES[i] == 0 ? "Aucune" : "-" + PENALTIES[i] + " s";
+            ui.add(l, stepper("Pénalité si on passe", pens, penIdx, i -> penIdx = i), 10);
+            ui.add(l, stepper("Difficulté", DIFFS, diffIdx, i -> diffIdx = i), 10);
+            ui.add(l, stepper("Défis surprises", new String[]{"Oui", "Non"}, challengesOn ? 0 : 1, i -> challengesOn = i == 0), 10);
+            ui.add(l, stepper("Bonus éclair (< 5 s)", new String[]{"Oui", "Non"}, bonusOn ? 0 : 1, i -> bonusOn = i == 0), 10);
+            ui.add(l, stepper("Écouter après un passe", new String[]{"Oui", "Non"}, listenOnPass ? 0 : 1, i -> listenOnPass = i == 0), 10);
+            ui.add(l, stepper("Rattrapage des autres joueurs", new String[]{"Oui", "Non"}, catchUpOn ? 0 : 1, i -> catchUpOn = i == 0), 10);
+            help = ui.text((modeIdx == 0
+                    ? "Individuel : le chanteur et celui qui devine marquent chacun les points."
+                    : "Équipes : un membre chante, ses coéquipiers devinent. L'équipe marque les points.")
+                    + "\nTitre = 1 pt · Interprète = 1 pt · Les deux = 3 pts · 10 chansons trouvées = +10 pts."
+                    + "\nRattrapage : en fin de passage, les autres écoutent l'original des chansons non trouvées et peuvent marquer.", 13, Ui.MUTED, false);
+        }
         ui.add(l, help, 14);
 
         TextView next = ui.button("Suivant  ›", Ui.PINK, Ui.TXT);
@@ -392,7 +435,7 @@ public class MainActivity extends Activity {
             ui.add(l, e, 10);
             nameFields.add(e);
         }
-        TextView go = ui.button("🎲  Tirage au sort du 1er joueur", Ui.PINK, Ui.TXT);
+        TextView go = ui.button(gameType == 1 ? "🎧  Commencer le blind test" : "🎲  Tirage au sort du 1er joueur", Ui.PINK, Ui.TXT);
         go.setOnClickListener(v -> startGame(collectNames()));
         ui.add(l, go, 22);
     }
@@ -430,6 +473,10 @@ public class MainActivity extends Activity {
         c.frenchShare = frShare;
         c.theme = themeKey;
         c.catchUp = catchUpOn;
+        c.blind = gameType == 1;
+        c.blindSongs = BLIND_SONGS[blindIdx];
+        c.blindMiddle = blindMiddle;
+        if (c.blind) c.seconds = LISTEN[listenIdx];
         c.names = names;
         return c;
     }
@@ -438,7 +485,7 @@ public class MainActivity extends Activity {
         game = new GameEngine(buildConfig(names), catalog, loadPlayed(), rnd);
         stoppedEarly = false;
         keepScreenOn(true);
-        showDraw();
+        if (game.config.blind) showBlindIntro(); else showDraw();
     }
 
     private void showDraw() {
@@ -716,9 +763,11 @@ public class MainActivity extends Activity {
     private void pauseTimer() {
         running = false;
         h.removeCallbacks(ticker);
+        if (blindActive && audio != null) audio.pause();
     }
 
     private void resumeTimer() {
+        if (blindActive && audio != null) audio.resume();
         running = true;
         lastTick = SystemClock.elapsedRealtime();
         updateTimerUi();
@@ -880,6 +929,234 @@ public class MainActivity extends Activity {
         else showTurnRecap();
     }
 
+    // ---------- Blind test ----------
+
+    private void showBlindIntro() {
+        screen = SC_GAME;
+        if (audio == null) audio = new BlindAudio(this);
+        blindFails = 0;
+        LinearLayout l = page();
+        l.setGravity(Gravity.CENTER_HORIZONTAL);
+        MusicViews.Vinyl vinyl = new MusicViews.Vinyl(this);
+        LinearLayout.LayoutParams vlp = new LinearLayout.LayoutParams(ui.dp(150), ui.dp(150));
+        vlp.gravity = Gravity.CENTER_HORIZONTAL;
+        vlp.topMargin = ui.dp(10);
+        l.addView(vinyl, vlp);
+        TextView t = ui.center("BLIND TEST", 34, Ui.TXT, true);
+        t.setShadowLayer(16, 0, 0, Ui.NEON_PINK);
+        ui.add(l, t, 14);
+        ui.add(l, ui.center(themeTitle(), 16, Ui.CYAN, true), 6);
+        ui.add(l, ui.center(game.config.blindSongs + " chansons · " + game.config.seconds + " s d'écoute", 15, Ui.MUTED, false), 6);
+        ui.add(l, ui.center("🔊 Monte le son et pose le téléphone au centre.\nLe premier qui trouve le crie !", 15, Ui.TXT, false), 22);
+        TextView go = ui.button("▶  C'est parti !", Ui.PINK, Ui.TXT);
+        go.setOnClickListener(v -> blindNextSong());
+        ui.add(l, go, 26);
+        ui.add(l, scoreboard(false), 22);
+        GameEngine.Proposal first = game.blindPeek();
+        if (first != null) audio.prefetch(first.song);
+    }
+
+    private void blindNextSong() {
+        closeOverlay();
+        blindActive = false;
+        audio.stop();
+        if (game.blindOver()) { showBlindFinal(); return; }
+        GameEngine.Proposal p = game.blindNext();
+        blindPlay(p);
+    }
+
+    private void blindPlay(final GameEngine.Proposal p) {
+        renderBlind(p, false);
+        audio.play(p.song, game.config.blindMiddle, new BlindAudio.Listener() {
+            @Override public void onStarted() {
+                if (game == null || game.current != p || screen != SC_BLIND) return;
+                blindFails = 0;
+                totalMs = game.config.seconds * 1000L;
+                remainingMs = totalMs;
+                songElapsedMs = 0;
+                lastBeepSec = -1;
+                blindActive = true;
+                foundText.setText("♪ Écoutez !");
+                resumeTimer();
+                GameEngine.Proposal next = game.blindPeek();
+                if (next != null) audio.prefetch(next.song);
+            }
+            @Override public void onFailed() {
+                if (game == null || game.current != p) return;
+                blindFails++;
+                if (blindFails >= 3) {
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setMessage("Impossible de lire les chansons. Vérifie la connexion Internet.")
+                            .setPositiveButton("Réessayer", (d, w) -> { blindFails = 0; blindPlay(game.blindReplace()); })
+                            .setNegativeButton("Classement", (d, w) -> showBlindFinal())
+                            .setCancelable(false)
+                            .show();
+                    return;
+                }
+                blindPlay(game.blindReplace());
+            }
+        });
+    }
+
+    /** Écran d'une chanson : recherche (titre masqué) ou réponse révélée. */
+    private void renderBlind(final GameEngine.Proposal p, boolean revealed) {
+        screen = SC_BLIND;
+        p.shown = true;
+        LinearLayout l = page();
+        LinearLayout top = ui.hbox();
+        top.addView(ui.text("🎧 Chanson " + game.blindIndex + " / " + game.config.blindSongs, 18, Ui.TXT, true), ui.weight(1, 0));
+        TextView pause = ui.button("⏸", Ui.CARD2, Ui.TXT);
+        pause.setPadding(ui.dp(14), ui.dp(6), ui.dp(14), ui.dp(6));
+        pause.setOnClickListener(v -> {
+            if (running) { pauseTimer(); showPauseOverlay(); }
+            else confirmQuit();
+        });
+        top.addView(pause);
+        ui.add(l, top, 0);
+        ui.add(l, ui.text(themeTitle(), 13, Ui.CYAN, false), 2);
+
+        timerText = ui.center(String.valueOf(game.config.seconds), 56, Ui.YELLOW, true);
+        timerText.setShadowLayer(16, 0, 0, Ui.NEON_BLUE);
+        ui.add(l, timerText, 6);
+        progress = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
+        progress.setMax(1000);
+        progress.setProgress(revealed ? 0 : 1000);
+        progress.setProgressTintList(android.content.res.ColorStateList.valueOf(Ui.GOLD));
+        progress.setProgressBackgroundTintList(android.content.res.ColorStateList.valueOf(Ui.CARD2));
+        l.addView(progress, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ui.dp(10)));
+        foundText = ui.center(revealed ? "" : "Recherche du titre…", 14, Ui.MUTED, false);
+        scoreText = ui.text("", 1, Ui.MUTED, false);
+        ui.add(l, foundText, 8);
+
+        LinearLayout card = ui.vbox();
+        card.setGravity(Gravity.CENTER_HORIZONTAL);
+        card.setBackground(new MusicViews.Neon(ui.dp(22), ui.dp(2)));
+        card.setPadding(ui.dp(22), ui.dp(22), ui.dp(22), ui.dp(22));
+        ui.add(l, card, 12);
+        MusicViews.Vinyl vinyl = new MusicViews.Vinyl(this);
+        LinearLayout.LayoutParams vlp = new LinearLayout.LayoutParams(ui.dp(110), ui.dp(110));
+        vlp.gravity = Gravity.CENTER_HORIZONTAL;
+        card.addView(vinyl, vlp);
+        if (!revealed) {
+            card.addView(ui.center("🎵 Chanson mystère", 22, Ui.YELLOW, true), ui.full(14));
+            card.addView(equalizer(200, 26));
+            LinearLayout actions = ui.hbox();
+            TextView reveal = ui.button("👁 Révéler", Ui.BG, Ui.TXT);
+            TextView ok = ui.button("✋ Trouvé !", Ui.GREEN, Ui.TXT);
+            ok.setTextSize(22);
+            reveal.setOnClickListener(v -> blindReveal(p));
+            ok.setOnClickListener(v -> onBlindFound(p));
+            actions.addView(reveal, ui.weight(1, 5));
+            actions.addView(ok, ui.weight(1.6f, 5));
+            ui.add(l, actions, 16);
+        } else {
+            card.addView(ui.center(p.song.title, 24, Ui.TXT, true), ui.full(14));
+            if (p.song.noteLine() != null) card.addView(ui.center(p.song.noteLine(), 15, Ui.GOLD, false), ui.full(2));
+            card.addView(ui.center(p.song.artist + " • " + p.song.year, 16, Ui.MUTED, false), ui.full(4));
+            String genre = Styles.genres(p.song);
+            if (!genre.isEmpty()) card.addView(ui.center("🎵 " + genre, 13, Ui.CYAN, false), ui.full(4));
+            String res = p.found
+                    ? "✅ " + game.players.get(p.guesser).name + " : " + WHAT[p.what] + " +" + p.points + (p.bonus ? " ⚡+1" : "")
+                    : "😶 Personne n'a trouvé";
+            card.addView(ui.center(res, 17, p.found ? Ui.GREEN : Ui.MUTED, true), ui.full(14));
+            TextView next = ui.button(game.blindOver() ? "🏆  Classement final" : "Chanson suivante  ›", Ui.PINK, Ui.TXT);
+            next.setOnClickListener(v -> blindNextSong());
+            ui.add(l, next, 16);
+        }
+        ui.add(l, scoreboard(false), 16);
+    }
+
+    private void onBlindFound(final GameEngine.Proposal p) {
+        if (!blindActive) return;
+        final long ms = songElapsedMs;
+        pauseTimer();
+        LinearLayout box = overlayBox("✋ Trouvé !");
+        box.addView(ui.center("Qu'a-t-on trouvé ?", 16, Ui.TXT, true), ui.full(12));
+        addWhatButtons(box, what -> {
+            closeOverlay();
+            LinearLayout who = overlayBox("Qui a trouvé ?");
+            who.addView(ui.center("+" + GameEngine.pointsFor(what) + " pt" + (GameEngine.pointsFor(what) > 1 ? "s" : ""), 14, Ui.MUTED, false), ui.full(6));
+            addPlayerButtons(who, -1, idx -> {
+                closeOverlay();
+                game.blindFound(idx, what, ms);
+                flash("+" + (GameEngine.pointsFor(what) + (p.bonus ? 1 : 0)), Ui.GREEN);
+                blindReveal(p);
+            });
+            TextView back = ui.button("‹ Retour", Ui.BG, Ui.MUTED);
+            back.setOnClickListener(v -> { closeOverlay(); resumeTimer(); });
+            who.addView(back, ui.full(16));
+        });
+        TextView cancel = ui.button("Annuler", Ui.BG, Ui.MUTED);
+        cancel.setOnClickListener(v -> { closeOverlay(); resumeTimer(); });
+        box.addView(cancel, ui.full(14));
+    }
+
+    /** Réponse : le chrono s'arrête, la musique continue pendant l'affichage du titre. */
+    private void blindReveal(GameEngine.Proposal p) {
+        pauseTimer();
+        blindActive = false;
+        backdrop.setAlert(false);
+        if (audio != null) audio.resume();
+        renderBlind(p, true);
+    }
+
+    private void blindTimeUp() {
+        sound.endTurn();
+        vibrate(150);
+        GameEngine.Proposal p = game.current;
+        if (p != null) blindReveal(p);
+    }
+
+    private void showBlindFinal() {
+        blindActive = false;
+        pauseTimer();
+        if (audio != null) audio.stop();
+        screen = SC_FINAL;
+        keepScreenOn(false);
+        savePlayed();
+        sound.endGame();
+        LinearLayout l = page();
+        List<GameEngine.Player> r = game.ranking();
+        ui.add(l, ui.center("🏆", 64, Ui.TXT, false), 0);
+        ui.add(l, ui.center(r.get(0).name, 32, Ui.GOLD, true), 0);
+        int winners = 0;
+        for (int i = 0; i < r.size(); i++) if (game.rankOf(r, i) == 1) winners++;
+        ui.add(l, ui.center(winners > 1 ? "Égalité en tête !" : "remporte le blind test !", 17, Ui.TXT, false), 4);
+        ui.add(l, scoreboard(true), 20);
+
+        LinearLayout st = ui.card();
+        st.addView(ui.text("Les trophées", 15, Ui.MUTED, true));
+        GameEngine.Player ear = null, fastest = null;
+        for (GameEngine.Player p : game.players) {
+            if (p.guessed > 0 && (ear == null || p.guessed > ear.guessed)) ear = p;
+            if (p.bestMs >= 0 && (fastest == null || p.bestMs < fastest.bestMs)) fastest = p;
+        }
+        int found = 0, total = 0;
+        for (GameEngine.Proposal p : game.history) if (p.shown) { total++; if (p.found) found++; }
+        st.addView(ui.text("🎵 " + found + " / " + total + " chansons trouvées", 15, Ui.TXT, false), ui.full(8));
+        if (ear != null) st.addView(ui.text("🎯 Meilleure oreille : " + ear.name + " (" + ear.guessed + ")", 15, Ui.TXT, false), ui.full(8));
+        if (fastest != null)
+            st.addView(ui.text("⚡ Plus rapide : " + fastest.name + " - « " + fastest.bestSong + " » en "
+                    + Math.max(1, Math.round(fastest.bestMs / 1000.0)) + " s", 15, Ui.TXT, false), ui.full(8));
+        ui.add(l, st, 14);
+
+        LinearLayout btns = ui.hbox();
+        TextView again = ui.button("🔁 Revanche", Ui.PINK, Ui.TXT);
+        again.setOnClickListener(v -> {
+            List<String> names = new ArrayList<>();
+            for (GameEngine.Player p : game.players) names.add(p.name);
+            startGame(names);
+        });
+        TextView home = ui.button("Accueil", Ui.CARD2, Ui.TXT);
+        home.setOnClickListener(v -> showHome());
+        btns.addView(again, ui.weight(1, 5));
+        btns.addView(home, ui.weight(1, 5));
+        ui.add(l, btns, 18);
+
+        ui.add(l, ui.text("Les chansons du blind test (touchez pour réécouter) :", 14, Ui.MUTED, false), 22);
+        addSongRows(l, played(game.history), false);
+    }
+
     /** Rattrapage : les autres joueurs écoutent l'original de chaque chanson non trouvée. */
     private void showCatchUp(final List<GameEngine.Proposal> list, final int idx, boolean revealed) {
         screen = SC_GAME;
@@ -982,7 +1259,7 @@ public class MainActivity extends Activity {
     }
 
     private void showPauseOverlay() {
-        if (overlay != null || screen != SC_PLAY) return;
+        if (overlay != null || (screen != SC_PLAY && screen != SC_BLIND)) return;
         LinearLayout box = overlayBox("⏸ Pause");
         box.addView(ui.center("Chrono arrêté", 15, Ui.MUTED, false), ui.full(6));
         TextView resume = ui.button("Reprendre", Ui.PINK, Ui.TXT);
@@ -1021,6 +1298,11 @@ public class MainActivity extends Activity {
     private void endGameEarly() {
         if (game == null) { showHome(); return; }
         pauseTimer();
+        if (game.config.blind) {
+            closeOverlay();
+            showBlindFinal();
+            return;
+        }
         game.abandon();
         stoppedEarly = !game.isGameOver();
         closeOverlay();

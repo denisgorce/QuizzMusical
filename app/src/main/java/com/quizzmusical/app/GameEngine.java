@@ -35,6 +35,9 @@ public class GameEngine {
         public boolean catchUp = true; // rattrapage des autres joueurs en fin de passage
         public int frenchShare = 75; // % de chansons françaises (thèmes généraux)
         public String theme = "random"; // thème unique pour toute la partie
+        public boolean blind = false;   // mode blind test : l'app joue l'original, tout le monde devine
+        public int blindSongs = 15;     // nombre de chansons en blind test
+        public boolean blindMiddle = true; // extrait pris au cœur du morceau
         public List<String> names = new ArrayList<>();
     }
 
@@ -217,6 +220,61 @@ public class GameEngine {
         Player g = players.get(guesser);
         g.score += pts;
         g.lateGuessed += 1;
+    }
+
+    // ---------- Blind test ----------
+
+    public int blindIndex; // nombre de chansons déjà jouées
+
+    private Proposal peeked;
+
+    /** Chanson suivante déjà tirée (pour précharger son flux audio), sans la compter. */
+    public Proposal blindPeek() {
+        if (blindIndex >= config.blindSongs) return null;
+        if (peeked == null) peeked = newProposal(config.theme);
+        return peeked;
+    }
+
+    /** Tire la chanson suivante du blind test. */
+    public Proposal blindNext() {
+        Proposal p = peeked != null ? peeked : newProposal(config.theme);
+        peeked = null;
+        p.onomato = null;
+        p.challenge = null;
+        p.singer = -1;
+        p.round = 1;
+        blindIndex++;
+        history.add(p);
+        current = p;
+        return p;
+    }
+
+    /** Chanson introuvable en écoute : remplacée par une autre, sans compter. */
+    public Proposal blindReplace() {
+        if (current != null) history.remove(current);
+        blindIndex--;
+        return blindNext();
+    }
+
+    public boolean blindOver() { return blindIndex >= config.blindSongs; }
+
+    /** Blind test : seul celui qui trouve marque (1 / 1 / 3, +1 si éclair). */
+    public void blindFound(int guesser, int what, long elapsedMs) {
+        if (current == null || guesser < 0) return;
+        Proposal p = current;
+        int pts = pointsFor(what);
+        p.found = true;
+        p.what = what;
+        p.points = pts;
+        p.guesser = guesser;
+        p.ms = elapsedMs;
+        Player g = players.get(guesser);
+        g.score += pts;
+        g.guessed += 1;
+        boolean bonus = config.speedBonus && elapsedMs < SPEED_BONUS_MS;
+        p.bonus = bonus;
+        if (bonus) { g.score += 1; g.bonus += 1; }
+        if (g.bestMs < 0 || elapsedMs < g.bestMs) { g.bestMs = elapsedMs; g.bestSong = p.song.title; }
     }
 
     // ---------- Tirage ----------

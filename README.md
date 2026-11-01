@@ -4,6 +4,8 @@ Jeu d'ambiance Android : un joueur fredonne une chanson **uniquement avec une on
 
 ## Fonctionnalités
 
+- **Deux types de jeu** : 🎤 **Fredonne** (un joueur fait deviner avec une onomatopée) et 🎧 **Blind test** (l'application joue l'original, titre masqué, tout le monde devine en même temps).
+- **Blind test** : 10 à 50 chansons, 10 à 45 s d'écoute, extrait au cœur du morceau ou au début ; ✋ Trouvé → quoi (titre 1 / interprète 1 / les deux 3, +1 éclair) → qui ; réponse affichée avec la musique qui continue ; chanson suivante préchargée ; classement, trophées et liste réécoutable en fin de partie. Accessible depuis l'accueil ou le réglage « Type de jeu ».
 - **Réglages** : mode individuel ou équipes (2 à 4), 2 à 12 joueurs, temps par joueur (30 à 120 s), 1 à 10 tours, pénalité de passe (0 / 3 / 5 / 10 s), difficulté (mix / incontournables / connaisseurs), défis surprises, bonus éclair.
 - **Thème unique** choisi au début de la partie (après les réglages), conservé jusqu'à la fin.
 - **Tirage au sort animé** du premier joueur, puis ordre de passage tournant.
