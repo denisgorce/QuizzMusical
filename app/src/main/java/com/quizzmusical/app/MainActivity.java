@@ -171,23 +171,44 @@ public class MainActivity extends Activity {
     }
 
     private void loadSettings() {
-        modeIdx = prefs.getInt("mode", 0);
-        playersN = prefs.getInt("players", 4);
-        teamsN = prefs.getInt("teams", 2);
-        secIdx = prefs.getInt("sec", 2);
-        roundsN = prefs.getInt("rounds", 3);
-        penIdx = prefs.getInt("pen", 2);
-        diffIdx = prefs.getInt("diff", 0);
-        challengesOn = prefs.getBoolean("chal", true);
-        bonusOn = prefs.getBoolean("bonus", true);
-        listenOnPass = prefs.getBoolean("listen", true);
-        catchUpOn = prefs.getBoolean("catchup", true);
-        gameType = prefs.getInt("gameType", 0);
-        blindIdx = prefs.getInt("blindSongs", 1);
-        listenIdx = prefs.getInt("listen", 2);
-        blindMiddle = prefs.getBoolean("blindMiddle", true);
-        themeKey = prefs.getString("theme", "random");
-        frShare = prefs.getInt("frShare", 75);
+        modeIdx = getI("mode", 0);
+        playersN = getI("players", 4);
+        teamsN = getI("teams", 2);
+        secIdx = getI("sec", 2);
+        roundsN = getI("rounds", 3);
+        penIdx = getI("pen", 2);
+        diffIdx = getI("diff", 0);
+        challengesOn = getB("chal", true);
+        bonusOn = getB("bonus", true);
+        listenOnPass = getB("listen", true);
+        catchUpOn = getB("catchup", true);
+        gameType = getI("gameType", 0);
+        blindIdx = getI("blindSongs", 1);
+        listenIdx = getI("blindListen", 2);
+        blindMiddle = getB("blindMiddle", true);
+        themeKey = getS("theme", "random");
+        frShare = getI("frShare", 75);
+        secIdx = clamp(secIdx, SECONDS.length);
+        penIdx = clamp(penIdx, PENALTIES.length);
+        diffIdx = clamp(diffIdx, DIFFS.length);
+        blindIdx = clamp(blindIdx, BLIND_SONGS.length);
+        listenIdx = clamp(listenIdx, LISTEN.length);
+        frShare = Math.max(0, Math.min(100, frShare));
+    }
+
+    private static int clamp(int i, int n) { return i < 0 || i >= n ? 0 : i; }
+
+    // Lectures tolérantes : une valeur corrompue (mauvais type) est supprimée au lieu de faire planter l'app au démarrage.
+    private int getI(String k, int d) {
+        try { return prefs.getInt(k, d); } catch (RuntimeException e) { prefs.edit().remove(k).apply(); return d; }
+    }
+
+    private boolean getB(String k, boolean d) {
+        try { return prefs.getBoolean(k, d); } catch (RuntimeException e) { prefs.edit().remove(k).apply(); return d; }
+    }
+
+    private String getS(String k, String d) {
+        try { String v = prefs.getString(k, d); return v == null ? d : v; } catch (RuntimeException e) { prefs.edit().remove(k).apply(); return d; }
     }
 
     private void saveSettings() {
@@ -195,12 +216,13 @@ public class MainActivity extends Activity {
                 .putInt("sec", secIdx).putInt("rounds", roundsN).putInt("pen", penIdx).putInt("diff", diffIdx)
                 .putBoolean("chal", challengesOn).putBoolean("bonus", bonusOn).putBoolean("listen", listenOnPass).putBoolean("catchup", catchUpOn)
                 .putString("theme", themeKey).putInt("frShare", frShare)
-                .putInt("gameType", gameType).putInt("blindSongs", blindIdx).putInt("listen", listenIdx)
+                .putInt("gameType", gameType).putInt("blindSongs", blindIdx).putInt("blindListen", listenIdx)
                 .putBoolean("blindMiddle", blindMiddle).apply();
     }
 
     private Set<String> loadPlayed() {
-        return new HashSet<>(prefs.getStringSet("played", new HashSet<String>()));
+        try { return new HashSet<>(prefs.getStringSet("played", new HashSet<String>())); }
+        catch (RuntimeException e) { prefs.edit().remove("played").apply(); return new HashSet<>(); }
     }
 
     private void savePlayed() {
@@ -286,7 +308,7 @@ public class MainActivity extends Activity {
         rules.setOnClickListener(v -> showRules());
         ui.add(l, rules, 12);
 
-        int played = prefs.getStringSet("played", new HashSet<String>()).size();
+        int played = loadPlayed().size();
         LinearLayout info = ui.card();
         int ru = Styles.pool(catalog, "ru", 0).size();
         int en = Styles.pool(catalog, "en", 0).size();
@@ -418,7 +440,7 @@ public class MainActivity extends Activity {
         screen = SC_NAMES;
         boolean teams = modeIdx == 1;
         int n = teams ? teamsN : playersN;
-        String saved = prefs.getString(teams ? "names_teams" : "names_solo", "");
+        String saved = getS(teams ? "names_teams" : "names_solo", "");
         List<String> prev = new ArrayList<>(Arrays.asList(saved.split("\n")));
         LinearLayout l = page();
         ui.add(l, ui.text(teams ? "Noms des équipes" : "Noms des joueurs", 26, Ui.TXT, true), 0);
