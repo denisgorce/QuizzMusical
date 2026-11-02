@@ -1071,11 +1071,13 @@ public class MainActivity extends Activity {
         final long ms = songElapsedMs;
         pauseTimer();
         LinearLayout box = overlayBox("✋ Trouvé !");
-        box.addView(ui.center("Qu'a-t-on trouvé ?", 16, Ui.TXT, true), ui.full(12));
+        addSongInfo(box, p);
+        box.addView(ui.center("Qu'a-t-on trouvé ?", 16, Ui.TXT, true), ui.full(16));
         addWhatButtons(box, what -> {
             closeOverlay();
             LinearLayout who = overlayBox("Qui a trouvé ?");
-            who.addView(ui.center("+" + GameEngine.pointsFor(what) + " pt" + (GameEngine.pointsFor(what) > 1 ? "s" : ""), 14, Ui.MUTED, false), ui.full(6));
+            addSongInfo(who, p);
+            who.addView(ui.center(WHAT[what] + " : +" + GameEngine.pointsFor(what) + " pt" + (GameEngine.pointsFor(what) > 1 ? "s" : ""), 15, Ui.GREEN, true), ui.full(10));
             addPlayerButtons(who, -1, idx -> {
                 closeOverlay();
                 game.blindFound(idx, what, ms);
@@ -1089,6 +1091,21 @@ public class MainActivity extends Activity {
         TextView cancel = ui.button("Annuler", Ui.BG, Ui.MUTED);
         cancel.setOnClickListener(v -> { closeOverlay(); resumeTimer(); });
         box.addView(cancel, ui.full(14));
+    }
+
+    /** Réponse de la chanson, pour vérifier ce qu'a dit le joueur avant d'attribuer les points. */
+    private void addSongInfo(LinearLayout box, GameEngine.Proposal p) {
+        LinearLayout c = ui.vbox();
+        c.setGravity(Gravity.CENTER_HORIZONTAL);
+        c.setBackground(ui.rounded(0x33FFFFFF, 16));
+        c.setPadding(ui.dp(14), ui.dp(12), ui.dp(14), ui.dp(12));
+        c.addView(ui.center("🎵 Titre", 12, Ui.MUTED, true));
+        c.addView(ui.center(p.song.title, 22, Ui.TXT, true), ui.full(2));
+        if (p.song.noteLine() != null) c.addView(ui.center(p.song.noteLine(), 14, Ui.GOLD, false), ui.full(2));
+        c.addView(ui.center("🎤 Interprète", 12, Ui.MUTED, true), ui.full(10));
+        c.addView(ui.center(p.song.artist, 18, Ui.YELLOW, true), ui.full(2));
+        c.addView(ui.center(p.song.year + "  •  " + Styles.genres(p.song), 13, Ui.CYAN, false), ui.full(8));
+        box.addView(c, ui.full(12));
     }
 
     /** Réponse : le chrono s'arrête, la musique continue pendant l'affichage du titre. */
