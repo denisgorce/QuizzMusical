@@ -24,6 +24,13 @@ public class GameEngine {
 
     public static int pointsFor(int what) { return what == FOUND_BOTH ? 3 : 1; }
 
+    /** Masque de ce qu'un joueur a trouvé : 1 = titre, 2 = interprète, 3 = les deux. */
+    public static final int M_TITLE = 1, M_ARTIST = 2, M_BOTH = 3;
+
+    public static int maskPoints(int m) { return m == M_BOTH ? 3 : m != 0 ? 1 : 0; }
+
+    public static int maskToWhat(int m) { return m == M_BOTH ? FOUND_BOTH : m == M_ARTIST ? FOUND_ARTIST : FOUND_TITLE; }
+
     public static class Config {
         public int mode = MODE_SOLO;
         public int seconds = 60;
@@ -67,6 +74,8 @@ public class GameEngine {
         public int lateGuesser = -1;  // rattrapage
         public int lateWhat = -1;
         public int latePoints;
+        public int[] finds;           // ce que chaque joueur a trouvé (masques), pendant le jeu
+        public int[] lateFinds;       // idem, au rattrapage
     }
 
     public static final String[] ONOMATOS = {
@@ -166,17 +175,24 @@ public class GameEngine {
     }
 
     /**
-     * Chanson trouvée. guesser : index du joueur (mode individuel) ou -1 (mode équipes).
-     * Le chanteur et celui qui devine marquent chacun 1 (titre), 1 (interprète) ou 3 (les deux).
+     * Chanson trouvée (mode Fredonne). masks[i] = ce que le joueur i a trouvé.
+     * Chaque joueur marque selon son masque (1 / 1 / 3) ; le chanteur marque selon ce qui a été
+     * trouvé au total (titre et interprète trouvés, même par deux joueurs différents = 3).
+     * En équipes, seul masks[chanteur] compte : l'équipe marque une fois.
      */
-    public void found(int guesser, int what, long elapsedMs) {
+    public void found(int[] masks, long elapsedMs) {
         if (current == null) return;
         Proposal p = current;
-        int pts = pointsFor(what);
+        int union = 0;
+        if (isTeams()) union = masks[p.singer];
+        else for (int i = 0; i < masks.length; i++) if (i != p.singer) union |= masks[i];
+        if (union == 0) return;
+        int pts = maskPoints(union);
         p.found = true;
-        p.what = what;
+        p.what = maskToWhat(union);
         p.points = pts;
-        p.guesser = guesser;
+        p.finds = masks.clone();
+        p.guesser = -1;
         p.ms = elapsedMs;
         Player s = players.get(p.singer);
         s.score += pts;
@@ -185,11 +201,15 @@ public class GameEngine {
         p.bonus = bonus;
         if (bonus) { s.score += 1; s.bonus += 1; }
         if (s.bestMs < 0 || elapsedMs < s.bestMs) { s.bestMs = elapsedMs; s.bestSong = p.song.title; }
-        if (!isTeams() && guesser >= 0 && guesser != p.singer) {
-            Player g = players.get(guesser);
-            g.score += pts;
-            g.guessed += 1;
-            if (bonus) { g.score += 1; g.bonus += 1; }
+        if (!isTeams()) {
+            for (int i = 0; i < masks.length; i++) {
+                if (i == p.singer || masks[i] == 0) continue;
+                if (p.guesser < 0) p.guesser = i;
+                Player g = players.get(i);
+                g.score += maskPoints(masks[i]);
+                g.guessed += 1;
+                if (bonus) { g.score += 1; g.bonus += 1; }
+            }
         }
         queue.remove(p);
         if (queue.isEmpty() && foundCount() == currentTurn.size()) {
@@ -198,6 +218,14 @@ public class GameEngine {
             lastTurnComplete = true;
         }
         advance();
+    }
+
+    /** Compatibilité : un seul joueur (ou l'équipe si guesser = -1). */
+    public void found(int guesser, int what, long elapsedMs) {
+        int[] m = new int[players.size()];
+        int mask = what == FOUND_BOTH ? M_BOTH : what == FOUND_ARTIST ? M_ARTIST : M_TITLE;
+        if (isTeams() || guesser < 0) m[singerIndex()] = mask; else m[guesser] = mask;
+        found(m, elapsedMs);
     }
 
     /** Fin du chrono : la chanson en cours reste non trouvée. */
@@ -210,16 +238,25 @@ public class GameEngine {
         return out;
     }
 
-    /** Rattrapage : un autre joueur trouve en écoutant l'original. Le chanteur ne marque rien. */
+    /** Rattrapage : les autres joueurs marquent selon leur masque. Le chanteur ne marque rien. */
+    public void lateFound(Proposal p, int[] masks) {
+        if (p.lateFinds != null) return;
+        p.lateFinds = masks.clone();
+        for (int i = 0; i < masks.length; i++) {
+            if (i == p.singer || masks[i] == 0) continue;
+            int pts = maskPoints(masks[i]);
+            if (p.lateGuesser < 0) { p.lateGuesser = i; p.lateWhat = maskToWhat(masks[i]); }
+            p.latePoints += pts;
+            Player g = players.get(i);
+            g.score += pts;
+            g.lateGuessed += 1;
+        }
+    }
+
     public void lateFound(Proposal p, int guesser, int what) {
-        if (guesser < 0 || guesser == p.singer || p.lateGuesser >= 0) return;
-        int pts = pointsFor(what);
-        p.lateGuesser = guesser;
-        p.lateWhat = what;
-        p.latePoints = pts;
-        Player g = players.get(guesser);
-        g.score += pts;
-        g.lateGuessed += 1;
+        int[] m = new int[players.size()];
+        m[guesser] = what == FOUND_BOTH ? M_BOTH : what == FOUND_ARTIST ? M_ARTIST : M_TITLE;
+        lateFound(p, m);
     }
 
     // ---------- Blind test ----------
@@ -258,23 +295,35 @@ public class GameEngine {
 
     public boolean blindOver() { return blindIndex >= config.blindSongs; }
 
-    /** Blind test : seul celui qui trouve marque (1 / 1 / 3, +1 si éclair). */
-    public void blindFound(int guesser, int what, long elapsedMs) {
-        if (current == null || guesser < 0) return;
+    /** Blind test : chaque joueur marque selon son masque (1 / 1 / 3, +1 si révélé en moins de 5 s). */
+    public void blindFound(int[] masks, long elapsedMs) {
+        if (current == null) return;
         Proposal p = current;
-        int pts = pointsFor(what);
-        p.found = true;
-        p.what = what;
-        p.points = pts;
-        p.guesser = guesser;
+        p.finds = masks.clone();
         p.ms = elapsedMs;
-        Player g = players.get(guesser);
-        g.score += pts;
-        g.guessed += 1;
+        int union = 0;
+        for (int m : masks) union |= m;
+        if (union == 0) return;
         boolean bonus = config.speedBonus && elapsedMs < SPEED_BONUS_MS;
+        p.found = true;
         p.bonus = bonus;
-        if (bonus) { g.score += 1; g.bonus += 1; }
-        if (g.bestMs < 0 || elapsedMs < g.bestMs) { g.bestMs = elapsedMs; g.bestSong = p.song.title; }
+        p.what = maskToWhat(union);
+        for (int i = 0; i < masks.length; i++) {
+            if (masks[i] == 0) continue;
+            if (p.guesser < 0) p.guesser = i;
+            Player g = players.get(i);
+            int pts = maskPoints(masks[i]);
+            g.score += pts;
+            g.guessed += 1;
+            if (bonus) { g.score += 1; g.bonus += 1; }
+            if (g.bestMs < 0 || elapsedMs < g.bestMs) { g.bestMs = elapsedMs; g.bestSong = p.song.title; }
+        }
+    }
+
+    public void blindFound(int guesser, int what, long elapsedMs) {
+        int[] m = new int[players.size()];
+        m[guesser] = what == FOUND_BOTH ? M_BOTH : what == FOUND_ARTIST ? M_ARTIST : M_TITLE;
+        blindFound(m, elapsedMs);
     }
 
     // ---------- Tirage ----------

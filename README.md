@@ -5,7 +5,7 @@ Jeu d'ambiance Android : un joueur fredonne une chanson **uniquement avec une on
 ## Fonctionnalités
 
 - **Deux types de jeu** : 🎤 **Fredonne** (un joueur fait deviner avec une onomatopée) et 🎧 **Blind test** (l'application joue l'original, titre masqué, tout le monde devine en même temps).
-- **Blind test** : 10 à 50 chansons, 10 à 45 s d'écoute, extrait au cœur du morceau ou au début ; ✋ Trouvé → quoi (titre 1 / interprète 1 / les deux 3, +1 éclair) → qui ; réponse affichée avec la musique qui continue ; chanson suivante préchargée ; classement, trophées et liste réécoutable en fin de partie. Accessible depuis l'accueil ou le réglage « Type de jeu ».
+- **Blind test** : 10 à 50 chansons, 10 à 45 s d'écoute, extrait au cœur du morceau ou au début ; ✋ Trouvé ? ou 🏳 Abandonner révèle titre et interprète : le chrono s'arrête, on ne cherche plus, la musique continue jusqu'à la chanson suivante ; chaque joueur coche ce qu'il a trouvé (titre 1 / interprète 1 / les deux 3, +1 éclair si révélé en moins de 5 s) ; chanson suivante préchargée ; classement, trophées et liste réécoutable en fin de partie. Accessible depuis l'accueil ou le réglage « Type de jeu ».
 - **Réglages** : mode individuel ou équipes (2 à 4), 2 à 12 joueurs, temps par joueur (30 à 120 s), 1 à 10 tours, pénalité de passe (0 / 3 / 5 / 10 s), difficulté (mix / incontournables / connaisseurs), défis surprises, bonus éclair.
 - **Thème unique** choisi au début de la partie (après les réglages), conservé jusqu'à la fin.
 - **Tirage au sort animé** du premier joueur, puis ordre de passage tournant.
@@ -28,8 +28,8 @@ Jeu d'ambiance Android : un joueur fredonne une chanson **uniquement avec une on
 - **Sons doux** synthétisés : petit carillon les 5 dernières secondes (+ vibration légère, écran rouge), carillon descendant en fin de passage, arpège en fin de partie.
 - **Liste de 10 chansons par passage** : les chansons passées reviennent en fin de liste s'il reste du temps ; 10/10 trouvées = **+10 pts** pour le chanteur.
 - **Score** : titre = 1 pt, interprète = 1 pt, les deux = 3 pts, pour le chanteur et celui qui devine (mode équipes : pour l'équipe). Bonus éclair (< 5 s) : +1 pour chacun.
-- **Trouvé** : choix de qui a trouvé et de quoi (titre / interprète / les deux), avec écoute possible de l'original (chrono en pause).
-- **Rattrapage** (option) : en fin de passage, les autres joueurs écoutent l'original des chansons non trouvées (titre masqué jusqu'à la révélation) et peuvent marquer 1 / 1 / 3 pts ; le chanteur ne joue pas.
+- **Trouvé** : panneau unique, une ligne par joueur avec cases 🎵 Titre / 🎤 Interprète ; **plusieurs joueurs peuvent marquer** sur la même chanson (chacun selon sa part) ; le chanteur marque selon ce qui a été trouvé au total (titre par l'un + interprète par l'autre = 3). Écoute possible de l'original (chrono en pause).
+- **Rattrapage** (option) : en fin de passage, les autres joueurs écoutent l'original des chansons non trouvées (titre masqué jusqu'à la révélation) et peuvent marquer 1 / 1 / 3 pts, à plusieurs ; le chanteur ne joue pas.
 - **Récap après chaque passage, chaque tour et en fin de partie** : chaque chanson est cliquable pour l'**écouter dans l'application** (lecteur intégré : lecture/pause, ±10 s, autre version), flux audio direct sans interface ni publicité YouTube (NewPipeExtractor + ExoPlayer, comme WebRadio).
 - **Pause / arrêt** : bouton ⏸ (Reprendre, Terminer et voir le classement, Quitter), pause automatique si l'app passe en arrière-plan.
 - **Statistiques par joueur** en fin de partie : taux de réussite, temps moyen, passes, éclairs, chansons devinées, points forts et points à travailler (playlist forte / difficile, décennie favorite, défis...).

@@ -39,12 +39,15 @@ public class PlayerStats {
                 st[1]++;
                 if (p.bonus) s.bonus++;
                 if (p.challenge != null) s.challengeFound++;
-                if (p.guesser >= 0 && p.guesser != p.singer) {
-                    PlayerStats gs = out.get(p.guesser);
-                    gs.guessed++;
-                    int d = p.song.hasGenre('U') ? -1 : p.song.hasGenre('C') ? -2 : p.song.decade();
-                    Integer c = gs.guessedByDecade.get(d);
-                    gs.guessedByDecade.put(d, c == null ? 1 : c + 1);
+                if (p.finds != null) {
+                    for (int k = 0; k < p.finds.length; k++) {
+                        if (k == p.singer || p.finds[k] == 0) continue;
+                        PlayerStats gs = out.get(k);
+                        gs.guessed++;
+                        int d = p.song.hasGenre('U') ? -1 : p.song.hasGenre('C') ? -2 : p.song.decade();
+                        Integer c = gs.guessedByDecade.get(d);
+                        gs.guessedByDecade.put(d, c == null ? 1 : c + 1);
+                    }
                 }
             }
         }

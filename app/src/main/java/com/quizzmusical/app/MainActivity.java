@@ -79,6 +79,7 @@ public class MainActivity extends Activity {
     private boolean stoppedEarly;
     private BlindAudio audio;
     private boolean blindActive;
+    private boolean blindRevealed; // réponse affichée : on ne cherche plus, la musique continue
     private int blindFails;
 
     private final Runnable ticker = new Runnable() {
@@ -831,75 +832,97 @@ public class MainActivity extends Activity {
 
     private void showFoundWhat(final GameEngine.Proposal p, final long ms) {
         LinearLayout box = overlayBox("🎉 Trouvé !");
-        box.addView(ui.center(p.song.title + "\n" + p.song.artist, 15, Ui.MUTED, false), ui.full(6));
-        box.addView(ui.center("Qu'a-t-on trouvé ?", 16, Ui.TXT, true), ui.full(16));
-        addWhatButtons(box, what -> {
+        addSongInfo(box, p);
+        final int si = game.singerIndex();
+        box.addView(ui.center(game.isTeams() ? "Qu'a trouvé l'équipe ?" : "Qui a trouvé quoi ?\nPlusieurs joueurs possibles", 15, Ui.TXT, true), ui.full(4));
+        TextView sum = ui.center("", 14, Ui.GREEN, true);
+        final int[] masks = game.isTeams() ? addFinderGrid(box, -1, si, sum, si) : addFinderGrid(box, si, -1, sum, si);
+        box.addView(sum, ui.full(8));
+        TextView ok = ui.button("✓ Valider", Ui.GREEN, Ui.TXT);
+        ok.setOnClickListener(v -> {
+            int union = 0;
+            for (int m : masks) union |= m;
+            if (union == 0) { Toast.makeText(this, "Coche titre et/ou interprète", Toast.LENGTH_SHORT).show(); return; }
             closeOverlay();
-            if (game.isTeams()) scoreFound(-1, what, ms);
-            else showFoundWho(p, what, ms);
+            scoreFound(masks, ms);
         });
+        box.addView(ok, ui.full(12));
         TextView listen = ui.button("🎧 Écouter l'original", Ui.CARD2, Ui.TXT);
         listen.setTextSize(15);
         listen.setOnClickListener(v -> openYouTube(p.song, false));
-        box.addView(listen, ui.full(16));
+        box.addView(listen, ui.full(10));
         TextView cancel = ui.button("Annuler", Ui.BG, Ui.MUTED);
         cancel.setOnClickListener(v -> { closeOverlay(); resumeTimer(); });
         box.addView(cancel, ui.full(10));
     }
 
-    /** Trouvé, étape 2 (mode individuel) : un appui sur le joueur valide et reprend le jeu. */
-    private void showFoundWho(final GameEngine.Proposal p, final int what, final long ms) {
-        LinearLayout box = overlayBox("Qui a trouvé ?");
-        box.addView(ui.center("+" + GameEngine.pointsFor(what) + " pt" + (GameEngine.pointsFor(what) > 1 ? "s" : "")
-                + " pour " + game.singer().name + " et pour le joueur choisi", 14, Ui.MUTED, false), ui.full(6));
-        addPlayerButtons(box, game.singerIndex(), idx -> {
-            closeOverlay();
-            scoreFound(idx, what, ms);
-        });
-        TextView back = ui.button("‹ Retour", Ui.BG, Ui.MUTED);
-        back.setOnClickListener(v -> { closeOverlay(); showFoundWhat(p, ms); });
-        box.addView(back, ui.full(16));
-    }
-
-    /** Un bouton par joueur (chanteur exclu) : un seul appui suffit. */
-    private void addPlayerButtons(LinearLayout box, int exclude, IntCb cb) {
-        LinearLayout row = null;
-        int col = 0;
+    /**
+     * Grille « qui a trouvé quoi » : une ligne par joueur (ou équipe), cases 🎵 Titre et 🎤 Interprète cumulables.
+     * exclude = joueur masqué (chanteur), only = seul joueur affiché (équipe du chanteur), singer = pour le résumé.
+     */
+    private int[] addFinderGrid(LinearLayout box, int exclude, int only, final TextView sum, final int singer) {
+        final int[] masks = new int[game.players.size()];
         for (int i = 0; i < game.players.size(); i++) {
-            if (i == exclude) continue;
-            if (col % 2 == 0) { row = ui.hbox(); box.addView(row, ui.full(10)); }
-            col++;
+            if (i == exclude || (only >= 0 && i != only)) continue;
             final int idx = i;
-            TextView b = ui.button(game.players.get(i).name, Ui.CARD2, Ui.TXT);
-            b.setTextSize(16);
-            b.setOnClickListener(v -> cb.on(idx));
-            row.addView(b, ui.weight(1, 4));
+            LinearLayout row = ui.hbox();
+            row.setGravity(Gravity.CENTER_VERTICAL);
+            row.addView(ui.text(game.players.get(i).name, 16, Ui.TXT, true), ui.weight(1.1f, 2));
+            final TextView t = chip("🎵 Titre");
+            final TextView a = chip("🎤 Interprète");
+            t.setOnClickListener(v -> {
+                masks[idx] ^= GameEngine.M_TITLE;
+                paintChip(t, (masks[idx] & GameEngine.M_TITLE) != 0);
+                sum.setText(finderText(masks, singer));
+            });
+            a.setOnClickListener(v -> {
+                masks[idx] ^= GameEngine.M_ARTIST;
+                paintChip(a, (masks[idx] & GameEngine.M_ARTIST) != 0);
+                sum.setText(finderText(masks, singer));
+            });
+            row.addView(t, ui.weight(1, 3));
+            row.addView(a, ui.weight(1.25f, 3));
+            box.addView(row, ui.full(8));
         }
-        if (col % 2 == 1 && row != null) row.addView(new View(this), ui.weight(1, 4));
+        sum.setText(finderText(masks, singer));
+        return masks;
     }
 
-    private void addWhatButtons(LinearLayout box, IntCb cb) {
-        TextView title = ui.button("🎵 Titre  +1", Ui.CARD2, Ui.TXT);
-        TextView artist = ui.button("🎤 Interprète  +1", Ui.CARD2, Ui.TXT);
-        TextView both = ui.button("⭐ Les deux  +3", Ui.GREEN, Ui.TXT);
-        title.setTextSize(15);
-        artist.setTextSize(15);
-        title.setOnClickListener(v -> cb.on(GameEngine.FOUND_TITLE));
-        artist.setOnClickListener(v -> cb.on(GameEngine.FOUND_ARTIST));
-        both.setOnClickListener(v -> cb.on(GameEngine.FOUND_BOTH));
-        LinearLayout row = ui.hbox();
-        row.addView(title, ui.weight(1, 4));
-        row.addView(artist, ui.weight(1, 4));
-        box.addView(row, ui.full(8));
-        box.addView(both, ui.full(8));
+    private TextView chip(String label) {
+        TextView b = ui.center(label, 14, Ui.MUTED, true);
+        b.setPadding(ui.dp(6), ui.dp(12), ui.dp(6), ui.dp(12));
+        b.setClickable(true);
+        paintChip(b, false);
+        return b;
     }
 
-    private void scoreFound(int guesser, int what, long ms) {
-        game.found(guesser, what, ms);
-        GameEngine.Proposal last = null;
-        for (GameEngine.Proposal q : game.currentTurn) if (q.found && q.ms == ms && q.what == what) last = q;
-        int pts = GameEngine.pointsFor(what) + (last != null && last.bonus ? 1 : 0);
-        flash("+" + pts + (last != null && last.bonus ? " ⚡" : ""), Ui.GREEN);
+    private void paintChip(TextView b, boolean on) {
+        b.setBackground(ui.rounded(on ? Ui.GREEN : Ui.CARD2, 14));
+        b.setTextColor(on ? Ui.TXT : Ui.MUTED);
+    }
+
+    /** Résumé des points avant validation (titre 1, interprète 1, les deux 3). */
+    private String finderText(int[] masks, int singer) {
+        StringBuilder b = new StringBuilder();
+        int union = 0;
+        for (int i = 0; i < masks.length; i++) {
+            if (masks[i] == 0) continue;
+            if (singer >= 0 && i == singer && !game.isTeams()) continue;
+            union |= masks[i];
+            if (b.length() > 0) b.append("  ·  ");
+            b.append(game.players.get(i).name).append(" +").append(GameEngine.maskPoints(masks[i]));
+        }
+        if (union == 0) return "Aucune case cochée";
+        if (singer >= 0 && !game.isTeams() && !game.config.blind)
+            b.insert(0, "🎤 " + game.players.get(singer).name + " +" + GameEngine.maskPoints(union) + "  ·  ");
+        return b.toString();
+    }
+
+    private void scoreFound(int[] masks, long ms) {
+        GameEngine.Proposal cur = game.current;
+        game.found(masks, ms);
+        int pts = cur.points + (cur.bonus ? 1 : 0);
+        flash("+" + pts + (cur.bonus ? " ⚡" : ""), Ui.GREEN);
         vibrate(40);
         if (game.lastTurnComplete) {
             flash("🏆 Liste complète  +" + GameEngine.FULL_LIST_BONUS, Ui.YELLOW);
@@ -966,10 +989,11 @@ public class MainActivity extends Activity {
     }
 
     private void blindPlay(final GameEngine.Proposal p) {
+        blindRevealed = false;
         renderBlind(p, false);
         audio.play(p.song, game.config.blindMiddle, new BlindAudio.Listener() {
             @Override public void onStarted() {
-                if (game == null || game.current != p || screen != SC_BLIND) return;
+                if (game == null || game.current != p || screen != SC_BLIND || blindRevealed) return;
                 blindFails = 0;
                 totalMs = game.config.seconds * 1000L;
                 remainingMs = totalMs;
@@ -982,7 +1006,7 @@ public class MainActivity extends Activity {
                 if (next != null) audio.prefetch(next.song);
             }
             @Override public void onFailed() {
-                if (game == null || game.current != p) return;
+                if (game == null || game.current != p || blindRevealed) return;
                 blindFails++;
                 if (blindFails >= 3) {
                     new AlertDialog.Builder(MainActivity.this)
@@ -1015,16 +1039,16 @@ public class MainActivity extends Activity {
         ui.add(l, top, 0);
         ui.add(l, ui.text(themeTitle(), 13, Ui.CYAN, false), 2);
 
-        timerText = ui.center(String.valueOf(game.config.seconds), 56, Ui.YELLOW, true);
+        timerText = ui.center(revealed ? "⏹ " + Math.max(0, (remainingMs + 999) / 1000) : String.valueOf(game.config.seconds), 56, revealed ? Ui.MUTED : Ui.YELLOW, true);
         timerText.setShadowLayer(16, 0, 0, Ui.NEON_BLUE);
         ui.add(l, timerText, 6);
         progress = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
         progress.setMax(1000);
-        progress.setProgress(revealed ? 0 : 1000);
+        progress.setProgress(revealed ? (int) (1000 * Math.max(0, remainingMs) / Math.max(1, totalMs)) : 1000);
         progress.setProgressTintList(android.content.res.ColorStateList.valueOf(Ui.GOLD));
         progress.setProgressBackgroundTintList(android.content.res.ColorStateList.valueOf(Ui.CARD2));
         l.addView(progress, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ui.dp(10)));
-        foundText = ui.center(revealed ? "" : "Recherche du titre…", 14, Ui.MUTED, false);
+        foundText = ui.center(revealed ? "Chrono arrêté · la musique continue" : "Recherche du titre…", 14, Ui.MUTED, false);
         scoreText = ui.text("", 1, Ui.MUTED, false);
         ui.add(l, foundText, 8);
 
@@ -1041,11 +1065,11 @@ public class MainActivity extends Activity {
             card.addView(ui.center("🎵 Chanson mystère", 22, Ui.YELLOW, true), ui.full(14));
             card.addView(equalizer(200, 26));
             LinearLayout actions = ui.hbox();
-            TextView reveal = ui.button("👁 Révéler", Ui.BG, Ui.TXT);
-            TextView ok = ui.button("✋ Trouvé !", Ui.GREEN, Ui.TXT);
+            TextView reveal = ui.button("🏳 Abandonner", Ui.BG, Ui.TXT);
+            TextView ok = ui.button("✋ Trouvé ?", Ui.GREEN, Ui.TXT);
             ok.setTextSize(22);
             reveal.setOnClickListener(v -> blindReveal(p));
-            ok.setOnClickListener(v -> onBlindFound(p));
+            ok.setOnClickListener(v -> blindReveal(p));
             actions.addView(reveal, ui.weight(1, 5));
             actions.addView(ok, ui.weight(1.6f, 5));
             ui.add(l, actions, 16);
@@ -1055,42 +1079,24 @@ public class MainActivity extends Activity {
             card.addView(ui.center(p.song.artist + " • " + p.song.year, 16, Ui.MUTED, false), ui.full(4));
             String genre = Styles.genres(p.song);
             if (!genre.isEmpty()) card.addView(ui.center("🎵 " + genre, 13, Ui.CYAN, false), ui.full(4));
-            String res = p.found
-                    ? "✅ " + game.players.get(p.guesser).name + " : " + WHAT[p.what] + " +" + p.points + (p.bonus ? " ⚡+1" : "")
-                    : "😶 Personne n'a trouvé";
-            card.addView(ui.center(res, 17, p.found ? Ui.GREEN : Ui.MUTED, true), ui.full(14));
-            TextView next = ui.button(game.blindOver() ? "🏆  Classement final" : "Chanson suivante  ›", Ui.PINK, Ui.TXT);
-            next.setOnClickListener(v -> blindNextSong());
+            LinearLayout grid = ui.card();
+            grid.addView(ui.center("Qui a trouvé quoi ?", 16, Ui.TXT, true));
+            grid.addView(ui.center("Plusieurs joueurs possibles · ⚡ +1 si trouvé en moins de 5 s", 12, Ui.MUTED, false), ui.full(2));
+            TextView sum = ui.center("", 14, Ui.GREEN, true);
+            final int[] masks = addFinderGrid(grid, -1, -1, sum, -1);
+            grid.addView(sum, ui.full(8));
+            ui.add(l, grid, 12);
+            TextView next = ui.button(game.blindOver() ? "✓ Valider · 🏆 Classement" : "✓ Valider · Chanson suivante  ›", Ui.PINK, Ui.TXT);
+            next.setOnClickListener(v -> {
+                game.blindFound(masks, p.ms);
+                int tot = 0;
+                for (int m : masks) tot += GameEngine.maskPoints(m) + (m != 0 && p.bonus ? 1 : 0);
+                if (tot > 0) flash("+" + tot + (p.bonus ? " ⚡" : ""), Ui.GREEN);
+                blindNextSong();
+            });
             ui.add(l, next, 16);
         }
         ui.add(l, scoreboard(false), 16);
-    }
-
-    private void onBlindFound(final GameEngine.Proposal p) {
-        if (!blindActive) return;
-        final long ms = songElapsedMs;
-        pauseTimer();
-        LinearLayout box = overlayBox("✋ Trouvé !");
-        addSongInfo(box, p);
-        box.addView(ui.center("Qu'a-t-on trouvé ?", 16, Ui.TXT, true), ui.full(16));
-        addWhatButtons(box, what -> {
-            closeOverlay();
-            LinearLayout who = overlayBox("Qui a trouvé ?");
-            addSongInfo(who, p);
-            who.addView(ui.center(WHAT[what] + " : +" + GameEngine.pointsFor(what) + " pt" + (GameEngine.pointsFor(what) > 1 ? "s" : ""), 15, Ui.GREEN, true), ui.full(10));
-            addPlayerButtons(who, -1, idx -> {
-                closeOverlay();
-                game.blindFound(idx, what, ms);
-                flash("+" + (GameEngine.pointsFor(what) + (p.bonus ? 1 : 0)), Ui.GREEN);
-                blindReveal(p);
-            });
-            TextView back = ui.button("‹ Retour", Ui.BG, Ui.MUTED);
-            back.setOnClickListener(v -> { closeOverlay(); resumeTimer(); });
-            who.addView(back, ui.full(16));
-        });
-        TextView cancel = ui.button("Annuler", Ui.BG, Ui.MUTED);
-        cancel.setOnClickListener(v -> { closeOverlay(); resumeTimer(); });
-        box.addView(cancel, ui.full(14));
     }
 
     /** Réponse de la chanson, pour vérifier ce qu'a dit le joueur avant d'attribuer les points. */
@@ -1110,6 +1116,10 @@ public class MainActivity extends Activity {
 
     /** Réponse : le chrono s'arrête, la musique continue pendant l'affichage du titre. */
     private void blindReveal(GameEngine.Proposal p) {
+        if (blindRevealed) return;
+        p.ms = blindActive ? songElapsedMs : game.config.seconds * 1000L;
+        if (!blindActive) remainingMs = 0;
+        blindRevealed = true;
         pauseTimer();
         blindActive = false;
         backdrop.setAlert(false);
@@ -1202,23 +1212,17 @@ public class MainActivity extends Activity {
             card.addView(ui.center(p.song.title, 24, Ui.TXT, true), ui.full(18));
             if (p.song.noteLine() != null) card.addView(ui.center(p.song.noteLine(), 14, Ui.GOLD, false), ui.full(2));
             card.addView(ui.center(p.song.artist + " • " + p.song.year, 16, Ui.MUTED, false), ui.full(4));
-            card.addView(ui.center("Qu'a-t-on trouvé ?", 16, Ui.TXT, true), ui.full(16));
-            addWhatButtons(card, what -> {
-                LinearLayout box = overlayBox("Qui a trouvé ?");
-                box.addView(ui.center("+" + GameEngine.pointsFor(what) + " pt" + (GameEngine.pointsFor(what) > 1 ? "s" : ""), 14, Ui.MUTED, false), ui.full(6));
-                addPlayerButtons(box, p.singer, who -> {
-                    closeOverlay();
-                    game.lateFound(p, who, what);
-                    flash("+" + GameEngine.pointsFor(what), Ui.GREEN);
-                    showCatchUp(list, idx + 1, false);
-                });
-                TextView back = ui.button("‹ Retour", Ui.BG, Ui.MUTED);
-                back.setOnClickListener(v -> closeOverlay());
-                box.addView(back, ui.full(16));
+            card.addView(ui.center("Qui a trouvé quoi ?", 16, Ui.TXT, true), ui.full(16));
+            TextView sum = ui.center("", 14, Ui.GREEN, true);
+            final int[] masks = addFinderGrid(card, p.singer, -1, sum, -1);
+            card.addView(sum, ui.full(8));
+            TextView ok = ui.button("✓ Valider  ›", Ui.GREEN, Ui.TXT);
+            ok.setOnClickListener(v -> {
+                game.lateFound(p, masks);
+                if (p.latePoints > 0) flash("+" + p.latePoints, Ui.GREEN);
+                showCatchUp(list, idx + 1, false);
             });
-            TextView nobody = ui.button("Personne n'a trouvé", Ui.BG, Ui.MUTED);
-            nobody.setOnClickListener(v -> showCatchUp(list, idx + 1, false));
-            card.addView(nobody, ui.full(12));
+            card.addView(ok, ui.full(12));
         }
         TextView skip = ui.button("Terminer le rattrapage  ›", Ui.BG, Ui.MUTED);
         skip.setTextSize(14);
@@ -1337,7 +1341,7 @@ public class MainActivity extends Activity {
                     android.content.res.ColorStateList.valueOf(0x33FFFFFF), ui.rounded(Ui.CARD, 14), null));
             row.setPadding(ui.dp(12), ui.dp(10), ui.dp(12), ui.dp(10));
             row.setClickable(true);
-            String icon = p.found ? "✅" : p.lateGuesser >= 0 ? "🔁" : p.revealed ? "🎧" : p.shown ? "⏭" : "⏳";
+            String icon = p.found ? "✅" : p.latePoints > 0 ? "🔁" : p.revealed ? "🎧" : p.shown ? "⏭" : "⏳";
             row.addView(ui.text(icon, 20, Ui.TXT, false), new LinearLayout.LayoutParams(ui.dp(36), ViewGroup.LayoutParams.WRAP_CONTENT));
             LinearLayout col = ui.vbox();
             col.addView(ui.text(p.song.title, 16, Ui.TXT, true));
@@ -1347,14 +1351,15 @@ public class MainActivity extends Activity {
             if (!genre.isEmpty()) sub.append(" • ").append(genre);
             if (showSinger) sub.append("\n🎤 ").append(game.players.get(p.singer).name);
             if (p.found) {
-                if (p.guesser >= 0) sub.append(showSinger ? " → " : "\nTrouvée par ").append(game.players.get(p.guesser).name);
-                else if (!showSinger) sub.append("\nTrouvée");
-                sub.append(" : ").append(WHAT[p.what]).append(" +").append(p.points);
-                sub.append(" (").append(Math.max(1, Math.round(p.ms / 1000.0))).append(" s)");
+                String who = finders(p.finds, game.config.blind ? -1 : p.singer);
+                if (!who.isEmpty()) sub.append(showSinger ? " → " : "\nTrouvée par ").append(who);
+                else sub.append(showSinger ? " → " : "\nTrouvée : ").append(WHAT[p.what]);
+                if (!game.config.blind && !game.isTeams()) sub.append(" · 🎤 +").append(p.points);
+                else if (game.isTeams()) sub.append(" +").append(p.points);
+                sub.append(" · ").append(Math.max(1, Math.round(p.ms / 1000.0))).append(" s");
                 if (p.bonus) sub.append(" ⚡");
-            } else if (p.lateGuesser >= 0) {
-                sub.append("\nRattrapage : ").append(game.players.get(p.lateGuesser).name)
-                        .append(" (").append(WHAT[p.lateWhat]).append(" +").append(p.latePoints).append(")");
+            } else if (p.latePoints > 0) {
+                sub.append("\nRattrapage : ").append(finders(p.lateFinds, p.singer));
             } else if (!p.shown) {
                 sub.append("\nPas eu le temps");
             }
@@ -1364,6 +1369,19 @@ public class MainActivity extends Activity {
             row.setOnClickListener(v -> openYouTube(p.song, false));
             ui.add(parent, row, 8);
         }
+    }
+
+    /** « Léa (titre +1), Tom (titre + interprète +3) » */
+    private String finders(int[] masks, int skip) {
+        if (masks == null) return "";
+        StringBuilder b = new StringBuilder();
+        for (int i = 0; i < masks.length; i++) {
+            if (masks[i] == 0 || i == skip) continue;
+            if (b.length() > 0) b.append(", ");
+            b.append(game.players.get(i).name).append(" (").append(WHAT[GameEngine.maskToWhat(masks[i])])
+                    .append(" +").append(GameEngine.maskPoints(masks[i])).append(")");
+        }
+        return b.toString();
     }
 
     private void openYouTube(Song s, boolean hidden) {
